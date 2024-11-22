@@ -1,97 +1,73 @@
-<header class="bsi-header d-flex">
-  <div class="container d-flex align-center  justify-space-between">
-    <a href="/" class="d-flex align-center justify-start logo-section">
-      <img src="~/assets/img/bsi-logo.png" class="img" alt="بانک صادرات ایران">
-      <img src="~/assets/img/bsi-text.png" class="img" alt="بانک صادرات ایران">
-      
-    </a>
-
-    <div class="d-none d-md-flex align-center justify-end header-links">
-      <!-- <nuxt-link to="/services" class="ml-9">
-        خدمات بانکی
-      </nuxt-link>
-      <NuxtLink to="/about" class="ml-9">
-        درباره ما
-      </NuxtLink>
-      <NuxtLink to="/digital-products" class="ml-9">
-        محصولات دیجیتال
-      </NuxtLink>
-      <nuxt-link to="/contact" class="ml-6">
-        ارتباط با ما
-      </nuxt-link> -->
-      <nuxt-link v-for="(item, index) in HeaderSite" :key="index" :to="item.TxtLink"
-        class="ml-9">{{item.Title}}</nuxt-link>
-      <v-divider vertical class="ml-7"></v-divider>
-      <!-- <span class="material-icons-outlined ml-7">
-        search
-      </span> -->
-      <!-- <span class="ml-7">
-          EN
-        </span> -->
-
-      <!--  -->
-
-      <!-- <template>
-        <SearchInput v-model="searchVal" />
-      </template> -->
 
 
+  <div>
+    <header class="bsi-header d-flex">
+      <div class="container d-flex align-center justify-space-between">
+        <a href="/" class="d-flex align-center justify-start logo-section">
+          <img src="~/assets/img/bsi-logo.png" class="img" alt="بانک صادرات ایران" />
+          <img src="~/assets/img/bsi-text.png" class="img" alt="بانک صادرات ایران" />
+        </a>
 
-      <!--  -->
-
-
-      <!-- <a href="#" class="login-btn">
-        ورود به نت‌بانک
-      </a> -->
-      <span id="openPopup">
-        جست و جو
-      </span>
-
-      <div id="popupBox" class="popup">
-          <div class="popup-content">
-              <span id="closePopup" class="close">&times;</span>
-              <h2>Popup Title</h2>
-              <p>This is a simple popup box.</p>
+        <!-- Search section -->
+        <div class="d-none d-md-flex align-center justify-end header-links">
+          <!-- <span style="color: white !important;" id="openPopup">
+            جست و جو
+          </span> -->
+          <span class="material-icons-outlined ml-6"  @click="openPopup">
+            search
+          </span>
+          <div id="popupBox" class="popup">
+            <div class="popup-content">
+              <span id="closePopup" class="close" @click="closePopup">&times;</span>
+              <div style="display: flex; flex-direction: column;">
+                <div class="unique-group">
+                    <svg width="24" viewBox="0 0 24 24" aria-hidden="true" class="unique-search-icon">
+                      <g>
+                        <path
+                          d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <input
+                      v-model="searchQuery"
+                      @input="searchOnChange"
+                      id="unique-query"
+                      class="unique-input"
+                      type="search"
+                      placeholder="جست و جو ..."
+                      name="searchbar"
+                    />
+                </div>
+                
+                <div v-if="filteredData.length" style="width: 100%; display: flex; justify-content: space-around;">
+                  <div v-for="(item, index) in filteredData" :key="item.id" >
+                    <div class="uiverse-container" dir="rtl">
+                      <div class="uiverse-card-box">
+                        <div class="uiverse-content-box">
+                          <span class="uiverse-card-title">{{ item.title }}</span>
+                          <p class="uiverse-card-content">
+                            {{ truncate(item.description) }}
+                          </p>
+                          <span class="uiverse-see-more">دیدن</span>
+                        </div>
+                        <div class="uiverse-date-box">
+                          <span class="uiverse-month">1403</span>
+                          <span class="uiverse-date">خرداد</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div v-else>
+                  <p style="    font-size: 20px;
+                  color: white;
+                  margin: 50px;">نتیجه ای یافت نشد!</p>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
-    </div>
-    <div class="d-flex d-md-none align-center  justify-end header-links">
-      <span class="material-icons-outlined ml-6">
-        search
-      </span>
-      <span class="material-icons-outlined" @click="$emit('openDrawer', true)">
-        menu
-      </span>
-    </div>
+    </header>
   </div>
-  <script>
-    console.log(document.getElementById('openPopup'))
-    document.getElementById('openPopup').addEventListener('click', function () {
-      console.log(';DS')
-        document.getElementById('popupBox').style.display = 'flex';
-    });
-
-    document.getElementById('closePopup').addEventListener('click', function () {
-        document.getElementById('popupBox').style.display = 'none';
-    });
-
-    // Close the popup if the user clicks outside the popup content
-    window.addEventListener('click', function (event) {
-        const popup = document.getElementById('popupBox');
-        if (event.target === popup) {
-            popup.style.display = 'none';
-        }
-    });
-
-    setTimeout(() => {
-      var link = document.querySelector("link[rel~='icon']");
-      if (!link) {
-        link = document.createElement('link');
-        link.rel = 'icon';
-        document.head.appendChild(link);
-      }
-      // link.href = 'https://stackoverflow.com/favicon.ico';
-      link.href = 'https://www.bsi.ir/Admin/ImagesAndIcons/BankIco.ico';
-    }, 3000);
-  </script>
-</header>

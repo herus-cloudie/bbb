@@ -6,9 +6,9 @@
     height: 56px;
   }
 
-  * {
-    color: white !important;
-  }
+  // * {
+  //   color: white !important;
+  // }
 
   .logo-section {
     .img {
@@ -21,7 +21,6 @@
   }
 
   .header-links {
-
     .login-btn {
       background: #285EB3;
       border-radius: 100px;         
@@ -38,7 +37,6 @@
       align-self: center;
     }
   }
-
 }
 
 body {
@@ -51,6 +49,7 @@ button {
   cursor: pointer;
 }
 
+/* Popup CSS */
 .popup {
   display: none; /* Hidden by default */
   position: fixed;
@@ -61,13 +60,15 @@ button {
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  z-index: 9999; /* Ensure it's always on top */
 }
 
 .popup-content {
-  background-color: white;
+  background-color: rgb(0 0 0 / 80%);
   padding: 20px;
+  height: 100vh;
   border-radius: 8px;
-  width: 300px;
+  width: 100%;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -84,4 +85,169 @@ button {
 
 .close:hover {
   color: red;
+}
+/* Renamed classes to avoid conflicts */
+.unique-group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  margin-top: 60px;
+}
+
+.unique-input {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 45px;
+  padding-right: 2.5rem;
+  box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+  border: 0;
+  border-radius: 12px;
+  background-color: #16171d;
+  outline: none;
+  color: #bdbecb;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: text;
+  z-index: 0;
+}
+
+.unique-input::placeholder {
+  color: #bdbecb;
+}
+
+.unique-input:hover {
+  box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+}
+
+.unique-input:active {
+  transform: scale(0.95);
+}
+
+.unique-input:focus {
+  box-shadow: 0 0 0 2.5px #2f303d;
+}
+
+.unique-search-icon {
+  position: absolute;
+  left: 1rem;
+  fill: #bdbecb;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
+.result-item{
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 0px 10px #0020fe;
+  border-radius: 10px;
+  color: #333 !important;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.uiverse-container {
+  width: 300px;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.uiverse-card-box {
+  padding-top: 50px;
+  border: 3px solid rgb(255, 255, 255);
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg, #0000 18.75%, #f3f3f3 0 31.25%, #0000 0),
+    repeating-linear-gradient(45deg, #f3f3f3 -6.25% 6.25%, #ffffff 0 18.75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.uiverse-card-box:hover {
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.uiverse-content-box {
+  background: rgba(4, 193, 250, 0.732);
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+
+.uiverse-content-box .uiverse-card-title {
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.uiverse-content-box .uiverse-card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.uiverse-content-box .uiverse-card-content {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f2f2f2;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.uiverse-content-box .uiverse-card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.uiverse-content-box .uiverse-see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgb(7, 185, 255);
+  background: white;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.uiverse-content-box .uiverse-see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.uiverse-date-box {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background: white;
+  border: 1px solid rgb(7, 185, 255);
+  padding: 10px;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.uiverse-date-box span {
+  display: block;
+  text-align: center;
+}
+
+.uiverse-date-box .uiverse-month {
+  color: rgb(4, 193, 250);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.uiverse-date-box .uiverse-date {
+  font-size: 18px;
+  font-weight: 900;
+  color: rgb(4, 193, 250);
 }
