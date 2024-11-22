@@ -1,0 +1,17 @@
+<div class="d-flex flex-column justify-start align-stretch sepehr-card-page">
+
+ <!-- <img src="https://www.rade.ir/wp-content/uploads/2019/09/bsi.png" alt="" style="width: 1000px;height: 1000px;"> -->
+
+ <div class="container systems-services d-flex flex-column justify-start align-stretch mt-10" style="gap: 24px">
+
+ <div class="d-flex flex-column justify-start align-stretch rules-page container">
+   <div v-for="(item,index) in EtelaatShKh"
+     class="d-flex flex-column justify-start align-stretch container my-12">
+     <a :href="item.Link.Description">
+       {{item.Title}}
+     </a>
+   </div>
+ </div>
+</div>
+
+</div>

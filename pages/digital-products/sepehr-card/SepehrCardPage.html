@@ -1,0 +1,33 @@
+<div class="d-flex flex-column justify-start align-stretch sepehr-card-page">
+  
+  <div style="text-align: center;">
+    <img class="img" src="~/assets/img/digital-products/sepehr.jpg">
+  </div>
+
+  <div class="d-flex flex-row justify-start align-center main-banner">
+    <div v-for="(item,index) of SepehrKartSectionOne" :key="index"
+      class="d-flex flex-column justify-start align-start pr-16">
+      <h1 class="mb-7">{{item.Title}}</h1>
+      <!-- <p>​{{item.Description}}</p> -->
+      <p v-html="item.Description.split('@@').join('<br>')"></p>
+    </div>
+  </div>
+
+  <div class="container d-flex flex-row justify-space-between align-stretch py-15">
+    <div class="col-md-3 d-none d-md-block"></div>
+    <div class="col-md-8 d-flex flex-column justify-start align-md-stretch align-center">
+      <h2 v-for="(item,index) of SepehrKartSectionFourthTitle" :key="index" class="text-primary"
+        style="font-size: 40px">
+        {{item.Title}}
+      </h2>
+      <GoldDivider class="mt-7 mb-10" />
+      <div class="d-flex flex-column justify-start align-stretch" style="gap: 20px">
+        <div v-for="(item,index) of SepehrKartSectionFourth" :key="index" class="receive-condition">
+          <p>{{item.Title}}</p>
+          <span v-html="item.Description.split('@@').join('<br>')"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

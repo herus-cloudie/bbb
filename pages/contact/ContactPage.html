@@ -1,0 +1,115 @@
+<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+<div class="d-flex flex-column justify-start align-stretch contact-page">
+  <div class="banner"></div>
+  <div class="container d-flex flex-md-row flex-column justify-start align-stretch pb-md-15">
+    <AboutLinkListComponent :links="ContactRightMenu" :divider="false" class="col-md-2 pa-0" />
+    <!-- <AboutLinkListComponent :links="links" :divider="false" class="col-md-2 pa-0"/> -->
+    <div class="d-flex flex-column justify-start align-md-start align-center contact-card col-md mt-md-n10">
+      <h2>اداره کل روابط عمومی</h2>
+
+      <span class="text-primary text-md-start text-center">
+        <b>صدای سپهر</b>
+        (مشاوره بانکی، پاسخگویی به سئوالات، پیشنهادها و انتقادها): ۰۹۶۰۲
+      </span>
+
+      <div class="d-flex flex-md-row justify-md-center align-md-stretch flex-column justify-start align-stretch"
+        style="gap: 20px;width: 100%">
+        <div class="d-flex flex-column justify-center align-center communicate-section">
+          <p>تلفن‌خانه ساختمان مرکزی</p>
+          <a href="tel:+982184761">
+            021-84761
+          </a>
+        </div>
+
+        <div class="d-flex flex-column justify-center align-center communicate-section">
+          <p>فکس اداره کل روابط‌عمومی</p>
+          <a href="fax:+982141476231">
+            021-41476231
+          </a>
+        </div>
+
+        <div class="d-flex flex-column justify-center align-center communicate-section">
+          <p>پست الکترونیکی</p>
+          <a href="mailto:info@bsi.ir">
+            info@bsi.ir
+          </a>
+        </div>
+      </div>
+
+      <p>
+        <b>آدرس:</b>
+        تهران، خیابان سمیه، مابین بهار و مفتح، پلاک ۸۵ کد پستی :۱۵۷۱۸۳۸۷۱۳
+      </p>
+
+      <client-only>
+        <l-map style="height: 375px; width: 100%;max-width: 750px;align-self: center" :zoom="zoom" :center="center">
+          <l-tile-layer :url="url"></l-tile-layer>
+          <l-marker :lat-lng="markerLatLng"></l-marker>
+        </l-map>
+      </client-only>
+
+    </div>
+  </div>
+  <!-- <div class="form-section-back">
+
+
+    <div class="form container d-flex flex-column justify-start align-stretch">
+      <v-btn-toggle v-model="toggle_exclusive" mandatory class="mt-12 mb-10">
+        <v-btn v-for="tab of tabs" :key="tab">
+          {{ tab }}
+        </v-btn>
+      </v-btn-toggle>
+      <v-form v-if="toggle_exclusive === 0" v-model="valid" ref="form" @submit="formSubmit()" id="123"
+        class="d-flex flex-column justify-start align-stretch px-md-10" lazy-validation>
+        <div class="d-flex flex-row justify-space-between align-center" style="gap: 32px">
+          <v-text-field v-model="loginform.firstName" :rules="nameRules" label="نام" required outlined
+            class="col pa-0"></v-text-field>
+          <v-text-field v-model="loginform.lastName" :rules="nameRules" label="نام خانوادگی" required outlined
+            class="col pa-0"></v-text-field>
+        </div>
+        <div class="d-flex flex-row justify-space-between align-center" style="gap: 32px">
+          <v-text-field v-model="email" :rules="emailRules" label="پست الکترونیکی" required outlined
+            class="col pa-0"></v-text-field>
+          <v-select v-model="contactSubject" :items="items" :rules="contactSubjectRules" label="موضوع تماس" required
+            outlined class="col pa-0"></v-select>
+        </div>
+        <v-textarea v-model="description" :rules="descriptionRules" outlined label="توضیحات تماس"></v-textarea>
+        <div>
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+          <form @submit.prevent="submitForm">
+            <div class="g-recaptcha" data-sitekey="6LfkMygqAAAAAPmaR10up-HksFX74kqRRTfY-jsF"></div>
+          </form>
+        </div>
+        <v-btn @click="submitForm()" :disabled="!valid" color="primary" class="align-self-center" id="submitRequest"
+          style="padding: 10px 100px">
+          ثبت
+        </v-btn>
+      </v-form>
+      <v-form v-if="toggle_exclusive === 1" v-model="validCheckCall" ref="backupForm"
+        style="max-width: 460px;width: 100%"
+        class="d-flex flex-column justify-start align-stretch px-10 align-self-center" lazy-validation>
+        <v-text-field v-model="issueTrackingCode" label="شماره پیگیری" required outlined
+          class="col pa-0"></v-text-field>
+        <div>
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+          <form @submit.prevent="submitForm">
+            <div class="g-recaptcha" data-sitekey="6LfkMygqAAAAAPmaR10up-HksFX74kqRRTfY-jsF"></div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <v-btn @click="submitCheckForm()" :disabled="!validCheckCall" color="primary" class="align-self-center"
+          style="padding: 10px 100px">
+          ثبت
+        </v-btn>
+      </v-form>
+    </div>
+  </div> -->
+  <script>
+    // function onloadCallback() {
+    //     document.getElementById("submitRequest").disabled = true;
+    //   };
+    // function enableBtn(){
+    //    document.getElementById("submitRequest").disabled = false;
+    //  }
+  </script>
+</div>

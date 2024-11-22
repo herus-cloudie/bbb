@@ -1,0 +1,65 @@
+<template src="./karmozdha-hazineha.html"></template>
+<style lang="scss" src="./karmozdha-hazineha.scss" scoped></style>
+
+<script lang="ts">
+import Vue from "vue";
+import axios from "axios";
+import FaqComponent from "~/components/FaqComponent/FaqComponent.vue";
+import HeaderComponent from "~/components/global/HeaderCompnent/HeaderComponent.vue";
+import FooterComponent from "~/components/global/FooterComponent/FooterComponent.vue";         
+import AccordionLinkListComponent from "~/components/AccordionLinkListComponent/AccordionLinkListComponent.vue";
+import GoldDivider from "~/components/Icons/gold-divider.vue";
+import { BankRialServicesLinks } from "~/core/files/about-us-links";
+
+export default Vue.extend({
+  name: "QarzHasanePasandazPage",
+  components: {
+    GoldDivider,
+    AccordionLinkListComponent,
+    FooterComponent,
+    HeaderComponent,
+    FaqComponent,
+  },
+  mounted: function () {
+    this.GetGharzolhasaneSepordeha();
+    this.GetGharzolhasaneSepordehaTitle();
+    this.GetLink();
+  },
+  methods: {
+     GetGharzolhasaneSepordehaTitle: function () {
+      var endPointUrl =
+        this.SiteAdrs +
+        "/_api/web/lists/getbyTitle('کارمزدها و هزینه ها(تسهیلات و تعهدات)')/items?$select=Id,Title,Description&$filter=IsActive%20eq%201%20and%20Order0%20eq%201%20and%20Parent%20ne%20'لینک ها'";
+      axios.get(endPointUrl).then((response) => {
+        this.GharzolhasaneSepordehaTitle = response.data.value;      
+        document.title="کارمزدها و هزینه ها بانک صادرات ایران";         
+      });
+    },
+    GetGharzolhasaneSepordeha: function () {
+      var endPointUrl =
+        this.SiteAdrs +
+        "/_api/web/lists/getbyTitle('کارمزدها و هزینه ها(تسهیلات و تعهدات)')/items?$select=Id,Title,Description&$filter=IsActive%20eq%201%20and%20Order0%20gt 1%20and%20Parent%20ne%20'لینک ها'&$orderby=Order0";
+      axios.get(endPointUrl).then((response) => {
+        this.GharzolhasaneSepordeha = response.data.value;
+      });
+    },
+    GetLink: function () {
+      var endPointUrl =
+        this.SiteAdrs +
+        "/_api/web/lists/getbyTitle('کارمزدها و هزینه ها(تسهیلات و تعهدات)')/items?$select=Id,Title,Description,TxtLinkLast&$filter=IsActive%20eq%201%20and%20Parent%20eq%20'لینک ها'&$orderby=Order0";
+      axios.get(endPointUrl).then((response) => {
+        this.Link = response.data.value;
+      });
+    },
+  },
+  data() {
+    return {
+      SiteAdrs: "/Admin/",
+      GharzolhasaneSepordeha: [],
+      GharzolhasaneSepordehaTitle:[],
+      Link:[],
+      links: BankRialServicesLinks,
+    };
+  },
+});
+</script>

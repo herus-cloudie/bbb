@@ -1,0 +1,31 @@
+<div class="d-flex flex-column mb-12 justify-start align-stretch news-page">
+
+  <h2 class="text-center my-6 my-md-16">
+    آخرین اخبار بانک
+  </h2>
+
+  <div class="d-flex flex-row flex-wrap justify-space-between align-stretch container">
+    <nuxt-link v-for="(item, index) in paginatedItems" :key="item.id" :to="'/news/' + item.id"
+               class="news-card d-flex flex-column justify-end align-stretch">
+      <!-- <img :src="require('~/assets/img/news/' + item.image)" :alt="item.title"> -->
+      <img :src="item.image" :alt="item.title">
+      <div class="title-section">
+        <h3>
+          {{item.title}}
+        </h3>
+        <span class="desc-section">
+            {{item.description }}
+          </span>
+      </div>
+    </nuxt-link>
+  </div>
+
+  <v-pagination
+    v-model="pagination.page"
+    :length="pages"
+    total-visible="4"
+    rounded="circle"
+    @input="scrollToTop"
+  ></v-pagination>
+
+</div>

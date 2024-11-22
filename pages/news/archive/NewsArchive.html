@@ -1,0 +1,70 @@
+<div class="d-flex flex-md-row my-md-12 flex-column my-4 justify-start align-stretch archive-news-page container">
+
+  <!-- <div class="d-flex flex-column justify-start align-stretch col-md-2 pa-0">
+    <h2>
+      آرشیو
+    </h2>
+    <div class="archive-section-box px-4 py-8">
+      <ul>
+        <li v-for="month of months" :key="month">
+          <nuxt-link to="/news/archive/#">
+            {{ month }}
+          </nuxt-link>
+        </li>
+      </ul>
+      <nuxt-link to="/news/archive/#" class="align-self-end">
+            <span class="text-primary">
+              مشاهده بیشتر
+            </span>
+        <v-icon color="primary" class="mdi-24px">mdi-chevron-left</v-icon>
+      </nuxt-link>
+    </div>
+  </div> -->
+
+  <!-- <div :style="{'min-height': calendarSectionHeight}"
+       class="d-flex flex-column justify-start align-stretch col-md-3 mx-md-5 pa-0 my-10 my-md-0">
+    <h2>
+      تقویم
+    </h2>
+    <div class="archive-section-box">
+      <date-picker
+        mode="single"
+        type="date"
+        click-on="all"
+        locale="fa"
+        :column="1"
+        :show="true"
+        style="--primary-color: #0D47A1; --secondary-color: #649eec;"
+        @select="dateSelected"
+        @open="calendarOpened"
+        @close="calendarClosed"
+      >
+      </date-picker>
+    </div>
+  </div> -->
+
+  <div class="d-flex flex-column justify-start align-stretch col-md pa-0">
+    <h2>
+      آخرین مطالب
+    </h2>
+    <div class="archive-section-box latest-news py-4 px-8">
+      <nuxt-link v-for="(item, index) in News" :to="'/news/_id?IDForItem=' + item.Order0" class="news-item" :key="item">
+        <!-- <h1>v-for="item of [1,2,3,4,5,6,7]"</h1> -->
+        <p>
+          {{item.Title}}
+        </p>
+        <span class="d-flex flex-row justify-start align-center date-section">
+          <v-icon color="#616161" class="mdi-18px ml-2">mdi-calendar-text</v-icon>
+          <span>{{item.NewsDate}}</span>
+        </span>
+      </nuxt-link>
+      <!-- <nuxt-link to="/news/archive/#" class="align-self-end">
+        <span class="text-primary">
+          مشاهده بیشتر
+        </span>
+        <v-icon color="primary" class="mdi-24px">mdi-chevron-left</v-icon>
+      </nuxt-link> -->
+    </div>
+  </div>
+
+</div>

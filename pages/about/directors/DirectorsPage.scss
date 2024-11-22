@@ -1,0 +1,255 @@
+.directors-page {
+
+  h1 {
+    @media screen and (max-width: 959px) {
+      font-size: 18px;
+    }
+  }
+
+  ::v-deep {
+    .v-btn-toggle {
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);
+      align-self: center;
+      padding: 8px 20px;
+
+      @media screen and (max-width: 959px) {
+        display: flex;
+        flex-direction: column;
+        padding: 4px 10px;
+      }
+
+      .v-btn {
+        border-radius: 10px;
+        background: white;
+        border: none;
+        padding: 16px 60px;
+        color: #616161;
+        font-size: 14px;
+
+        @media screen and (min-width: 960px) {
+          height: unset !important;
+          font-size: 22px;
+        }
+      }
+
+      .v-item--active {
+        background: #0D47A1;
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);
+        color: white;
+
+        &:before {
+          opacity: 0 !important;
+        }
+      }
+
+    }
+  }
+
+  .directors-wrap {
+    gap: 120px 20%;
+
+    @media screen and (max-width: 959px) {
+      gap: 1.5rem;
+    }
+  }
+
+  .director-card {
+    .director-title {
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.10);
+      position: relative;
+      padding: 1rem 100px 1rem 24px;
+
+      @media screen and (max-width: 959px) {
+        padding: 1rem 100px 1rem 1rem;
+      }
+
+      .avatar {
+        $size: 180px;
+        position: absolute;
+        right: calc(-180px / 2);
+        bottom: 0;
+        width: $size;
+        height: $size;
+        object-fit: cover;
+        border-radius: 50%;
+
+        @media screen and (max-width: 959px) {
+          $size: 90px;
+          width: $size;
+          height: $size;
+          right: 0;
+        }
+      }
+
+      b {
+        color: #0D47A1;
+        text-align: right;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        margin-bottom: 8px;
+
+        @media screen and (max-width: 959px) {
+          font-size: 16px;
+        }
+      }
+
+      .position {
+        color: #616161;
+        text-align: right;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+
+        @media screen and (max-width: 959px) {
+          font-size: 14px;
+        }
+      }
+
+    }
+
+    .toggle-button {
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      transition: all 0.2s ease-in;
+    }
+
+    .rotate180 {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .director-summary {
+      padding: 16px 32px;
+      transition: all 0.2s ease-in;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+
+      @media screen and (max-width: 959px) {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+    }
+
+    .hide-director-summary {
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  .director-card-state {
+    .director-title {
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.10);
+      position: relative;
+      padding: 1rem 100px 1rem 24px;
+
+      @media screen and (max-width: 959px) {
+        padding: 1rem 100px 1rem 1rem;
+      }
+
+      .avatar {
+        $size: 180px;
+        position: absolute;
+        right: calc(-180px / 2);
+        bottom: 0;
+        width: $size;
+        height: $size;
+        object-fit: cover;
+        border-radius: 50%;
+
+        @media screen and (max-width: 959px) {
+          $size: 90px;
+          width: $size;
+          height: $size;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      b {
+        color: #0D47A1;
+        text-align: right;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        margin-bottom: 8px;
+
+        @media screen and (max-width: 959px) {
+          font-size: 16px !important;
+        }
+      }
+
+      .position {
+        color: #616161;
+        text-align: right;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+
+        @media screen and (max-width: 959px) {
+          font-size: 14px;
+        }
+      }
+
+    }
+
+    .toggle-button {
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      transition: all 0.2s ease-in;
+    }
+
+    .rotate180 {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .director-summary {
+      padding: 16px 32px;
+      transition: all 0.2s ease-in;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+
+      @media screen and (max-width: 959px) {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+    }
+
+    .hide-director-summary {
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  .iranMap {
+    height: 320px;
+
+    @media screen and (min-width: 960px) {
+      height: 650px;
+    }
+  }
+
+}

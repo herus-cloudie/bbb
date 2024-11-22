@@ -1,0 +1,30 @@
+<div class="d-flex flex-column justify-start align-stretch rules-page container">
+
+  <h1 class="text-center mt-md-15 mt-8">
+    <span class="text-primary">
+      لیست شعب منتخب وام قرض الحسنه ماده 69 و فرزند سوم یا بیشتر
+      </span>
+  </h1>
+  <br>
+  <br>
+  <br>
+  <h2>
+    فهرست شعب منتخب بانک صادرات ایران برای پرداخت وام قرض الحسنه قانون حمایت از خانواده و جوانی جمعیت در راستای اجرای تبصره های (1) و (2) ذیل ماده 69؛ و ودیعه، خرید یا ساخت مسکن برای خانواده‌های فاقد مسکن که از ابتدای سال 1399 به بعد صاحب فرزند سوم یا بیشتر می شوند (موضوع جزء (3) بند (ث) تبصره (13) قانون بودجه سال 1403 کل کشور) به شرح فایل پیوست و به تفکیک هر استان و مناطق سه گانه تهران اعلام می‌شود.
+  </h2>
+
+  <!-- <v-btn-toggle v-model="toggle_exclusive" mandatory class="mt-12">
+      <v-btn v-for="tab of tabs" :key="tab.tabName">
+      {{ tab.tabName }}
+    </v-btn>
+  </v-btn-toggle> -->
+
+  <div class="d-flex flex-column justify-start align-stretch container my-12">
+    <!-- <a v-for="(item,index) of tabs[toggle_exclusive].links" :key="item.name + index"
+       download target="_blank"> -->
+       <a v-for="(item,index) of tabs[toggle_exclusive].links" :key="item.Title + index"
+       download target="_blank" :href="item.Link">
+      {{item.Title }}
+    </a>
+  </div>
+
+</div>

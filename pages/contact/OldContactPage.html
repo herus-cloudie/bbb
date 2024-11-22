@@ -1,0 +1,109 @@
+<v-app>
+  <div class="d-flex flex-row justify-start align-stretch mx-15 mt-10 mb-8">
+    <AboutLinkListComponent :links="links" class="col-2 pa-0" />
+    <section id="historySection" class="content-section d-flex flex-column justify-start align-stretch col-7 mr-16 pa-0 scrollbar-hidden">
+      <h2>
+        اداره کل روابط عمومی
+      </h2>
+      <p>
+        <b>صدای سپهر</b>
+        (مشاوره بانکی، پاسخگویی به سئوالات، پیشنهادها و انتقادها):  ۰۹۶۶۰۲
+      </p>
+
+      <div class="d-flex flex-column flex-md-row justify-start justify-space-between align-stretch align-md-stretch">
+
+        <div class="d-flex flex-column justify-start align-start communicate-section">
+          <p>تلفن‌خانه ساختمان مرکزی</p>
+          <a href="tel:+982184761">
+            021-84761
+          </a>
+        </div>
+
+        <div class="d-flex flex-column justify-start align-start communicate-section">
+          <p>تلفن‌خانه ساختمان مرکزی</p>
+          <a href="fax:+982141476231">
+            021-41476231
+          </a>
+        </div>
+
+        <div class="d-flex flex-column justify-start align-start communicate-section">
+          <p>سامانه دریافت پیامک</p>
+          <a href="sms:100065">
+            100065
+          </a>
+        </div>
+
+        <div class="d-flex flex-column justify-start align-start communicate-section">
+          <p>پست الکترونیکی</p>
+          <a href="mailto:info@bsi.ir">
+            info@bsi.ir
+          </a>
+        </div>
+
+      </div>
+
+      <p class="mt-10">
+        آدرس: تهران، خیابان سمیه، مابین بهار و مفتح، پلاک ۸۵ کد پستی :۱۵۷۱۸۳۸۷۱۳
+      </p>
+
+      <div class="divider my-10"></div>
+
+      <p>
+        مشتری گرامی / همکار ارجمند ؛ ضمن قدردانی از حسن انتخاب حضرتعالی به استحضار می رساند در صورت ارسال هرگونه پیام می بایست کد پیگیری مربوطه را دریافت و سپس از طریق منوی پیگیری که در صفحه کناری همین بخش قابل دسترسی می باشد از نتیجه پیگیریهای بعمل آمده اطلاع حاصل فرمایید.
+        <br>
+        <br>
+        باتشکر- روابط عمومی بانک صادرات ایران
+      </p>
+
+      <div class="divider my-10"></div>
+
+      <h3 class="text-center mb-8">
+        تماس با روابط عمومی
+      </h3>
+
+      <v-form v-model="valid" ref="form"
+              class="d-flex flex-column justify-start align-stretch"
+              lazy-validation>
+        <v-text-field
+          v-model="name"
+          :rules="nameRules"
+          label="نام و نام خانوادگی"
+          required
+          outlined
+        ></v-text-field>
+        <v-text-field
+          v-model="email"
+          :rules="emailRules"
+          label="پست الکترونیکی"
+          required
+          outlined
+        ></v-text-field>
+        <v-select
+          v-model="contactSubject"
+          :items="items"
+          :rules="contactSubjectRules"
+          label="موضوع تماس"
+          required
+          outlined
+        ></v-select>
+        <v-textarea
+          v-model="description"
+          :rules="descriptionRules"
+          outlined
+          label="توضیحات"
+        ></v-textarea>
+        <v-btn
+          @click="submitForm()"
+          :disabled="!valid"
+          color="primary"
+        >
+          ثبت
+        </v-btn>
+      </v-form>
+
+
+    </section>
+    <div class="actions mr-auto pa-0 d-flex flex-row">
+    </div>
+  </div>
+</v-app>

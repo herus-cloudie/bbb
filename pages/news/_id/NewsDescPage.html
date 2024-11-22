@@ -1,0 +1,193 @@
+<div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch
+  container news-desc-page my-md-12 my-4">
+  <div class="col-md d-flex flex-column justify-start align-stretch pa-0">
+    <!-- <img src="~/assets/img/print.jpg" alt="bsi-download-mockup" onclick="printPageArea('ImpoDiv');return false;"
+      style="width: 70px; height: 70px; cursor: pointer;"> -->
+    <!-- <img src="~/assets/img/print.jpg" alt="bsi-download-mockup" style="width: 70px; height: 70px; cursor: pointer;"> -->
+    <div v-for="(item, index) in relatedNewsSlider" :key="item.id"
+      class="desc-box d-flex flex-column justify-start align-stretch">
+      <div id="ImpoDiv">
+        <h4 id="rutitr" class="mr-md-5">{{item.RuTitr}}</h4>
+        <h3 id="titr" class="mr-md-5"
+          style="color: red;font-family: b titr;font-size: xx-large;line-height: 2;text-align: center;">
+          {{item.Title}}
+        </h3>
+        <span class="d-flex flex-row justify-start align-center date-section mb-8 mt-2 mr-md-5">
+          <v-icon color="primary" class="mdi-18px ml-2">mdi-calendar-text</v-icon>
+          <span>تاریخ انتشار: </span>
+          <span> {{item.NewsDate}}</span>
+        </span>
+        <img v-if="item.ImageUrl != null " id="imagenews" :src="item.ImageUrl" alt="bsi-download-mockup" class="mb-8">
+        <img v-if="item.ImageUrl == null " id="imagenews" src="~/assets/img/imagebank.jpg" alt="bsi-download-mockup"
+          class="mb-8">
+        <h4 id="lead" style="font-family: b koodak;font-size: x-large;text-align: right;">{{item.Lead}}</h4>
+        <br>
+        <!-- <p id="newdesc" class="mb-5" style="font-size: 20px;font-family: b nazanin;line-height: 2;">
+          {{item.Description}}
+        </p> -->
+        <p v-if="item.Description" id="newdesc" class="mb-5"
+          style="font-size: 20px;font-family: b nazanin;line-height: 2;text-align: right;"          
+          v-html="item.Description.split('@@').join('<br>')"></p>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <div v-for="(item, index) in RelativeLink" :key="item">
+        <a :href="item.split(',')[0]" target="_blank">{{item.split(',')[1]}}</a>
+      </div>
+
+
+
+      <v-divider style="border-color: #8C8C8C !important;" class="mt-5"></v-divider>
+
+      <div
+        class="my-5 px-2 px-md-0 d-flex flex-md-row flex-column justify-start justify-md-space-between align-md-center align-stretch">
+        <!-- <div class="d-flex flex-row justify-start align-center mb-5 mb-md-0" style="gap: 8px">
+          <span>برچسب‌ها:</span>
+          <span class="news-tag">شعب بانک</span>
+          <span class="news-tag">تهران</span>
+        </div> -->
+        <!-- <div class="d-flex flex-row justify-md-end justify-space-between align-center social-media" style="gap: 10px">
+          <span>اشتراک گذاری:</span>
+          <div class="d-flex flex-row justify-end align-center" style="gap: 10px">
+            <img src="~/assets/img/news/social-media/eitaa.png" alt="bsi-download-mockup">
+            <img src="~/assets/img/news/social-media/bale.png" alt="bsi-download-mockup">
+            <img src="~/assets/img/news/social-media/telegram.png" alt="bsi-download-mockup">
+            <img src="~/assets/img/news/social-media/X.png" alt="bsi-download-mockup">
+            <img src="~/assets/img/news/social-media/whatsapp.png" alt="bsi-download-mockup">
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="d-flex flex-column justify-start align-stretch mt-10">
+
+      <h2>گزارش تصویری مرتبط</h2>
+      <!-- <v-carousel hide-delimiters cycle height="300px" class="mb-10 mb-md-0"> -->
+      <!-- <v-carousel-item v-for="(report, i) in [1,2,3,4,5]" :key="i"> -->
+      <!-- <v-carousel-item v-for="(item, i) in RelatedImage" :key="item.id">
+          <div class="d-flex flex-row justify-space-between align-stretch fill-height slider-images">
+            <img :src="item" :alt="i">  -->
+      <!-- <img :src="require('~/assets/img/news/news-example-0.png')" :alt="i">
+            <img :src="require('~/assets/img/news/news-example-1.png')" :alt="i">
+            <img :src="require('~/assets/img/news/news-example-0.png')" :alt="i">
+            <img :src="require('~/assets/img/news/news-example-0.png')" :alt="i">
+            <img :src="require('~/assets/img/news/news-example-0.png')" :alt="i"> -->
+      <!-- </div>
+        </v-carousel-item>
+      </v-carousel> -->
+
+      <!-- <template>
+        <v-container>
+          <v-carousel hide-delimiter-background :cycle="true">
+            <v-carousel-item v-for="(item, index) in RelatedImage" :key="index">
+              <v-row>
+                <v-col v-for="(item, index) in RelatedImage" :key="index" cols="10">
+                  <a :href="item" target="_blank">
+                    <v-img :src="item" class="carousel-image" style="width: 100%;height: auto;"></v-img>
+                  </a>
+                </v-col>
+              </v-row>
+            </v-carousel-item>
+          </v-carousel>
+        </v-container>
+      </template> -->
+
+      <template>
+        <div class="image-gallery" style=" display: flex;flex-wrap: wrap;">
+          <div v-for="(item, index) in RelatedImage" :key="index" class="image-container" style="margin: 10px;">
+            <a :href="item" target="_blank">
+              <img :src="item" :alt="item" style=" width: 200px;height: auto;" />
+            </a>
+          </div>
+        </div>
+      </template>
+
+      <!-- <h2>اخبار مرتبط</h2>
+      <v-carousel hide-delimiters height="350">
+
+        <v-carousel-item v-for="(reportArray, i) in getRelatedSlider" :key="i">
+          <div v-if="reportArray?.length" class="d-flex flex-row justify-start align-stretch fill-height slider-news">
+            <div class="box" v-for="(report, index) in reportArray" :key="index">
+              <img :src="report.img" :alt="index">
+              <p>{{report.title}}</p>
+              <span class="date-box">
+                تاریخ انتشار:
+                {{report.createdAt}}
+              </span>
+            </div>
+          </div>
+        </v-carousel-item>
+      </v-carousel> -->
+
+      <!-- <div class="d-flex flex-column justify-start align-start mt-15">
+        <p style="font-size: 22px;">
+          آیا این خبر مفید بود؟
+        </p>
+        <v-radio-group v-model="isNewsHelpful" row class="my-6">
+          <v-radio label="بله" :value="true"></v-radio>
+          <v-radio label="خیر" :value="false"></v-radio>
+        </v-radio-group>
+        <v-btn color="primary" class="py-2 px-7">
+          ثبت
+        </v-btn>
+      </div> -->
+
+      <!-- <v-form v-model="valid" ref="form" class="d-flex flex-column justify-start align-stretch mt-15" lazy-validation>
+        <div class="d-flex flex-row justify-space-between align-center" style="gap: 32px">
+          <v-text-field v-model="firstName" :rules="nameRules" label="نام" required outlined
+            class="col pa-0"></v-text-field>
+          <v-text-field v-model="lastName" :rules="nameRules" label="نام خانوادگی" required outlined
+            class="col pa-0"></v-text-field>
+        </div>
+        <div class="d-flex flex-row justify-space-between align-center" style="gap: 32px">
+          <v-text-field v-model="phoneNumber" :rules="phoneNumberRules" label="شماره تماس" required outlined dir="ltr"
+            class="col pa-0"></v-text-field>
+          <v-text-field v-model="email" :rules="emailRules" label="پست الکترونیکی" required outlined dir="ltr"
+            class="col pa-0"></v-text-field>
+        </div>
+        <v-textarea v-model="description" :rules="descriptionRules" outlined label="نظر"></v-textarea>
+        <v-btn @click="submitForm()" :disabled="!valid" class="align-self-start" color="primary"
+          style="padding: 10px 100px">
+          ثبت نظر
+        </v-btn>
+      </v-form> -->
+
+    </div>
+  </div>
+
+
+  <div class="col-md-3 d-flex flex-column justify-start align-stretch">
+    <h2>تازه ترین اخبار</h2>
+    <nuxt-link v-for="(item, index) in NewsAll" :key="item.id" :to="'_id?IDForItem=' + item.Order0"
+      class="latest-news-box" @click.native="GetNewsDetails()">
+      {{item.Title}}
+    </nuxt-link>
+
+    <div v-for="(item, index) in relatedNewsSlider" :key="item.id"
+      class="download-app mt-15 d-flex flex-column justify-start align-center">
+      <img :src="item.ImageUrlKuchak" alt="bsi-download-mockup">
+      <b class="text-primary mt-8">{{item.TitleKuchak}}</b>
+      <span class="mb-8">{{item.DescriptionKuchak}}</span>
+      <a :href="item.TxtLinkKuchak" class="text-center"
+        style="border-radius: 8px;background: #0D47A1;color: white;padding: 14px 25px">اطلاعات بیشتر</a>
+      <!-- // add tag a and comment  nuxt-link    -->
+      <!-- <nuxt-link to="/digital-products/hamrah-bank" class="text-center"
+        style="border-radius: 8px;background: #0D47A1;color: white;padding: 14px 25px">
+        دانلود اپلیکیشن
+      </nuxt-link> -->
+    </div>
+
+  </div>
+  <script>
+    // function printPageArea(areaID) {
+    //   var mycontent = document.getElementById("ImpoDiv").innerHTML;
+    //   var mylead = document.getElementById("lead").innerHTML;
+    //   var left = (screen.width / 2);
+    //   var top = (screen.height / 2);
+    //   var myWindow = window.open("", "news", `status=no,width=${screen.width - 300},height=${screen.height - 110}, top=${top}, left=${left}`);
+    //   myWindow.document.write("<html><head></head><body><div class='mybox' style='text-align:center;font-size: 25px;'><img src='https://www.bsi.ir/SamixTheme/images/logo/logoSimple.png'>" + mycontent + "</div></body></html>");
+    //   myWindow.print();
+    // }
+  </script>
+</div>

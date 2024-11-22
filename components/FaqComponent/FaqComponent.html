@@ -1,0 +1,19 @@
+<div class="d-flex flex-column justify-start align-stretch faq-section">
+  <h2 class="text-center">
+    سوالات متداول کاربران
+  </h2>
+
+  <v-expansion-panels accordion>
+    <v-expansion-panel
+      v-for="(faq,i) in faqs"
+      :key="i">
+      <v-expansion-panel-header>
+        {{faq.title}}
+      </v-expansion-panel-header>
+      <v-expansion-panel-content class="expansion-content">
+        {{faq.text}}
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
+
+</div>

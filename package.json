@@ -1,0 +1,45 @@
+{
+  "name": "bsi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@alireza-ab/vue-persian-datepicker": "^2.3.2",
+    "@nuxtjs/axios": "^5.13.6",   
+    "@nuxtjs/pwa": "^3.3.5",             
+    "core-js": "^3.25.3",                
+    "leaflet": "^1.9.4",                 
+    "nuxt": "^2.15.8",            
+    "nuxt-swiper": "^1.1.1",       
+    "sass": "^1.66.1",
+    "sass-loader": "^10.1.1",                  
+    "swiper": "^9.4.1",
+    "vue": "^2.7.10",
+    "vue-html-to-paper": "^1.4.4",
+    "vue-recaptcha": "^3.0.0-alpha.6",
+    "vue-recaptcha-v3": "^1.9.0",
+    "vue-search-input": "^1.1.14",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "vue2-leaflet": "^2.7.1",
+    "vuetify": "2.5.8"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/vuetify": "^1.12.3",
+    "@vue/test-utils": "^1.3.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^29.1.2",
+    "jest": "^29.1.2",
+    "jest-environment-jsdom": "^29.1.2",
+    "ts-jest": "^29.0.3",
+    "vue-jest": "^3.0.4"
+  }
+}

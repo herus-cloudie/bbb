@@ -1,0 +1,55 @@
+<div class="auction-page d-flex flex-column flex-md-row justify-space-between align-start my-10">
+  <AccordionLinkListComponent class="col-md-3 px-md-15" :links-list="links"/>
+  <div class="col-md pl-md-15 d-flex flex-column justify-start align-md-stretch align-center">
+    <h2 class="text-primary text-center">
+      مزایده ها و مناقصه ها
+    </h2>
+    <GoldDivider class="mt-5 mb-10 text-center"/>
+
+    <p class="mb-2 text-justify">
+      بانك صادرات ايران در نظر دارد تعدادی از املاك مازاد خود را از طريق مزايده های عمومي به فروش برساند. متقاضيان
+      ميتوانند جهت كسب اطلاعات بيشتر، دريافت اسناد مزايده ، مطالعه مدارك و بازديد از املاك مورد نظر خود تماس حاصل
+      نمايند.حضور شركت كنندگان در جلسه بازگشايي، اختياری و منوط به ارائه رسيد تسليم پاكات مي باشد .
+    </p>
+
+    <v-btn-toggle v-model="toggle_exclusive" mandatory class="my-10">
+      <v-btn v-for="tab of tabs" :key="tab">
+        {{ tab }}
+      </v-btn>
+    </v-btn-toggle>
+
+    <div class="d-flex flex-column justify-start align-stretch" style="gap: 15px">
+
+      <template v-if="toggle_exclusive === 0">
+        <a href="https://bsi.ir/moz-mogh/hamedan14020510.jpg" target="_blank" class="link-box">
+          مزایده عمومی فروش اموال - مدیریت شعب استان همدان
+        </a>
+        <a href="https://bsi.ir/moz-mogh/hamedan14020419.jpg" target="_blank" class="link-box">
+          مزايده عمومی امحاء و فروش اسناد - مدیریت شعب استان همدان
+        </a>
+        <a href="https://bsi.ir/moz-mogh/esfahan14020523.pdf" target="_blank" class="link-box">
+          مزایده عمومی فروش خودرو - مدیریت شعب استان اصفهان
+        </a>
+      </template>
+
+      <template v-if="toggle_exclusive === 1">
+        <a href="https://bsi.ir/moz-mogh/hamedan14020510.jpg" target="_blank" class="link-box">
+          مزایده عمومی فروش اموال - مدیریت شعب استان همدان
+        </a>
+      </template>
+
+      <template v-if="toggle_exclusive === 2">
+        <a href="https://bsi.ir/moz-mogh/mashhad14020501.pdf" target="_blank" class="link-box">
+          مزایده عمومی فروش املاک مازاد بانک صادرات ایران - مدیریت شعب استان خراسان رضوی
+        </a>
+        <a href="https://bsi.ir/moz-mogh/khuzestan14020501.jpg" target="_blank" class="link-box">
+          مزایده عمومی فروش املاک مازاد بانک صادرات ایران - مدیریت شعب استان خوزستان
+        </a>
+      </template>
+
+      <div v-if="toggle_exclusive === 3"></div>
+
+    </div>
+
+  </div>
+</div>

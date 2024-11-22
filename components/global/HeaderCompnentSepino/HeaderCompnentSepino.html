@@ -1,0 +1,42 @@
+<header class="bsi-header d-flex">
+  <div class="container d-flex align-center  justify-space-between">
+    <a href="https://www.bsi.ir" class="d-flex align-center justify-start logo-section">
+      <img src="~/assets/img/bsi-logo.png" class="img" alt="بانک صادرات ایران">
+      <img src="~/assets/img/bsi-text.png" class="img" alt="بانک صادرات ایران">
+  
+    </a>
+    <div class="d-none d-md-flex align-center justify-end header-links">
+      <!-- <nuxt-link to="/services" class="ml-9">
+        خدمات بانکی
+      </nuxt-link>
+      <NuxtLink to="/about" class="ml-9">
+        درباره ما
+      </NuxtLink>
+      <NuxtLink to="/digital-products" class="ml-9">
+        محصولات دیجیتال
+      </NuxtLink>
+      <nuxt-link to="/contact" class="ml-6">
+        ارتباط با ما
+      </nuxt-link> -->
+      <nuxt-link v-for="(item, index) in HeaderSite" :key="index" :to="item.TxtLink" class="ml-9">{{item.Title}}</nuxt-link>
+      <v-divider vertical class="ml-7"></v-divider>
+      <!-- <span class="material-icons-outlined ml-7">
+          search
+        </span>
+      <span class="ml-7">
+          EN
+        </span>-->
+      <a href="https://ib.bsi.ir/" class="login-btn"> 
+        ورود به نت‌بانک
+      </a>
+    </div>
+    <!-- <div class="d-flex d-md-none align-center  justify-end header-links">
+        <span class="material-icons-outlined ml-6">
+          search
+        </span>
+      <span class="material-icons-outlined" @click="$emit('openDrawer', true)">
+          menu
+        </span>
+    </div> -->
+  </div>
+</header>

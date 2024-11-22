@@ -1,0 +1,212 @@
+<div class="d-flex flex-column justify-start align-stretch branches-page my-12">
+
+  <h2 class="text-center text-primary">اطلاعات شعب</h2>
+  <GoldDivider class="mt-md-5 mb-md-10 my-4 align-self-center" />
+
+  <div class="container">
+    <div class="input-box d-flex flex-column justify-start align-md-stretch align-center mb-md-15 mb-6">
+      <span class="box-title">
+        فیلتر جستجو
+      </span>
+      <!-- <div class="d-flex flex-md-row flex-column justify-md-space-between align-md-center justify-start align-stretch" style="gap: 40px">
+        <div class="input-div">
+            <span class="text">
+              نام شعبه
+            </span>
+          <v-text-field
+            v-model="branchName"
+            outlined hide-details="auto"
+            class="col pa-0"
+          ></v-text-field>
+        </div>
+        <div class="input-div">
+            <span class="text">
+              کد شعبه
+            </span>
+          <v-text-field
+            v-model="branchCode"
+            outlined hide-details="auto"
+            class="col pa-0"
+          ></v-text-field>
+        </div>
+        <div class="input-div">
+            <span class="text">
+              استان
+            </span>
+          <v-text-field
+            v-model="stateName"
+            outlined hide-details="auto"
+            class="col pa-0"
+          ></v-text-field>
+        </div>
+        <div class="input-div">
+            <span class="text">
+              نام شهر
+            </span>
+          <v-text-field
+            v-model="city"
+            outlined hide-details="auto"
+            class="col pa-0"
+          ></v-text-field>
+        </div>
+        <v-btn
+          @click="search"
+          color="primary"
+          class="py-2 px-10">
+          <v-icon class="me-2">
+            mdi-magnify
+          </v-icon>
+          <span>
+                جستجو
+              </span>
+        </v-btn>
+      </div> -->
+      <div class="d-flex flex-md-row flex-column justify-md-space-between align-md-center justify-start align-stretch"
+        style="gap: 40px">
+        <div class="input-div">
+          <span class="text">
+            نام شعبه
+          </span>
+          <v-text-field v-on:keyup.enter="fetchData" v-model="Title" outlined hide-details="auto"
+            class="col pa-0"></v-text-field>
+        </div>
+        <div class="input-div">
+          <span class="text" style="color:red;">
+            کد شعبه
+          </span>
+          <span style="font-size: 25px;color: red;">*</span>
+          <v-text-field v-on:keyup.enter="fetchData" v-model="BranchCode" outlined hide-details="auto"
+            class="col pa-0"></v-text-field>
+        </div>
+        <!-- <div class="input-div">
+          <span class="text">
+            استان
+          </span>
+          <v-text-field v-model="stateName" outlined hide-details="auto" class="col pa-0"></v-text-field>
+        </div> -->
+        <div class="input-div">
+          <span class="text">
+            نام استان
+          </span>
+          <v-text-field v-on:keyup.enter="fetchData" v-model="City" outlined hide-details="auto"
+            class="col pa-0"></v-text-field>
+        </div>
+        <v-btn @click="fetchData" color="primary" class="py-2 px-10">
+          <v-icon class="me-2">
+            mdi-magnify
+          </v-icon>
+          <span>
+            جستجو
+          </span>
+        </v-btn>
+      </div>
+    </div>
+
+    <!-- <template>
+      <div>
+        <v-text-field
+          v-model="query"
+          label="Search"
+          @input="fetchData"
+        ></v-text-field>
+        <ul>
+          <li v-for="item in data" :key="item.id">{{ item.name }}</li>
+        </ul>
+      </div>
+    </template> -->
+
+    <template v-if="tableData?.length">
+      <span class="align-self-start py-4 px-15 mb-n15 mr-10" style="border-radius: 100px;background: #FFC444;font-size: 18px;color: #212121;
+        box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.14);">
+        اطلاعات شعب
+      </span>
+      <div class="input-box">
+        <v-simple-table height="300px">
+          <template v-slot:default>
+            <thead>
+              <tr>
+                <th class="text-center">
+                  کد شعبه
+                </th>
+                <th class="text-center">
+                  نام شعبه
+                </th>
+                <th class="text-center">
+                  استان
+                </th>
+                <th class="text-center">
+                  نشانی
+                </th>
+                <th class="text-center">
+                  تلفن
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr
+              v-for="(item, index) in tableData"
+              :key="index"
+            >
+              <td>{{ item.branchCode }}</td>
+              <td style="color: #0D47A1">{{ item.branchName }}</td>
+              <td>{{ item.city }}</td>
+              <td>{{ item.address }}</td>
+              <td>
+                <a :href="'tel:' + item.phone">
+                  {{ item.phone }}
+                </a>
+              </td>
+            </tr> -->
+              <tr v-for="(item, index) in tableData" :key="index">
+                <td>{{ item.BranchCode }}</td>
+                <td style="color: #0D47A1">{{ item.Title }}</td>
+                <td>{{ item.City }}</td>
+                <td>{{ item.Address }}</td>
+                <td >
+                  <!-- <a :href="'tel:' + item.phone"> -->
+                    {{ item.Phone }}
+                  <!-- </a> -->
+                </td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
+      </div>
+    </template>
+    <div v-if="!tableData?.length">
+      <h2 class="text-center text-primary">اطلاعاتی وجود ندارد</h2>
+    </div>
+  </div>
+  <script>
+    //   import axios from 'axios';
+
+    //   export default {
+    //     data() {
+    //       return {
+    //         query: '',  // This will hold the input from v-text-field
+    //         data: [],   // This will store the data fetched from the API
+    //       };
+    //     },
+    //     methods: {
+    //       fetchData() {
+    //         console.log('FETCHFETCHFETCHFETCHFETCHFETCHFETCH')
+    //         // Construct the query string based on v-text-field value
+    //         const params = new URLSearchParams();
+    //         if (this.query) {
+    //           params.append('search', this.query);
+    //         }
+
+    //         console.log('params:==>', params);
+
+    //         axios.get(`/Admin/_api/web/lists/getbyTitle('Branches')/items?$select=Id,Title,BranchCode,City,Address,Phone?${params.toString()}`)
+    //           .then(response => {
+    //             this.data = response.data;  // Store the fetched data
+    //           })
+    //           .catch(error => {
+    //             console.error('There was an error fetching the data:', error);
+    //           });
+    //       },
+    //     },
+    //   };
+    // </script>
+</div>

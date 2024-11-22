@@ -1,0 +1,23 @@
+<div class="d-flex flex-column justify-start align-stretch rules-page container">
+  <h1 class="text-center mt-md-15 mt-8">
+    فرم های دریافت
+    <span class="text-primary">
+      تسهیلات
+    </span>
+  </h1>
+
+  <!-- <v-btn-toggle v-model="toggle_exclusive" mandatory class="mt-12">
+      <v-btn v-for="tab of tabs" :key="tab.tabName">
+      {{ tab.tabName }}
+    </v-btn>
+  </v-btn-toggle> -->
+
+  <div class="d-flex flex-column justify-start align-stretch container my-12">
+    <!-- <a v-for="(item,index) of tabs[toggle_exclusive].links" :key="item.name + index"
+       download target="_blank"> -->
+    <a v-for="(item,index) in FormTashilat" :key="item.Title + index" download :href="item.TxtLink" target="_blank">
+      {{index+1+'-'+item.Title }}
+    </a>
+  </div>
+
+</div>

@@ -1,0 +1,124 @@
+.footer {
+  background: #040738;
+
+  * {
+    color: white;
+    text-align: center; //changed
+  }
+
+  .container {
+    @media screen and (min-width: 960px) {
+      max-height: 100px;
+    }
+
+    padding: 0 !important;
+  }
+
+  img {
+    max-width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    align-self: center;
+  }
+
+  div {                                 //add
+    width: 100%;                        //add
+  }                                     //add
+
+  .footer-link-title {
+    font-size: 14px;
+
+    .material-icons-outlined {
+      display: inline-block;
+      overflow: hidden;
+    }
+  }
+
+  .sub-footer {
+    @media screen and (min-width: 960px) {
+      height: 80px;
+    }
+
+    @media screen and (max-width: 960px) {
+      font-size: 14px;
+    }
+
+    background: #010320;
+  }
+}
+
+// 
+.MenuContent li {
+  list-style: none;
+  border-bottom: 1px solid #ffffff21;
+}
+
+.MenuContent {
+  position: absolute;
+  background-color: #161b61;
+  box-shadow: 0 0 1px 0;
+  width: 80%;
+  bottom: 0;
+  margin-bottom: 60px;
+  display: none;
+}
+
+.dropdownInto_Cell {
+  display: flex;
+}
+
+a#ghavanin:hover .MenuContent {
+  display: block;
+}
+
+.MenuContent1 li {
+  list-style: none;
+  border-bottom: 1px solid #ffffff21;
+}
+
+.MenuContent1 {
+  position: absolute;
+  background-color: #161b61;
+  box-shadow: 0 0 1px 0;
+  width: 50%;
+  bottom: 0;
+  margin-bottom: 60px;
+  display: none;
+}
+
+a#harimkhosusi:hover .MenuContent1 {
+  display: block;
+}
+
+.MenuContent2 li {
+  list-style: none;
+  border-bottom: 1px solid #ffffff21;
+}
+
+.MenuContent2 {
+  position: absolute;
+  background-color: #161b61;
+  box-shadow: 0 0 1px 0;
+  width: 50%;
+  bottom: 0;
+  margin-bottom: 60px;
+  display: none;
+}
+
+a#monaghese:hover .MenuContent2 {
+  display: block;
+}
+
+.footer_SocialIcon {
+  margin: 30px 0 0 30px;
+  display: flex;
+}
+
+.footer_SocialIcon a {
+  margin-right: 7px;
+  border-radius: 50%;
+}
+
+.footer_SocialIcon img {
+  border-radius: 50%;
+}

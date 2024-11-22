@@ -1,0 +1,25 @@
+.MessagePage {
+  text-align: center;
+
+  h2 {
+    margin-top: 50px;
+  }
+
+  img {
+    width: 1000px;
+    height: 700px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  p {
+    margin-bottom: 50px;
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    font-size: 20px;
+    white-space: break-spaces;
+    // line-height: 50px;
+  }
+
+}

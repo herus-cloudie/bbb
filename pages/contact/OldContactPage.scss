@@ -1,0 +1,32 @@
+.content-section {
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: right;
+    color: #212121;
+    margin: 1rem 0;
+  }
+
+  .communicate-section {
+    p {
+      color: #616161;
+    }
+
+    a {
+      font-size: 18px !important;
+      font-weight: bold !important;
+      color: black !important;
+    }
+  }
+
+  .v-form {
+    @media screen and (min-width: 960px) {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+
+}

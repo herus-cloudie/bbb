@@ -1,0 +1,90 @@
+
+<div class="d-flex flex-column my-md-12 my-4 justify-start align-stretch news-page container">
+  <!-- <b-tab title='first <i class="fa fa-user"></i>' active>
+    I'm the first fading tab
+  </b-tab> -->
+    <!-- <head>
+      <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlUOlOaQCUdhhbww_sq5kDRJ6jQ4_Hk_cPOw&s">
+</head> -->
+  <h2>
+    تازه ترین اخبار
+  </h2>
+
+  <div class="news-list-box d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch">
+
+    <template v-if="page === 0">
+      <div class="d-flex flex-column justify-start align-stretch bigger-box">
+        <nuxt-link :to="'/news/_id?IDForItem=' + news[0].Order0">
+         <img :src="news[0].ImageUrl" :alt="news[0].Title">
+        </nuxt-link>
+         <b>{{ news[0].Title }}</b>
+        <p>{{ news[0].Description }}</p>
+        <div class="d-flex flex-row justify-space-between align-center text-primary">               
+          <div class="d-flex flex-row justify-start align-center">
+            <v-icon color="primary" class="mdi-18px">mdi-calendar-text</v-icon>
+            <span class="mx-1">تاریخ انتشار:</span>
+            <span>{{ news[0].NewsDate }}</span>
+          </div>
+          <nuxt-link :to="'/news/_id?IDForItem=' + news[0].Order0">
+            <span>
+              مشاهده متن خبر
+            </span>
+            <v-icon color="primary" class="mdi-18px">mdi-chevron-left</v-icon>
+          </nuxt-link>
+        </div>
+      </div>
+
+      <div class="little-wrap-box">
+        <nuxt-link v-for="(item, index) in sliceArray(news, 1,5)"
+                   :key="item.id" :to="'news/_id?IDForItem=' + item.Order0" class="news-link-box">        
+          <div class="img-box">
+             <img :src="item.ImageUrl" :alt="item.Title">
+            <span class="date-box">{{ item.NewsDate }}</span>
+          </div>
+          <p>
+            {{ item.Title }}
+          </p>
+        </nuxt-link>
+      </div> 
+    </template>
+
+    <template v-if="page === 1">
+      <div class="bigger-wrap-box">
+        <nuxt-link v-for="(item, index) in sliceArray(news, 1)"
+                   :key="item.id" :to="'news/_id?IDForItem=' + item.Order0" class="news-link-box">
+          <div class="img-box">
+            <img :src="item.ImageUrl" :alt="item.Title">
+            <span class="date-box">{{ item.NewsDate }}</span>
+          </div>
+          <p>
+            {{ item.Title }}
+          </p>
+        </nuxt-link>
+      </div>
+    </template>
+
+  </div>
+
+   <v-btn to="news/" v-if="page === 0" @click="page = 1" outlined               
+         color="primary" class="px-15 py-3 mt-8 text-primary align-self-start">
+         آرشیو اخبار
+  </v-btn>
+
+  <div class="d-flex flex-row justify-space-between align-center" v-if="page === 1">
+    <!-- <v-btn outlined
+           color="primary" class="px-md-15 py-3 mt-8 text-primary">       
+      <nuxt-link to="news/archive/">              
+        آرشیو نمام اخبار
+      </nuxt-link>
+    </v-btn> -->
+    <v-btn @click="page = 0" outlined
+           color="primary" class="px-md-15 py-3 mt-8 text-primary">
+      صفحه قبل
+    </v-btn>
+  </div>
+
+</div>
+ 
+
+
+ 

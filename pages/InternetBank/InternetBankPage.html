@@ -1,0 +1,69 @@
+<div class="d-flex flex-column justify-start align-stretch sepehr-card-page">
+
+  <div style="text-align: center;">
+    <img class="img" src="~/assets/img/digital-products/InternetBank.jpg">
+  </div>
+
+  <!-- <div class="d-flex flex-row justify-start align-center main-banner">
+  </div> -->
+
+
+  <div style="background: #F3F6FA">
+    <div
+      class="container d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch py-md-15 py-6">
+      <AccordionLinkListComponent class="col-md-3" :links-list="links" />
+      <div class="col-md-8 d-flex flex-column justify-start align-md-stretch align-center">
+        <div class="d-flex flex-column justify-start align-stretch mt-16">
+          <!-- <GoldDivider class="mt-7 mb-10" /> -->
+          <h2 v-for="(item,index) of SepehrKartSectionTwoTitle" :key="index" class="text-primary"
+            style="font-size: 40px">
+            {{item.Title}}
+          </h2>
+          <div
+            class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch mt-md-10 mb-md-16">
+            <br>
+            <div v-for="(item,index) of SepehrKartSectionThird" :key="index" class="feature-card">
+              <NuxtLink v-if="item.NoeLink=='صفحه داخلی'" :to="item.TxtLink">
+                <img :src="item.Image" alt="item.Title">
+                <h3>{{item.Title}}</h3>
+                <span>{{item.Description}}</span>
+                <!-- <span v-html="item.Description.split('@@').join('<br>')"></span> -->
+              </NuxtLink>
+              <a v-if="item.NoeLink=='لینک خارجی'" :href="item.TxtLink" target="_blank">
+                <img :src="item.Image" alt="item.Title">
+                <h3>{{item.Title}}</h3>
+                <span>{{item.Description}}</span>
+                <!-- <span v-html="item.Description.split('@@').join('<br>')"></span> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container d-flex flex-row justify-space-between align-stretch py-15">
+    <!-- <div class="col-md-3 d-none d-md-block"></div> -->
+    <div class="col-md-8 d-flex flex-column justify-start align-md-stretch align-center">
+      <h3>معرفی اینترنت بانک</h3>
+      <h2 v-for="(item,index) of SepehrKartSectionFourthTitle" :key="index" class="text-primary"
+        style="font-size: 40px">
+        {{item.Title}}
+      </h2>
+      <GoldDivider class="mt-7 mb-10" />
+      <div class="d-flex flex-column justify-start align-stretch" style="gap: 20px">
+        <div v-for="(item,index) of SepehrKartSectionFourth" :key="index" class="receive-condition">
+          <NuxtLink :to="item.TxtLink" v-if="item.NoeLink=='صفحه داخلی'">
+            <p>{{item.Title}}</p>
+          </NuxtLink>
+          <a :href="item.TxtLink" v-if="item.NoeLink=='لینک خارجی'">
+            <p>{{item.Title}}</p>
+          </a>
+          <!-- <span>{{item.Description}}</span> -->
+          <span v-html="item.Description.split('@@').join('<br>')"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

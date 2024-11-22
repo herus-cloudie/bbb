@@ -1,0 +1,46 @@
+<div class="d-flex flex-column justify-start align-stretch education-page container my-md-12 my-6">
+  <h1 class="text-primary text-center">
+    آموزش خدمات و محصولات بانک صادرات ایران
+  </h1>
+  <GoldDivider class="mt-md-5 mb-md-10 my-6 align-self-center"/>
+
+  <!-- <v-text-field
+    v-model="searchedText"
+    label="جستجو"
+    placeholder="عنوان آموزش خود را جستجو کنید..."
+    class="mt-md-6 mb-12 search-input"
+    filled
+    rounded
+    dense
+    hide-details="auto"
+    append-icon="mdi-magnify"
+    @click:append="search"
+  ></v-text-field> -->
+
+  <div class="d-flex flex-row flex-wrap justify-space-between align-stretch" style="gap: 30px">
+    <a v-for="(item, index) of Education" :key="item.id + index"
+               class="education-card" :href="item.TxtLink">
+      <div class="img-box">
+        <!-- <img :src="require('~/assets/img/learning/' + item.LinkFilename)" :alt="item.Title"> -->
+        <img :src="item.Img" :alt="item.Title">
+        <!-- <span class="time-box" v-if="item.Title">
+            {{item.Title}}
+          </span> -->
+      </div>
+      <div class="title-box">
+        <b>
+          {{item.Title}}
+        </b>
+        <!-- <div class="d-flex flex-row justify-start align-center sub-title">
+          <v-icon color="#616161" class="mdi-18px ml-1">mdi-calendar-text</v-icon>            
+          <span>{{item.Modified}}</span>
+          <span class="mx-2">.</span>
+          <span>
+              {{item.Views}}
+              بازدید
+            </span>
+        </div> -->
+      </div>
+    </a>
+  </div>
+</div>

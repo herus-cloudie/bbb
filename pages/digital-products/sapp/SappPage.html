@@ -1,0 +1,143 @@
+<div class="d-flex flex-column justify-start align-stretch sapp-page mb-12">
+  <div class="divImageOne">
+    <img class="ImageOne" v-for="(item,index) in ApplicationsOneSection" :key="index" :src="item.Image" alt="بانک صادرات ایران">
+  </div>
+
+  <!-- <v-carousel v-for="(item,index) in ApplicationsOneSection" :key="index" :show-arrows="false">
+    <v-carousel-item :src="item.Image">
+      <div 
+        class="fill-height d-flex flex-column justify-center align-start pr-16" style="width: 100%"> -->
+        <!-- <h2>{{item.Title}}</h2>
+        <p>{{item.Description}}</p>
+        <a :href="item.TxtLink" class="app-download-btn" target="_blank" download>
+          دانلود اپلیکیشن
+        </a> -->
+      <!-- </div>
+    </v-carousel-item>
+  </v-carousel> -->
+
+  <div class="d-flex flex-row justify-center align-stretch py-13 app-download-box">
+    <div v-for="(item, index) of ApplicationsTwoSection" :key="index"
+      class="d-flex flex-column justify-start align-md-center align-stretch mx-5 mx-md-0 download-source">  
+      <a :href="item.TxtLink" target="_blank" download>
+        <p>{{item.Title}}</p>
+        <!-- <img :src="require('~/assets/img/digital-products/download-options/' + source.img)" :alt="source.img"> -->
+        <img :src="item.Image" :alt="item.Title">
+      </a>
+      <span>
+        {{item.Noskhe}}
+      </span>
+      <span>
+        {{item.TarikhEnteshar}}
+      </span>
+      <span>
+        {{item.Hajm}}
+      </span>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row justify-center align-stretch py-13 app-download-box">
+    <div v-for="(item, index) of ApplicationsTwoSectionRowTwo" :key="index"
+      class="d-flex flex-column justify-start align-md-center align-stretch mx-5 mx-md-0 download-source">  
+      <a :href="item.TxtLink" target="_blank" download>
+        <p>{{item.Title}}</p>
+        <!-- <img :src="require('~/assets/img/digital-products/download-options/' + source.img)" :alt="source.img"> -->
+        <img :src="item.Image" :alt="item.Title">
+      </a>
+      <span>
+        {{item.Noskhe}}
+      </span>
+      <span>
+        {{item.TarikhEnteshar}}
+      </span>
+      <span>
+        {{item.Hajm}}
+      </span>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-start align-center py-13 pb-16 app-features app-features-new">
+    <!-- <h2>
+      یک اپلیکیشن برای تمام نیازها
+    </h2>
+    <GoldDivider class="mt-7 mb-10" /> -->
+    <div class="container d-flex flex-column justify-start align-stretch" style="width: 95%; max-width: 1000px;">
+      <div
+        class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch mt-md-10 mb-md-16">
+        <div v-for="(item, index) of ApplicationsThreeSection" :key="index" class="feature-card">
+          <img :src="item.Image" alt="بانک صادرات ایران">
+          <h3>{{item.Title}}</h3>
+          <span v-html="item.Description.split('@@').join('<br>')"></span>
+        </div>
+      </div>
+      <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch">
+        <div v-for="(item, index) of ApplicationsThreeSectionSecondRow" :key="index" class="feature-card">
+          <img :src="item.Image" alt="بانک صادرات ایران">
+          <h3>{{item.Title}}</h3>
+          <span v-html="item.Description.split('@@').join('<br>')"></span>
+        </div>
+      </div>
+      <div style="height: 70px;"></div>
+      <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch">
+        <div v-for="(item, index) of ApplicationsThreeSectionThirdRow" :key="index" class="feature-card">
+          <img :src="item.Image" alt="بانک صادرات ایران">
+          <h3>{{item.Title}}</h3>
+          <span v-html="item.Description.split('@@').join('<br>')"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <BlueScrollDownIcon style="align-self: center" class="mt-n9" /> -->
+
+  <div class="d-flex flex-column justify-start align-center app-background mt-10">
+    <h2 class="text-primary">
+      تصاویر
+    </h2>
+    <GoldDivider class="mt-7 mb-10" />
+    <div class="container d-flex flex-column justify-start align-stretch">
+      <v-carousel hide-delimiters height="350px">
+        <v-carousel-item v-for="mockup in ApplicationsFoureSection" :key="mockup" contain
+          :src="mockup.Image">
+        </v-carousel-item>
+      </v-carousel>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-start align-center py-13 pb-16 app-features">
+    <div v-for="(item, index) of ApplicationsSectionFive" :key="index" class="d-flex flex-column justify-start align-md-stretch align-center" style="width: 95%; max-width: 1000px;">
+      <h2>
+        {{item.Title}}
+      </h2>
+      <GoldDivider class="mt-7 mb-10" />
+      <p v-html="item.Description.split('@@').join('<br>')">
+      </p>
+    </div>
+  </div>
+
+  <br>
+  <span style="font-size: 35px; width: 200px; margin: auto; background-color: #0855cb; text-align: center; color: white; border-radius: 40px;">کلیپ</span>
+  <div class="d-flex flex-row justify-center align-stretch py-13 app-download-box">
+    <div v-for="(item, index) of ApplicationsTizer" :key="index"
+      class="d-flex flex-column justify-start align-md-center align-stretch mx-5 mx-md-0 download-source">
+      <a :href="item.TizerLink" target="_blank" download>
+        {{item.Title}}
+        <img src="~/assets/img/video.png">
+      </a>
+    </div>
+  </div>
+
+  <div class="soorat-hesab d-flex flex-row justify-start align-center">
+    <div v-for="(item, index) of ApplicationsSectionSix" :key="index" class="col-md-6 d-flex flex-column justify-center align-start pa-md-14 pr-md-16 mr-md-16">
+      <!-- <h2 class="mb-5">
+        {{item.Title}}
+      </h2>
+      <p>
+        {{item.Description}}
+      </p>
+      <a :href="item.TxtLink" class="app-download-btn" target="_blank" download>
+        دانلود اپلیکیشن
+      </a> -->
+    </div>
+  </div>
+
+</div>

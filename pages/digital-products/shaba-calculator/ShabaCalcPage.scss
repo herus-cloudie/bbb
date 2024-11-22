@@ -1,0 +1,119 @@
+.shaba-calc-page {
+  width: 100%;
+  max-width: 85%;
+  margin: 70px auto 120px;
+
+  @media screen and (max-width: 959px) {
+    max-width: 95%;
+    margin: 2rem auto 2rem;
+  }
+
+  h2 {
+    color: #0D47A1;
+    text-align: right;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .summary-box {
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);
+    padding: 45px 60px;
+    font-size: 18px;
+
+    @media screen and (max-width: 959px) {
+      padding: 1rem 2rem;
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: 960px) {
+      padding-left: 150px;
+    }
+
+    li {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    ::v-deep {
+      .v-text-field__details {
+        display: none;
+      }
+    }
+
+    .radio-div {
+      width: 100%;
+      span {
+        color: #292D32;
+        text-align: right;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 221.014%;
+        font-size: 14px;
+      }
+
+      ::v-deep .v-text-field__slot {
+        font-size: 12px !important;
+      }
+
+      @media screen and (min-width: 960px) {
+        ::v-deep .v-text-field__slot {
+          font-size: 16px !important;
+        }
+        span {
+          font-size: 16px !important;
+        }
+        gap: 36px;
+        width: 100%;
+      }
+    }
+
+  }
+
+  ::v-deep {
+    .v-btn-toggle {
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);
+      align-self: center;
+      padding: 8px 20px;
+      width: 100%;
+
+      @media screen and (max-width: 959px) {
+        display: flex;
+        flex-direction: column;
+        padding: 4px 10px;
+      }
+
+      .v-btn {
+        border-radius: 10px;
+        background: white;
+        border: none;
+        padding: 16px 0;
+        color: #616161;
+        font-size: 14px;
+
+        @media screen and (min-width: 960px) {
+          height: unset !important;
+          width: 50%;
+          font-size: 22px;
+        }
+      }
+
+      .v-item--active {
+        background: #0D47A1;
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);
+        color: white;
+
+        &:before {
+          opacity: 0 !important;
+        }
+      }
+
+    }
+  }
+
+}

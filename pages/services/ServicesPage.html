@@ -1,0 +1,469 @@
+<div class="d-flex flex-column my-md-10 my-5 justify-start align-stretch services-page container">
+
+  <h2 class="text-center">خدمات بانکی</h2>
+
+  <v-btn-toggle v-model="toggle_exclusive" mandatory class="mt-md-7 mb-md-15 my-5 text-center">
+    <v-btn v-for="tab of tabs" :key="tab">
+      {{ tab }}
+    </v-btn>
+  </v-btn-toggle>
+
+  <template v-if="toggle_exclusive === 0">
+    <div class="d-flex flex-md-row flex-column justify-start align-stretch mb-5 mx-2 mx-md-0" style="gap: 40px">
+      <div v-for="(item, index) in rialServiceTileOne " :key="index" id="service-card-tashilat" @mouseenter="mouseOverCardRial('service-card-tashilat')"
+        class="service-card col-md">
+        <!-- <img src="~/assets/img/digital-products/app-mockup.png" alt="بانک صادرات ایران"> -->
+        <img :src="item.Image" alt="بانک صادرات ایران">   
+        <b>
+        {{item.Title}}
+        </b>
+        <p>
+          {{item.Description}}
+        </p>
+        <nuxt-link to="/services/#">
+          {{item.SubTitle}}
+        </nuxt-link>
+      </div>
+      <div class="d-md-none d-flex flex-row flex-wrap justify-start align-stretch" v-if="selectedRialService === 0"
+        style="gap: 16px">
+        <nuxt-link :to="item.Link" v-for="(item, index) in rialFacilitiesV" :key="index" class="d-flex
+                 flex-column justify-md-center align-md-center
+                 justify-start align-center services-card">
+          <!-- <img :src="require('~/assets/img/landing/' + item.Image)" :alt="item.Title" class="img-fluid"> -->
+          <img :src="item.Image" :alt="item.Title" class="img-fluid">
+          <div class="d-flex flex-column justify-start align-center mt-6 mt-md-0">
+            <p>{{ item.Title }}</p>
+            <span>{{ item.Description }}</span>
+          </div>
+        </nuxt-link>
+      </div>
+      <div v-for="(item, index) in rialServiceTileTwo " :key="index" id="service-card-tarha" @mouseenter="mouseOverCardRial('service-card-tarha')" class="service-card col">
+        <img :src="item.Image" alt="بانک صادرات ایران">
+        <b>
+          {{item.Title}}
+        </b>
+        <p>
+          {{item.Description}}
+        </p>
+        <nuxt-link to="/services/#">
+          {{item.SubTitle}}
+        </nuxt-link>
+      </div>      
+      <div v-for="(item, index) in rialServiceTileThree " :key="index" id="service-card-sepordeha" @mouseenter="mouseOverCardRial('service-card-sepordeha')"
+        class="service-card col">
+        <img :src="item.Image" alt="بانک صادرات ایران">
+        <b>
+          {{item.Title}}
+        </b>
+        <p>
+          {{item.Description}}
+        </p>
+        <nuxt-link to="/services/#">
+          {{item.SubTitle}}
+        </nuxt-link>
+      </div>
+      <!-- <div class="d-md-none d-flex flex-row flex-wrap justify-start align-stretch" v-if="selectedRialService === 2"
+        style="gap: 16px">
+        <nuxt-link :to="item.link.Url" v-for="(item, index) in rialDeposits" :key="index" class="d-flex
+                 flex-column justify-md-center align-md-center
+                 justify-start align-center services-card">
+          <img :src="require('~/assets/img/landing/' + item.image)" :alt="item.title" class="img-fluid">
+          <div class="d-flex flex-column justify-start align-center mt-6 mt-md-0">
+            <p>{{ item.title }}</p>
+            <span>{{ item.subtitle }}</span>
+          </div>
+        </nuxt-link>
+      </div> -->
+    </div>
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" v-if="selectedRialService === 0"
+      style="gap: 16px">
+      <nuxt-link :to="item.Link" v-for="(item, index) in rialFacilitiesV" :key="index" class="d-flex
+                 flex-column justify-md-center align-md-center
+                 justify-start align-center services-card">
+        <!-- <img :src="require('~/assets/img/landing/' + item.Image)" :alt="item.Title" class="img-fluid"> -->
+        <img :src="item.Image" :alt="item.Title" class="img-fluid">
+        <div class="d-flex flex-column justify-start align-center mt-6 mt-md-0">
+          <p>{{ item.Title }}</p>
+          <span>{{ item.Description }}</span>
+        </div>
+      </nuxt-link>
+    </div>
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" v-if="selectedRialService === 1"
+      style="gap: 16px">
+      <nuxt-link :to="item.Link" v-for="(item, index) in rialServicesV" :key="index" class="d-flex
+                 flex-column justify-md-center align-md-center
+                 justify-start align-center services-card">
+        <!-- <img :src="require('~/assets/img/landing/' + item.Image)" :alt="item.Title" class="img-fluid"> -->
+        <img :src="item.Image" :alt="item.Title" class="img-fluid">
+        <div class="d-flex flex-column justify-start align-center mt-6 mt-md-0">
+          <p>{{ item.Title }}</p>
+          <span>{{ item.Description }}</span>
+        </div>
+      </nuxt-link>
+    </div>
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" v-if="selectedRialService === 2"
+      style="gap: 16px">
+      <nuxt-link :to="item.Link" v-for="(item, index) in rialDepositsV" :key="index" class="d-flex
+                 flex-column justify-md-center align-md-center
+                 justify-start align-center services-card">
+        <!-- <img :src="require('~/assets/img/landing/' + item.Image)" :alt="item.Title" class="img-fluid"> -->
+        <img :src="item.Image" :alt="item.Title" class="img-fluid">
+        <div class="d-flex flex-column justify-start align-center mt-6 mt-md-0">
+          <p>{{ item.Title }}</p>
+          <span>{{ item.Description }}</span>
+        </div>
+      </nuxt-link>
+    </div>
+  </template>
+
+  <template v-if="toggle_exclusive === 1">
+
+
+
+    <div class="d-flex flex-md-row flex-column justify-start align-stretch mb-8 mx-2 mx-md-0" style="gap: 40px">
+
+      <div :to="item.Link" v-for="(item, index) in arziTileTopV" :key="index" :id="item.id"
+        @mouseenter="mouseOverCardArzi(item.mouseOverCardArzi)" class="service-card col">
+        <!-- <img :src="require('~/assets/img/digital-products/' + item.Image)" alt="بانک صادرات ایران"> -->
+        <img :src="item.Image" alt="بانک صادرات ایران">
+        <b>
+          {{item.Title}}
+        </b>
+        <p>
+          {{item.Description}}
+        </p>
+        <nuxt-link to="/services/#">
+          {{item.SubDescription}}
+        </nuxt-link>
+      </div>
+
+
+      <!-- <div id="service-card-import" @mouseenter="mouseOverCardArzi('service-card-import')" class="service-card col">
+        <img src="~/assets/img/digital-products/app-mockup.png" alt="بانک صادرات ایران">
+        <b>
+          مدیریت واردات کالا و خدمات
+        </b>
+        <p>
+          توضیحات اپلیکیشن همراه بانک و قراره افتتاح حساب در باشگاه مشتریان این باننعطف دریافت کنید، پرداخت تسهیلات
+          سپرده‌گذاری ...
+        </p>
+        <nuxt-link to="/services/#">
+          مشاهده همه تسهیلات
+        </nuxt-link>
+      </div> -->
+      <!-- <div class="d-flex d-md-none flex-row flex-wrap justify-md-start justify-space-between align-stretch"
+        style="gap: 24px" v-if="selectedArziService === 0">
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه پس ­انداز</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه جاری</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+       </div> -->
+
+      <!-- <div id="service-card-currency" @mouseenter="mouseOverCardArzi('service-card-currency')" class="service-card col">
+        <img src="~/assets/img/digital-products/app-mockup.png" alt="بانک صادرات ایران">
+        <b>
+          مدیریت دارایی ارزی مشتریان
+        </b>
+        <p>
+          توضیحات اپلیکیشن همراه بانک و قراره افتتاح حساب در باشگاه مشتریان این بانک، می‌توانید بر اساس امتیازات کسب
+          شده
+          تا سقف 2 میلیارد ریال تسهیلات با شرایط منعطف دریافت کنید، پرداخت تسهیلات سپرده‌گذاری ...
+        </p>
+        <nuxt-link to="/services/#">
+          مشاهده همه طرح ها
+        </nuxt-link>
+      </div> -->
+      <!-- <div class="d-flex d-md-none flex-row flex-wrap justify-md-start justify-space-between align-stretch"
+        style="gap: 24px" v-if="selectedArziService === 1">
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه پس ­انداز</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه جاری</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+      </div> -->
+
+      <!-- <div id="service-card-export" @mouseenter="mouseOverCardArzi('service-card-export')" class="service-card col">
+        <img src="~/assets/img/digital-products/app-mockup.png" alt="بانک صادرات ایران">
+        <b>
+          مدیریت صادرات کالا و خدمات
+        </b>
+        <p>
+          توضیحات اپلیکیشن همراه بانک و قراره افتتاح حساب در باشگاه مشتریان این باننعطف دریافت کنید، پرداخت تسهیلات
+          سپرده‌گذاری ...
+        </p>
+        <nuxt-link to="/services/#">
+          مشاهده همه سپرده ها
+        </nuxt-link>
+      </div> -->
+      <!-- <div class="d-flex d-md-none flex-row flex-wrap justify-md-start justify-space-between align-stretch"
+        style="gap: 24px" v-if="selectedArziService === 2">
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه پس ­انداز</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه جاری</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+      </div> -->
+    </div>
+
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 0">
+      <nuxt-link :to="item.Link" v-for="(item, index) in arziBoxTopV" :key="index" class="link-card col pa-0">
+        <b>{{item.Title}}</b>
+        <span>{{item.Description}}</span>
+      </nuxt-link>
+    </div>
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 1">
+      <nuxt-link :to="item.Link" v-for="(item, index) in arziBoxTopV2" :key="index" class="link-card col pa-0">
+        <b>{{item.Title}}</b>
+        <span>{{item.Description}}</span>
+      </nuxt-link>
+    </div>
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 2">
+      <nuxt-link :to="item.Link" v-for="(item, index) in arziBoxTopV3" :key="index" class="link-card col pa-0">
+        <b>{{item.Title}}</b>
+        <span>{{item.Description}}</span>
+      </nuxt-link>
+    </div>
+
+    <!-- <div v-for="(item, index) in arziBoxTopV" :key="index"
+      class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 0">
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه پس ­انداز</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه جاری</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+    </div> -->
+
+    <!-- <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 1">
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه پس ­انداز</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه جاری</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+    </div> -->
+
+    <!-- <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 2">
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه پس ­انداز</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه جاری</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+    </div> -->
+
+    <div class="d-flex flex-md-row flex-column justify-start align-stretch mb-5 mt-15" style="gap: 40px">
+      <div :to="item.Link" v-for="(item, index) in arziTileBottomV" :key="index" :id="item.id"
+        @mouseenter="mouseOverCardArzi(item.mouseOverCardArzi)" class="service-card col">
+        <!-- <img :src="require('~/assets/img/digital-products/' + item.Image)" alt="بانک صادرات ایران"> -->
+        <img :src="item.Image" alt="بانک صادرات ایران">
+        <b>
+          {{item.Title}}
+        </b>
+        <p>
+          {{item.Description}}
+        </p>
+        <nuxt-link to="/services/#">
+          {{item.SubDescription}}
+        </nuxt-link>
+      </div>
+    </div>
+
+    <!-- <div class="d-flex flex-md-row flex-column justify-start align-stretch mb-5 mt-15" style="gap: 40px">
+      <div id="service-card-guarantee" @mouseenter="mouseOverCardArzi('service-card-guarantee')"
+        class="service-card col">
+        <img src="~/assets/img/digital-products/app-mockup.png" alt="بانک صادرات ایران">
+        <b>
+          ضمانت­نامه ارزی
+        </b>
+        <p>
+          توضیحات اپلیکیشن همراه بانک و قراره افتتاح حساب در باشگاه مشتریان این باننعطف دریافت کنید، پرداخت تسهیلات
+          سپرده‌گذاری ...
+        </p>
+        <nuxt-link to="/services/#">
+          مشاهده همه تسهیلات
+        </nuxt-link>
+      </div> -->
+      <!-- <div class="d-flex d-md-none flex-row flex-wrap justify-md-start justify-space-between align-stretch"
+        style="gap: 24px" v-if="selectedArziService === 3">
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه پس ­انداز</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه جاری</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+      </div> -->
+
+      <!-- <div id="service-card-financing" @mouseenter="mouseOverCardArzi('service-card-financing')"
+        class="service-card col">
+        <img src="~/assets/img/digital-products/app-mockup.png" alt="بانک صادرات ایران">
+        <b>
+          تأمین مالی ارزی
+        </b>
+        <p>
+          توضیحات اپلیکیشن همراه بانک و قراره افتتاح حساب در باشگاه مشتریان این بانک، می‌توانید بر اساس امتیازات کسب
+          شده
+          تا سقف 2 میلیارد ریال تسهیلات با شرایط منعطف دریافت کنید، پرداخت تسهیلات سپرده‌گذاری ...
+        </p>
+        <nuxt-link to="/services/#">
+          مشاهده همه طرح ها
+        </nuxt-link>
+      </div> -->
+      <!-- <div class="d-flex d-md-none flex-row flex-wrap justify-md-start justify-space-between align-stretch"
+        style="gap: 24px" v-if="selectedArziService === 4">
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه پس ­انداز</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه جاری</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+      </div> -->
+
+      <!-- <div id="service-card-other" @mouseenter="mouseOverCardArzi('service-card-other')" class="service-card col">
+        <img src="~/assets/img/digital-products/app-mockup.png" alt="بانک صادرات ایران">
+        <b>
+          سایر خدمات ارزی
+        </b>
+        <p>
+          توضیحات اپلیکیشن همراه بانک و قراره افتتاح حساب در باشگاه مشتریان این باننعطف دریافت کنید، پرداخت تسهیلات
+          سپرده‌گذاری ...
+        </p>
+        <nuxt-link to="/services/#">
+          مشاهده همه سپرده ها
+        </nuxt-link>
+      </div> -->
+      <!-- <div class="d-flex d-md-none flex-row flex-wrap justify-md-start justify-space-between align-stretch"
+        style="gap: 24px" v-if="selectedArziService === 5">
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه پس ­انداز</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده قرض­ الحسنه جاری</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+        <nuxt-link to="/services/#" class="link-card col-md pa-0">
+          <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+          <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+        </nuxt-link>
+      </div> -->
+
+    <!-- </div> -->
+
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 3">
+      <nuxt-link :to="item.Link" v-for="(item, index) in arziBoxBottomV" :key="index" class="link-card col pa-0">
+        <b>{{item.Title}}</b>
+        <span>{{item.Description}}</span>
+      </nuxt-link>
+    </div>
+
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 4">
+      <nuxt-link :to="item.Link" v-for="(item, index) in arziBoxBottomV2" :key="index" class="link-card col pa-0">
+        <b>{{item.Title}}</b>
+        <span>{{item.Description}}</span>
+      </nuxt-link>
+    </div>
+
+    <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 5">
+      <nuxt-link :to="item.Link" v-for="(item, index) in arziBoxBottomV3" :key="index" class="link-card col pa-0">
+        <b>{{item.Title}}</b>
+        <span>{{item.Description}}</span>
+      </nuxt-link>
+    </div>
+
+    <!-- <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 4">
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه پس ­انداز</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه جاری</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+    </div> -->
+
+    <!-- <div class="d-none d-md-flex flex-row flex-wrap justify-start align-stretch mt-15" style="gap: 24px"
+      v-if="selectedArziService === 5">
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه پس ­انداز</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده قرض­ الحسنه جاری</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+      <nuxt-link to="/services/#" class="link-card col pa-0">
+        <b>سپرده سرمایه­ گذاری مدت­ دار</b>
+        <span>خرید آسان محصولات خانگی با همیاران سپهر بانک صادرات ایران</span>
+      </nuxt-link>
+    </div> -->
+
+  </template>
+
+</div>

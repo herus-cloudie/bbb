@@ -1,0 +1,330 @@
+
+
+<div class="d-flex flex-column justify-start align-stretch rima-page mb-12">
+
+  <v-carousel :show-arrows="false">
+    <v-carousel-item
+      v-for="(item,i) in sliders"
+      :key="i"
+      :src="require('~/assets/img/digital-products/' + item)"
+    >
+      <div class="fill-height d-flex flex-column justify-center align-start pr-16" style="width: 100%">
+       
+      </div>
+    </v-carousel-item>
+  </v-carousel>
+
+  <div class="d-flex flex-row justify-center align-stretch py-13 app-download-box">
+    <div v-for="(source, index) of appSources" :key="index"
+         class="d-flex flex-column justify-start align-md-center align-stretch mx-5 mx-md-0 download-source">
+      <a :href="source.link" target="_blank" download>
+        <p>{{source.text}}</p>
+        <!-- <img :src="require('~/assets/img/digital-products/download-options/' + source.img)" :alt="source.img"> -->
+        <img :src="source.img" :alt="source.img">
+      </a>
+      <span>
+          نسخه
+          {{source.version}}
+        </span>
+      <span>
+          آخرین بروزرسانی:
+          {{source.updatedAt}}
+        </span>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-start align-center py-13 pb-16 app-features app-features-new">
+    <h2>
+      سپینو فقط یک بانک نیست
+    </h2>
+    <GoldDivider class="mt-7 mb-10"/>
+    <div class="container d-flex flex-column justify-start align-stretch" style="width: 95%; max-width: 1000px;">
+      <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch mt-md-10 mb-md-16">
+        <a href="/digital-products/sepino#emkanat">
+          <div class="feature-card" >
+            <img src="~/assets/img/digital-products/امکانات سپینو.png"
+                alt="بانک صادرات ایران">
+            <h3>امکانات سپینو</h3>
+            <span> </span>
+          </div>
+        </a>
+        <a href="/digital-products/sepino#davat">
+          <div class="feature-card">
+            <img src="~/assets/img/digital-products/طرح دعوت.png"
+                alt="بانک صادرات ایران">
+            <h3>طرح دعوت سپینو</h3>
+            <span></span>
+          </div>
+        </a>
+        <a href="/digital-products/sepino#faq">
+          <div class="feature-card">
+            <img src="~/assets/img/digital-products/سوالات متداول.png"
+                alt="بانک صادرات ایران">
+            <h3>سوالات متداول</h3>
+            <span></span>
+          </div>
+        </a>
+      </div>    
+      <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch">
+        <a href="/digital-products/sepino#sabt">
+          <div class="feature-card">
+            <img src="~/assets/img/digital-products/ثبت اطلاعات.png"
+                alt="بانک صادرات ایران">
+            <h3>ثبت اطلاعات</h3>
+            <span></span>
+          </div>
+        </a>
+        <a href="/digital-products/sepino#about">
+          <div class="feature-card">
+            <img src="~/assets/img/digital-products/درباره سپینو.png"
+                alt="بانک صادرات ایران">
+            <h3>درباره ی سپینو</h3>
+            <span></span>
+          </div>
+        </a>
+        <a href="/digital-products/sepino#call">
+          <div class="feature-card">
+            <img src="~/assets/img/digital-products/تماس با سپینو.png"
+                alt="بانک صادرات ایران">
+            <h3>تماس با سپینو</h3>
+            <span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <BlueScrollDownIcon style="align-self: center" class="mt-n9"/>
+  
+  <div id="emkanat" class="d-flex flex-column justify-start align-center py-13 pb-16 app-features" style="background: white">
+    <div class="d-flex flex-column justify-start align-center" style="width: 95%; max-width: 1000px;">
+      <h2>
+        امکانات سپینو
+      </h2>
+      <GoldDivider class="mt-7 mb-15"/>
+      <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch mt-md-0 my-6 mb-md-14" style="width: 100%">
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/افتتاح حساب.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>افتتاح انواع حساب غیرحضوری انلاین تنها در سه دقیقه</span>
+        </div>
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/اخذ انواع تسهیلات.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>اخذ انواع تسهیلات با شرایط منعطف بصورت غیر حضوری</span>
+        </div>
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/انتقال وجه.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>انتقال وجه هوشمند</span>
+        </div>
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/طرح تیم ثروت.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>طرح تیم ثروت(دریافت تسهیلات با معرفی دوستان) </span>
+        </div>                   
+      </div>
+      <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch mt-md-0 my-6 mb-md-14" style="width: 100%">
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/صدور سپینو کارت.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>صدور سپینو کارت </span>
+        </div>
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/گردش حساب.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>گردش حساب منعطف</span>
+        </div>
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/اخذ رتبه اعتباری.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>اخذ رتبه اعتباری</span>
+        </div>
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/پرداخت قبض.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>پرداخت قبض</span>
+        </div>                   
+      </div>
+      <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch lastRow mt-md-0 my-6 mb-md-14" style="width: 100%">
+        <div class="fancy-card " >
+          <img src="~/assets/img/digital-products/خرید سیم کارت.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>خرید انواع شارژ سیم کارت و بسته اینترنت</span>
+        </div>
+        <div class="fancy-card">
+          <img src="~/assets/img/digital-products/رهگیری مرسولات پستی.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>رهگیری مرسولات پستی</span>
+        </div>         
+        <div class="fancy-card" >
+          <img src="~/assets/img/digital-products/پرداخت اقساط.png"
+               class="download-mockup" alt="بانک صادرات ایران">
+          <span>پرداخت اقساط تسهیلات خود و سایرین بصورت غیرحضوری و...</span>
+        </div> 
+        
+      </div>      
+    </div>
+  </div>
+
+  <div id="davat" class="d-flex flex-column justify-start align-center py-13 pb-16 app-features">
+    <div class="d-flex flex-column justify-start align-md-stretch align-center" style="width: 95%; max-width: 1000px;">
+      <h2>
+        طرح دعوت سپینو 
+      </h2>
+      <GoldDivider class="mt-7 mb-10"/>
+      <img src="~/assets/img/digital-products/sepino-info.jpg">
+      <div class="desc-box">
+        <b>شروع آسان است</b>
+        <P>
+          با کاغذبازی و انتظارهای طولانی خداحافظی کنید. فرآیند ورود ساده ی ما به شما این اطمینان را می دهد که می توانید حساب خود را به سرعت باز کرده و از مزایای"سپینو"بهره مند شوید. ما به شمول مالی اعتقاد داریم. خدمات ما به گونه‌ای طراحی شده‌اند که برای همه قابل دسترسی باشد، موانع را از بین ببرد و خدمات بانکی را برای جمعیتی وسیع‌تر در دسترس قرار دهد. 
+        </P>
+      </div>
+      <div class="desc-box">
+        <b>امروز به "سپینو" بپیوندید</b>
+        <P>
+          آن را به دوستان خود معرفی کنید تا علاوه بر پاداش نقدی تا سقف 20 معرفی از مزایای تسهیلات 500 میلیون ریالی بدون میانگین حساب بهره مند شوید. 
+"سپینو" از شما دعوت می کند تا به جمع مشتریان ما بپیوندید و از امتیازات فوق العاده ای که ارائه می دهد بهره مند شوید. شما می‌توانید در کنار سپینو از امکانات منحصر به فردی که ارائه می‌دهیم، به یک تجربه مالی جدید و جذاب دست پیدا کنید.
+حساب سپینو و امکان دریافت تسهیلات به صورت منحصر به فرد!
+با افتتاح حساب سپینو، شما و دوستان دعوت‌پذیرتان به کانال جدیدی از مدیریت مالی پیشرفته وارد می‌شوید. سپینو با تخصیص 5 درصد از میانگین سپرده ی هر کدام از دعوت پذیرانی که با کد معرف شما اقدام به افتتاح حساب سپینو نموده اند این فرصت را در اختیار شما قرار می دهند تا سبد مالی خود را متناسب با شبکه ی ارتباطی خود توسعه دهید.
+        </P>
+      </div>      
+      
+      <div class="desc-box">
+        <b>حساب سپینو و امکان دریافت تسهیلات به صورت منحصر به فرد!</b>
+        <P>
+          با افتتاح حساب سپینو، شما و دوستان دعوت‌پذیرتان به کانال جدیدی از مدیریت مالی پیشرفته وارد می‌شوید. سپینو با تخصیص 5 درصد از میانگین سپرده ی هر کدام از دعوت پذیرانی که با کد معرف شما اقدام به افتتاح حساب سپینو نموده اند این فرصت را در اختیار شما قرار می دهند تا سبد مالی خود را متناسب با شبکه ی ارتباطی خود توسعه دهید.
+        </P>
+      </div>
+      <div class="desc-box">
+        <b>امتیازات نقدی برای ورود به جمع سپینویی ها !</b>
+        <P>
+          با استفاده از کد معرف انحصاری، دوستان خود را به "سپینو" دعوت کنید و از امتیاز واریز آنی جذابی که برای شما و دعوت پذیران به ازای ورود هرکدام از کاربران جدید اختصاص داده شده ، بهره ببرید. به یاد داشته باشید که هر دعوت از طرف شما این امکان را ایجاد می کند تا از تمامی فرصت های جدیدی که سپینو در حال حاضر و حتی در آینده به مشتریان معرفی میکند استفاده نمایید. در سپینو به ازای هر فردی که با کد دعوت شما اقدام به نصب و افتتاح حساب نماید، 200.000 هزار ریال بعنوان پاداش نقدی به حساب شما واریز خواهد شد. از طرفی فرد دعوت پذیر نیز در ازای نصب و افتتاح حساب خود در سپینو، مبلغ 100.000 ریال پاداش نقدی دریافت خواهد کرد
+        </P>
+      </div>
+      <div class="desc-box">
+        <b>طرح تسهیلات دعوت(تسهیلات غیر حضوری و بدون ضامن)</b>
+        <P>
+          طرح تسهیلات دعوت، امتیاز ویژه ای است که سپینو برای شما ایجاد کرده تا از طریق دعوت دوستان خود دریافت نمایید. در این طرح با دعوت از دوستان و آشنایان خود چنانچه آنها نسبت به افتتاح حساب سپینو اقدام نمایند، 5 درصد از معدل روزانه حساب آنها برای شما لحاظ خواهد شد و شما می توانید بدون سپرده گذاری بعد از یک ماه 100درصد میانگین ایجاد شده توسط دعوت پذیران خود را تا سقف 250 میلیون ریال تسهیلات 10 ماهه دریافت کرده و یا بعد از دو ماه 100درصد این میانگین را تا سقف 500 میلیون ریال تسهیلات 20 ماهه دریافت نمایید. به ازای هر ماه به تأخیر انداختن دریافت تسهیلات 10 ماه به مدت بازپرداخت اقساط تسهیلات طرح دعوت اضافه خواهد شد.
+        </P>
+      </div>
+      <div class="desc-box">
+        <b>چرا باید دوستان و آشنایانتان با کد دعوت شما اقدام به افتتاح حساب سپینو نمایند؟</b>
+        <P>
+          دوستان و آشنایان شما با پذیرش کد دعوت شما و افتتاح حساب سپینو و ایجاد میانگین، پس از گذشت دو ماه امکان دریافت تسهیلات سنای دیجیتال به میزان 100درصد میانگین ایجاد شده، تا سقف 3 میلیارد ریال با شرایط خاص را خواهند داشت. 
+        </P>
+      </div>
+    </div>
+  </div>
+  
+  <div class="d-flex flex-column justify-start align-center py-13 pb-16 app-Sanafeatures">
+    <div class="d-flex flex-column justify-start align-md-stretch align-center" style="width: 95%; max-width: 1000px;">
+      <h2>
+        ویژگی های طرح سنای دیجیتال
+      </h2>
+      <GoldDivider class="mt-7 mb-10"/>
+      <p>
+        شرایط دریافت تسهیلات در طرح سنای دیجیتال در سه مولفه "مدت بازپرداخت، نرخ سود تسهیلات و تعداد اقساط" کاملا منعطف می باشد، بر همین اساس دعوت پذیران بسته به امتیاز معدل حساب و نیاز خود می‌توانند یکی از حالت های متعلقه را انتخاب نمایند. 
+نرخ تسهیلات : 15 تا 23 درصد 
+اقساط : 18 تا 60 ماه
+ضریب تسهیلات : 100 درصد میانگین موجودی 
+حداقل مدت سپرده گذاری : 2 ماه 
+مسدودی سپرده پس از دریافت تسهیلات : نیازی نیست
+مسدودی سپرده قبل از دریافت تسهیلات : نیازی نیست 
+در طرح تسهیلات سنای دیجیتال چنانچه متقاضی بدون کد دعوت اقدام به افتتاح سپرده و ایجاد میانگین نماید، به ازای هر ماه ماندگاری بیشتر می تواند از مزایای کاهش یک درصدی نرخ تسهیلات یا افزایش اقساط به میزان 9 ماه بهره مند گردد. اما چنانچه متقاضی با کد معرف اقدام به نصب اپلیکیشن سپینو نماید، به ازای هر ماه ماندگاری سپرده، مدت بازپرداخت اقساط تسهیلات دریافتی بجای ضریب 9، با ضریب 10 محاسبه خواهد شد.
+      </p>
+      <div class="desc-box">
+        <b>آیا دعوت کننده می تواند علاوه بر دریافت تسهیلات 500 میلیون ریالی طرح دعوت، از تسهیلات 3 میلیارد ریالی طرح سنای دیجیتال هم استفاده نماید؟</b>
+        <P>
+          بله، شما سپینویی عزیز هم می‌توانید بعنوان دعوت کننده از تسهیلات طرح دعوت(با بهره‌گیری از 5درصد میانگین حساب زیرمجموعه) بهره مند شوید و هم از تسهیلات طرح سنای دیجیتال(متناسب با میانگین حساب خود) بصورت مجزا استفاده نمایید. تسهیلات طرح دعوت بدون بررسی رتبه اعتباری و بدون ضامن پرداخت خواهد شد. ولی در تسهیلات طرح سنای دیجیتال رتبه اعتباری و تضامین مورد نیاز بر اساس مبلغ درخواستی بررسی خواهد شد.
+        </P>
+      </div>
+      <div class="desc-box">
+        <b>آیا دریافت پاداش نقدی برای معرفی سپینو به دوستان و آشنایان محدودیت دارد؟</b>
+        <P>
+          بله پاداش نقدی برای حداکثر 20 دعوت موفق در نظر گرفته شده است. اما سایر پاداش ها بدون محدودیت     می باشد.
+        </P>
+      </div>
+      <div class="desc-box">
+        <b>برای دعوت از دوستان و آشنایان علاوه بر پاداش نقدی آیا پاداش دیگری شامل دعوت کننده و دعوت پذیر می شود؟ </b>
+        <P>
+          بله. دریافت تسهیلات سنای دیجیتال ، امتیاز ویژه ای است که سپینو برای شما ایجاد کرده تا از طریق دعوت دوستان خود دریافت نمایید. به طوری که با کسب 5 درصد از معدل حساب سنای دیجیتال هر یک از دعوت پذیران ، موفق به دریافت این تسهیلات به صورت غیر حضوری و خارج از سقف شبکه ی بانکی تا مبلغ 500.000.000 ریال شوید.
+        </P>
+      </div>
+      <div class="desc-box">
+        <b>برای محاسبه میانگین دعوت پذیران آیا محدودیت تعداد دعوت وجود دارد</b>
+        <P>
+          خیر. خبر خوب این است که تعداد دعوت پذیرانی که می توانید از معدل حساب آنها برای اخذ تسهیلات امتیازی طرح دعوت استفاده کنید نامحدود بوده و این فرصت در اختیار شماست که تا سقف مبلغ 500.000.000 ریال تسهیلات طرح دعوت را دریافت نمایید.
+با وارد شدن به دنیای امن و جذاب "سپینو" ، دعوت هستید تا بهترین تجربه ی مالی خود را خلق کنید. از این فرصت بهره‌مند شوید و همچنین دوستان خود را به این دنیای جدید دعوت کنید.
+
+        </P>
+      </div>
+    </div>
+  </div>
+
+  <BlueScrollDownIcon style="align-self: center" class="mt-n9"/>
+
+  <FaqComponent ref="FaqComponentSepino" id="faq" class="faq"/>  
+
+  <div id="about" class="soorat-hesab d-flex flex-row justify-start align-center">
+    <div class="col-md-10 d-flex flex-column justify-center align-start pa-md-10 pr-md-10 mr-md-10">
+      <h2 class="mb-5">
+        درباره ی سپینو (سپینو ریشه ای کهن رویشی نو ) :
+      </h2>
+      <p>
+        به سپینو ، بانک تمام دیجیتال خوش آمدید !
+جایی که نوآوری، سهولت، اعتبار و امنیت با هم هماهنگ می شوند. 
+در بانک صادرات ایران، ما همیشه متعهد به خدمت بوده‌ایم و اکنون در حال ارتقاء مسیر تجربه ی شما مطابق با نیازهای روز هستیم. بانک تمام دیجیتال سپینو، رویشی نو با ریشه‌ ای 72ساله و کهن است که در آغازین روز دی ماه 1402 جوانه زده و سفر خود به سمت رشد و تعالی در کسب رضایتمندی همراهان با وفای خود در فضای دیجیتالی کشور را آغاز نموده است. 
+اکنون با بررسی و آگاهی کامل از اهداف متنوع و پویای شما گرانقدران و نیازهای دنیای دیجیتالی ، سپینو را برای پاسخگویی به هر جنبه ای از زندگی مالی ، از معاملات ساده گرفته تا سرمایه گذاری های بلندپروازانه، طراحی کرده ایم.
+با سپینو، بانکداری نه فقط یک خدمت بلکه به یک ماجراجویی و قسمتی لذت بخش از زندگی شما تبدیل     می شود. با سپینو شعبه ای با 72 سال سبقه و اعتبار بانکی در گوشی هوشمند شماست. این همان انقلابی است که با تعهد به امنیت مالی شما در حال به وجود آوردن آن هستیم.
+با سپینو همراه شما هستیم تا بتوانید علاوه برطرف نمودن نیازهای مالی و انجام امور روزمره بانکی خود، مأمنی برای کسب درآمد از طریق ارتباطات اجتماعی خود باشید. 
+      </p>
+      
+    </div>
+  </div>
+  <BlueScrollDownIcon style="align-self: center" class="mt-n9"/>
+  <div id="call" class="d-flex flex-column justify-start align-stretch contact-page">
+    <div class="d-flex flex-column justify-start align-md-start align-center contact-card col-md mt-md-n10">
+      <h2>تماس با سپینو </h2>      
+
+      <div class="d-flex flex-md-row justify-md-center align-md-stretch flex-column justify-start align-stretch"
+          style="gap: 20px;width: 100%">
+        <div class="d-flex flex-column justify-center align-center communicate-section">
+          <p>شماره مرکز تماس</p>
+          <a href="tel:+982184761">
+            021-84765151
+          </a>
+        </div>
+
+        <div class="d-flex flex-column justify-center align-center communicate-section">
+          <p>شبکه های اجتماعی</p>
+          <p style="margin-bottom: 0px;">
+          <a href="https://www.linkedin.com/in/sepino-saderat-neo-bank-75b15729b/" style="margin-left: 20px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/Sepino.bsi" style="margin-left: 20px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+            </svg>
+          </a>
+          <a href="https://rubika.ir/Sepino.bsi" style="margin-left: 20px">
+            <img width="30" height="30" src="~/assets/img/digital-products/rubika.png">
+          </a>
+        </p>
+        </div>
+
+        <!-- <div class="d-flex flex-column justify-center align-center communicate-section">
+          <p>پست الکترونیکی</p>
+          <a href="mailto:info@bsi.ir">
+            info@bsi.ir
+          </a>
+        </div> -->
+      </div>
+      
+
+    </div>
+  </div>
+
+</div>

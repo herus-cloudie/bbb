@@ -1,0 +1,184 @@
+<div class="d-flex flex-column justify-start align-stretch about-page mb-12">
+  <div v-for="(item, index) in HeaderAboutMe" :key="index" :to="item.Link" class="about-starter d-flex flex-column
+    justify-start align-center py-8 py-md-0
+    justify-md-center align-md-center">
+    <!-- <h2>
+      {{item.Title}}
+    </h2>
+    <p class="mt-md-9 mb-md-12 about-subtitle text-center">
+      {{item.Description}}
+    </p> -->
+    <div class="d-flex flex-column flex-md-row
+      justify-start align-stretch
+      justify-md-center align-md-center
+      about-starter-buttons">
+      <!-- <nuxt-link v-for="(item, index) in HeaderButtonRight" :key="index" :to="item.Link.Description" class="text-center mt-4 mt-md-0">{{item.Title}}</nuxt-link>
+      <nuxt-link v-for="(item, index) in HeaderButtonLeft" :key="index" :to="item.Link.Description" to="/about/#" class="text-center mx-md-5 my-4 my-md-0">{{item.Title}}</nuxt-link> -->
+             <NuxtLink :to="item.Link.Description" class="text-center ">دریافت نام و نشان تجاری</NuxtLink>
+    </div>
+  </div>
+
+  <!-- <div class="about-starter d-flex flex-column
+    justify-start align-center py-8 py-md-0
+    justify-md-center align-md-center">
+    <h2>
+      بانک
+      <span class="text-primary">صادرات</span>
+      ایران...
+    </h2>
+    <p class="mt-md-9 mb-md-12 about-subtitle text-center">
+      بانک صادرات ایران در حال حاضر ۲٬۳۱۷ شعبه در داخل کشور و ۲۳ شعبه در خارج کشور و حدود ۲۷٬۲۰۶ کارمند دارد.
+      <br>
+      این بانک دارای سیستم یکپارچه بانکی به نام سپهر می‌باشد.
+    </p>
+    <div class="d-flex flex-column flex-md-row
+      justify-start align-stretch
+      justify-md-center align-md-center
+      about-starter-buttons">
+      <nuxt-link to="/about/brand" class="text-center mt-4 mt-md-0">نام و نشان تجاری</nuxt-link>
+      <nuxt-link to="/about/#" class="text-center mx-md-5 my-4 my-md-0">چارت سازمانی</nuxt-link>
+      <a href="#" class="text-center ">اطلاعات شعب</a>
+    </div>
+  </div>  -->
+
+  <div class="d-flex flex-column justify-start align-stretch mt-10">
+
+    <div class="d-flex flex-column flex-md-row
+      justify-start align-stretch
+      justify-md-space-between
+      container pa-0">
+      <!--  -->
+      <NuxtLink v-for="(item, index) in RightAboutMe" :key="index" :to="item.Link.Description" class="about-card d-flex flex-column col-md-7 me-md-6
+      mb-6 mb-md-0
+      justify-center align-center aspect-1 pa-0">
+        <!-- <img :src="require('~/assets/img/about/' + item.Image)" alt="saderat-intro" class="img-fluid"> -->
+        <img :src="item.Image" alt="item.Image" class="img-fluid">
+        <h2 class="about-card-title">
+          {{item.Title}}
+          <br>
+          {{item.TitleTwo}}
+        </h2>
+        <p class="about-card-subtitle">
+          {{item.Description}}
+        </p>
+        <div class="advance-btn">
+          <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.57145 1.33333L1.90479 8L8.57145 14.6667" stroke="white" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </NuxtLink>
+      <!--  -->
+
+      <!-- <NuxtLink to="/about/history" class="about-card d-flex flex-column col-md-7 me-md-6
+        mb-6 mb-md-0
+        justify-center align-center aspect-1 pa-0">
+        <img src="~/assets/img/about/saderat-intro.png" alt="saderat-intro" class="img-fluid">
+        <h2 class="about-card-title">
+          آنچه بوده‌ایم
+          <br>
+          بانک صادرات ایران
+        </h2>
+        <p class="about-card-subtitle">
+          تاریخچه بانکداری به شيوه نوين در ایران از اوایل سال ١٣٠٠ هجری شمسی به دلیل ضرورت‌های اقتصادی و سیاسی آغاز
+          شد
+          اما از آنجايی که نخستین بانکهای ایرانی تا حدودی شکل گرفته بودند.
+        </p>
+        <div class="advance-btn">
+          <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.57145 1.33333L1.90479 8L8.57145 14.6667" stroke="white" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </NuxtLink> -->
+
+      <div class="d-flex flex-column justify-space-between align-stretch col pa-0">
+        <NuxtLink v-for="(item, index) in LeftTopAboutMe" :key="index" :to="item.Link.Description"
+          class="about-card d-flex flex-column justify-space-between align-center  h-100 mb-6 pa-8">
+          <!-- <img :src="require('~/assets/img/about/' + item.Image)" alt="bsi-managers" class="img-fluid"> -->
+          <img :src="item.Image" alt="item.Image" class="img-fluid">
+          <h2 class="about-card-title-lt col-6 align-self-start pa-0" style="flex: unset">
+            {{item.Title}}
+          </h2>
+          <div class="advance-btn">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.57145 1.33333L1.90479 8L8.57145 14.6667" stroke="white" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </NuxtLink>
+        <!-- <NuxtLink to="/about/directors"
+          class="about-card d-flex flex-column justify-space-between align-center  h-100 mb-6 pa-8">
+          <img src="~/assets/img/about/bsi-managers.png" alt="bsi-managers" class="img-fluid">
+          <h2 class="about-card-title-lt col-6 align-self-start pa-0" style="flex: unset">
+            درباره مدیران بانک صادرات ایران
+          </h2>
+          <div class="advance-btn">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.57145 1.33333L1.90479 8L8.57145 14.6667" stroke="white" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </NuxtLink> -->
+        <NuxtLink v-for="(item, index) in LeftBottomAboutMe" :key="index" :to="item.Link.Description" class="about-card d-flex flex-column justify-space-between align-center  h-100 pa-8">
+          <!-- <img :src="require('~/assets/img/about/' + item.Image)" alt="bsi-shares" class="img-fluid"> -->
+          <img :src="item.Image" alt="item.Image" class="img-fluid">
+          <h2 class="about-card-title-lt col-6 align-self-start pa-0" style="flex: unset">
+            {{item.Title}}
+          </h2>
+          <div class="advance-btn">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.57145 1.33333L1.90479 8L8.57145 14.6667" stroke="white" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </NuxtLink>
+        <!-- <NuxtLink to="/education" class="about-card d-flex flex-column justify-space-between align-center  h-100 pa-8">
+          <img src="~/assets/img/about/bsi-shares.png" alt="bsi-shares" class="img-fluid">
+          <h2 class="about-card-title-lt col-6 align-self-start pa-0" style="flex: unset">
+            آموزش بانک صادرات ایران
+          </h2>
+          <div class="advance-btn">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.57145 1.33333L1.90479 8L8.57145 14.6667" stroke="white" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </NuxtLink> -->
+      </div>
+
+    </div>
+
+    <NuxtLink v-for="(item, index) in BottomAboutMe" :key="index" :to="item.Link.Description" class="d-flex flex-md-row flex-column
+    justify-start align-stretch
+    container pa-0 mt-10 about-card-banner">
+    <!-- <img :src="require('~/assets/img/about/' + item.Image)" alt="social-responsibility.png" class="img-fluid"> -->
+    <img :src="item.Image" alt="item.Image" class="img-fluid">
+    <h2 class="about-card-title me-md-6 col-md-4 text-right my-4">
+      {{item.Title}}
+    </h2>
+    <div class="advance-btn">
+      <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.57145 1.33333L1.90479 8L8.57145 14.6667" stroke="white" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </div>
+  </NuxtLink>
+    <!-- <NuxtLink to="/rules" class="d-flex flex-md-row flex-column
+      justify-start align-stretch
+      container pa-0 mt-10 about-card-banner">
+      <img src="~/assets/img/about/social-responsibility.png" alt="social-responsibility.png" class="img-fluid">
+      <h2 class="about-card-title me-md-6 col-md-4 text-right my-4">
+        مقررات و الزامات بانک صادرات ایران
+      </h2>
+      <div class="advance-btn">
+        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.57145 1.33333L1.90479 8L8.57145 14.6667" stroke="white" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </NuxtLink> -->
+
+  </div>
+
+</div>

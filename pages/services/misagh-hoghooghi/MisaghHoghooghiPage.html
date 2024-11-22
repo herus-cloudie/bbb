@@ -1,0 +1,151 @@
+<div class="d-flex flex-column mb-12 justify-start align-stretch misagh-page">
+
+  <div class="d-flex flex-md-row flex-column justify-end align-end main-banner">
+    <div class="d-flex flex-column justify-start align-start col-md-6 col-auto main-banner-text">
+      <h2>طرح میثاق حقوقی</h2>
+      <p class="my-5">تسهیلات ارزان قیمت با نرخ ۱۴ درصد برای مشتریان بانک صادرات ایران</p>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row justify-start align-center" style="gap: 40px;border-bottom: 1px solid #EEE">
+
+  </div>
+
+  <section class="my-md-16 d-flex flex-column flex-md-row justify-md-center justify-start
+    align-stretch align-md-center container more-info-section">
+    <div class="d-flex flex-column justify-start align-stretch col-md-3">
+      <img src="~/assets/img/services/misagh/services-mockup.png" alt="طرح میثاق">
+    </div>
+    <div class="d-flex flex-column justify-center align-stretch col-md-6" style="gap: 25px">
+      <div class="desc-box">
+        <b>مبلغ سرمایه گذاری:</b>
+        <ul>
+          <li>
+            داشتن حداقل مـبلغ جـهت افتتاح سـپرده کوتاه مدت میثاق حقوقی 1 میلیون ریال است
+          </li>
+          <li>
+            حداقل معدل میانگین جهت محاسبه امتیاز دریافت تسـهیالت 100 مـیلیون ریال است.
+          </li>
+          <li>
+            امکان واریز و برداشت از حساب میسر خواهد بود.
+          </li>
+        </ul>
+      </div>
+      <div class="desc-box">
+        <b>دوره سرمایه گذاری:</b>
+        <ul>
+          <li>
+            مــبنای دوره سـپرده گـذاری بـرای بهره مندی از امتیاز تسـهیلات، حداقل 3 ماه و حداکثر 12 ماه است .
+          </li>
+          <li>
+            بعـد از طـی نمودن حـداقل مـدت مــاندگاری(3 ماه) مـعادل 80 تا 90 درصد میانگین موجودی، تسهیلات قابل پرداخت
+            است.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section ref="calculateBox" class="calculate-box">
+    <div class="d-flex flex-column justify-start align-stretch container my-15">
+      <h2 class="text-center mb-2">نحوه محاسبه امتیاز در طرح میثاق حقوقی</h2>
+      <p class="text-center">
+        یکی از مزیت های این طرح نسبت به سپرده های سرمایه گذاری ماه شمار این است که نحوه محاسبه میانگین موجودی و کسب
+        امتیاز دریافت تسهیلات در این طرح به صورت روزشمار بوده و مشتری امکان واریز و برداشت و انجام امور روزانه مالی
+        خود را خواهد داشت.
+      </p>
+
+      <div class="d-flex flex-md-row flex-column justify-start justify-md-space-between align-center my-5" style="gap: 60px">
+        <div class="input-div">
+            <span class="text">
+              مبلغ سرمایه گذاری:
+            </span>
+          <v-text-field
+            v-model="depositValue"
+            outlined hide-details="auto"
+            class="col pa-0" dir="ltr"
+          ></v-text-field>
+        </div>
+
+        <div class="input-div">
+          <span>دوره سرمایه گذاری:</span>
+
+          <v-btn-toggle
+            v-model="depositPeriod"
+            color="#FFD130"
+          >
+            <v-btn value="3">
+              ۳ماهه
+            </v-btn>
+
+            <v-btn value="4">
+              ۴ماهه
+            </v-btn>
+
+            <v-btn value="6">
+              ۶ماهه
+            </v-btn>
+
+            <v-btn value="8">
+              ۸ماهه
+            </v-btn>
+
+            <v-btn value="12">
+              ۱۲ماهه
+            </v-btn>
+          </v-btn-toggle>
+        </div>
+
+
+        <v-btn
+          color="#FFC444"
+          class="py-2 px-10">
+          <v-icon class="me-2">
+            mdi-magnify
+          </v-icon>
+          <span>
+                جستجو
+              </span>
+        </v-btn>
+      </div>
+
+      <v-simple-table height="400px" class="mt-13">
+        <template v-slot:default>
+          <thead>
+          <tr>
+            <th>
+              ردیف
+            </th>
+            <th>
+              دوره سرمایه گذاری(ماه)
+            </th>
+            <th>
+              مدت بازپرداخت(ماه)
+            </th>
+            <th>
+              ضرایب
+            </th>
+            <th>
+              نرخ سود
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+            v-for="(item, index) in tableData"
+            :key="index"
+          >
+            <td>{{ index + 1 }}</td>
+            <td style="color: #FFC444">{{ item.period }}</td>
+            <td>{{ item.revenue }}</td>
+            <td>{{ item.multiply }}</td>
+            <td>{{ item.benefit }}</td>
+          </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+    </div>
+  </section>
+
+  <FaqComponent ref="faqComponent" class="faq"/>
+</div>

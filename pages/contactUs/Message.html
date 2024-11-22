@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internet Banking</title>
+  <link rel="stylesheet" href="InternetBankPage.scss" />
+</head>
+<body>
+  <div style="display: flex; flex-direction: column; padding: 30px" class="v-application internet-bank">
+    <div class="header">
+      <h2 style="margin-bottom: 30px; font-size: 28px; border-bottom: 1px solid; padding-bottom: 5px;">
+        تماس با روابط عمومی
+      </h2>
+    </div>
+    <!-- New Contact Information Section -->
+    <div style="margin-bottom: 40px; text-align: right; font-size: 16px; color: #333;">
+      <h3 style="margin-bottom: 10px;">ارتباط با ما</h3>
+      <div style="padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0px 0px 5px #81818199;">
+        <p>صدای سپهر (مشاوره بانکی، پاسخگویی به سئوالات، پیشنهادها و انتقادها): 09602</p>
+        <p>تلفن‌خانه ساختمان مرکزی: 84761-021</p>
+        <p>فکس اداره کل روابط‌عمومی: 41476231-021</p>
+        <p>سامانه دریافت پیامک: 100065</p>
+        <p>پست الکترونیکی: info@bsi.ir</p>
+        <p>آدرس: تهران، خیابان سمیه، مابین بهار و مفتح، پلاک 85 کد پستی: 1571838713</p>
+      </div>
+      <div style="padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0px 0px 5px #81818199;">
+        <p>مشتری گرامی / همکار ارجمند ؛</p>
+        <p>ضمن قدردانی از حسن انتخاب حضرتعالی به استحضار می رساند در صورت ارسال هرگونه پیام می بایست کد پیگیری مربوطه را دریافت و سپس از طریق منوی پیگیری که در صفحه کناری همین بخش قابل دسترسی می باشد از نتیجه پیگیریهای بعمل آمده اطلاع حاصل فرمایید.</p>
+        <p>باتشکر - روابط عمومی بانک صادرات ایران</p>
+      </div>
+    </div>
+
+    <!-- Original Header Section -->
+
+    <!-- Form Sections Below -->
+    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;">
+      <div style="margin-top: 50px; text-align: center;">
+        پیگیری تماس با روابط عمومی
+      </div>
+      <form class="form">
+        <div style="width: 100%; display: flex; justify-content: center;">
+          <div class="input-group" style="display: flex; box-shadow: 0px 0px 5px #81818199; flex-direction: column; border-radius: 10px; gap: 10px; padding: 20px; margin: 10px 0;">
+            <input type="text" placeholder="نام خانوادگی" style="border: #4343435d solid 1px; font-size: 14px; padding: 5px; border-radius: 5px; max-width: 300px; height: 40px;" required />
+            <input type="text" placeholder="شماره تلفن همراه" style="border: #4343435d solid 1px; font-size: 14px; padding: 5px; border-radius: 5px; max-width: 300px; height: 40px;" required />
+            <select style="border: #4343435d solid 1px; font-size: 14px; padding: 5px; border-radius: 5px; max-width: 300px; height: 40px;" name="pets" id="pet-select">
+              <option value="">دسته بندی</option>
+              <option value="تسهیلات (انواع وام)">تسهیلات (انواع وام)</option>
+              <option value="تشکر و قدردانی">تشکر و قدردانی</option>
+              <option value="تلفن بانک (صدای سپهر 09602)">تلفن بانک (صدای سپهر 09602)</option>
+              <option value="حساب سپرده (کوتاه مدت، بلند مدت، گنجینه سپهر، برکت سپهر)">حساب سپرده (کوتاه مدت، بلند مدت، گنجینه سپهر، برکت سپهر)</option>
+              <option value="حساب قرض الحسنه">حساب قرض الحسنه</option>
+              <option value="حساب جاری و دسته چک">حساب جاری و دسته چک</option>
+              <option value="سرویس ارسال پیامک">سرویس ارسال پیامک</option>
+              <option value="دستگاه کارت خوان(pos)">دستگاه کارت خوان(pos)</option>
+              <option value="درخواست">درخواست</option>
+              <option value="تبلیغات و همکاری تبلیغاتی">تبلیغات و همکاری تبلیغاتی</option>
+              <option value="بانکداری اینترنتی">بانکداری اینترنتی</option>
+              <option value="همراه بانک">همراه بانک</option>
+              <option value="قرعه کشی">قرعه کشی</option>
+              <option value="شکایت">شکایت</option>
+              <option value="انتقاد و پیشنهاد">انتقاد و پیشنهاد</option>
+            </select>
+            <div>
+              <div style="margin-bottom: 10px;">کد امنیتی</div>
+              <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <div style="padding: 7px; border: 1px solid; width: 100px; border-radius: 7px; text-align: center; background-color: #c5c5c5; font-weight: bold;">{{randomString}}</div>
+                <input type="text" placeholder="" style="border: #4343435d solid 1px; font-size: 14px; padding: 5px; border-radius: 5px; max-width: 300px; height: 40px;" required />
+              </div>
+            </div>
+            <textarea type="text" placeholder="متن پیام" style="border: #4343435d solid 1px; font-size: 14px; padding: 5px; border-radius: 5px; max-width: 300px; height: 40px;" required />
+            <button style="width: 300px; font-size: 18px; font-weight: bold; box-shadow: 0px 0px 2px black; padding: 8px; background-color: blue; color: white; border-radius: 5px; margin-top: 30px;" type="submit" class="submit-button">ارسال</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Another Form Section -->
+    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;">
+      <div style="margin-top: 50px; text-align: center;">
+        پیگیری تماس با روابط عمومی
+      </div>
+      <form class="form">
+        <div style="width: 100%; display: flex; justify-content: center;">
+          <div class="input-group" style="display: flex; box-shadow: 0px 0px 5px #81818199; flex-direction: column; border-radius: 10px; gap: 10px; padding: 20px; margin: 10px 0;">
+            <input type="text" placeholder="کد رهگیری" style="border: #4343435d solid 1px; font-size: 14px; padding: 5px; border-radius: 5px; max-width: 300px; height: 40px;" required />
+            <div>
+              <div style="margin-bottom: 10px;">کد امنیتی</div>
+              <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <div style="padding: 7px; border: 1px solid; width: 100px; border-radius: 7px; text-align: center; background-color: #c5c5c5; font-weight: bold;">{{randomString}}</div>
+                <input type="text" placeholder="" style="border: #4343435d solid 1px; font-size: 14px; padding: 5px; border-radius: 5px; max-width: 300px; height: 40px;" required />
+              </div>
+            </div>
+            <button style="width: 300px; font-size: 18px; font-weight: bold; box-shadow: 0px 0px 2px black; padding: 8px; background-color: green; color: white; border-radius: 5px; margin-top: 30px;" type="submit" class="submit-button">بررسی</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

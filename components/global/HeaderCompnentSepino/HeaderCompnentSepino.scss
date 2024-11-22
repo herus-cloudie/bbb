@@ -1,0 +1,42 @@
+.bsi-header {
+  background: #0D47A1;
+  height: 72px;
+
+  @media screen and (max-width: 960px) {
+    height: 56px;
+  }
+
+  * {
+    color: white !important;
+  }
+
+  .logo-section {
+    .img {
+      height: 42px;
+      margin-left: 0.5rem;
+      @media screen and (max-width: 960px) {
+        height: 32px;
+      }
+    }
+  }
+
+  .header-links {
+
+    .login-btn {
+      background: #285EB3;
+      border-radius: 100px;
+      padding: 9px 12px;
+    }
+
+    a {
+      font-size: 14px !important;
+      margin-left: 36px !important;
+    }
+
+    .v-divider {
+      height: 24px !important;
+      align-self: center;
+    }
+  }
+
+}

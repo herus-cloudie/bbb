@@ -1,0 +1,18 @@
+<div class="d-flex flex-row justify-space-between align-stretch">
+
+  <ul>
+    <nuxt-link class="list-item" v-for="(item, index) in links" :key="index"
+      v-if="item.link && item.NoeLink=='صفحه داخلی'" :to="item.link">
+      {{item.title}}
+    </nuxt-link>
+
+    <a class="list-item" v-for="(item, index) in links" :key="index" v-if="item.link && item.NoeLink=='لینک خارجی'"
+      :href="item.link" target="_blank">
+      {{item.title}}
+    </a>
+
+  </ul>
+
+  <div v-if="divider" class="list-divider"></div>
+
+</div>

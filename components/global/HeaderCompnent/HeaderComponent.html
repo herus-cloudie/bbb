@@ -1,0 +1,97 @@
+<header class="bsi-header d-flex">
+  <div class="container d-flex align-center  justify-space-between">
+    <a href="/" class="d-flex align-center justify-start logo-section">
+      <img src="~/assets/img/bsi-logo.png" class="img" alt="بانک صادرات ایران">
+      <img src="~/assets/img/bsi-text.png" class="img" alt="بانک صادرات ایران">
+      
+    </a>
+
+    <div class="d-none d-md-flex align-center justify-end header-links">
+      <!-- <nuxt-link to="/services" class="ml-9">
+        خدمات بانکی
+      </nuxt-link>
+      <NuxtLink to="/about" class="ml-9">
+        درباره ما
+      </NuxtLink>
+      <NuxtLink to="/digital-products" class="ml-9">
+        محصولات دیجیتال
+      </NuxtLink>
+      <nuxt-link to="/contact" class="ml-6">
+        ارتباط با ما
+      </nuxt-link> -->
+      <nuxt-link v-for="(item, index) in HeaderSite" :key="index" :to="item.TxtLink"
+        class="ml-9">{{item.Title}}</nuxt-link>
+      <v-divider vertical class="ml-7"></v-divider>
+      <!-- <span class="material-icons-outlined ml-7">
+        search
+      </span> -->
+      <!-- <span class="ml-7">
+          EN
+        </span> -->
+
+      <!--  -->
+
+      <!-- <template>
+        <SearchInput v-model="searchVal" />
+      </template> -->
+
+
+
+      <!--  -->
+
+
+      <!-- <a href="#" class="login-btn">
+        ورود به نت‌بانک
+      </a> -->
+      <span id="openPopup">
+        جست و جو
+      </span>
+
+      <div id="popupBox" class="popup">
+          <div class="popup-content">
+              <span id="closePopup" class="close">&times;</span>
+              <h2>Popup Title</h2>
+              <p>This is a simple popup box.</p>
+          </div>
+      </div>
+    </div>
+    <div class="d-flex d-md-none align-center  justify-end header-links">
+      <span class="material-icons-outlined ml-6">
+        search
+      </span>
+      <span class="material-icons-outlined" @click="$emit('openDrawer', true)">
+        menu
+      </span>
+    </div>
+  </div>
+  <script>
+    console.log(document.getElementById('openPopup'))
+    document.getElementById('openPopup').addEventListener('click', function () {
+      console.log(';DS')
+        document.getElementById('popupBox').style.display = 'flex';
+    });
+
+    document.getElementById('closePopup').addEventListener('click', function () {
+        document.getElementById('popupBox').style.display = 'none';
+    });
+
+    // Close the popup if the user clicks outside the popup content
+    window.addEventListener('click', function (event) {
+        const popup = document.getElementById('popupBox');
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+
+    setTimeout(() => {
+      var link = document.querySelector("link[rel~='icon']");
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+      }
+      // link.href = 'https://stackoverflow.com/favicon.ico';
+      link.href = 'https://www.bsi.ir/Admin/ImagesAndIcons/BankIco.ico';
+    }, 3000);
+  </script>
+</header>

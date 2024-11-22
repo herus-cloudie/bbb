@@ -1,0 +1,128 @@
+@import "swiper/modules/pagination/pagination.scss";
+@import "swiper/modules/effect-coverflow/effect-coverflow.scss";
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #040738;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0D47A1;
+}
+.footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.v-application {
+  direction: rtl;
+  // margin-bottom: 360px !important;
+
+  .v-divider {
+    border-color: rgba(224, 224, 224, 0.2) !important;
+  }
+
+  .v-btn {
+    letter-spacing: 0 !important;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .v-pagination {
+    direction: ltr;
+
+    .v-pagination__navigation {
+      display: none;
+    }
+
+    .v-pagination__item {
+      border-radius: 50%;
+      box-shadow: none;
+      border: none;
+      font-size: 20px;
+      width: 48px;
+      height: 48px;
+    }
+
+    .v-pagination__item--active {
+      background: #0D47A1 !important;
+    }
+
+  }
+
+  .v-expansion-panel--active {
+    background: rgba(33, 33, 33, 0.03) !important;
+  }
+
+  .v-expansion-panel {
+    &:before {
+      box-shadow: none !important;
+    }
+
+    .v-expansion-panel-content__wrap {
+      padding: 24px !important;
+    }
+
+    .v-expansion-panel-header {
+      font-size: 20px;
+      line-height: 36px;
+
+      .v-expansion-panel-header__icon {
+        margin-left: 0 !important;
+        margin-right: auto;
+      }
+    }
+  }
+
+}
+
+.text-primary {
+  color: #0D47A1;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.aspect-1 {
+  aspect-ratio: 1;
+}
+
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+}

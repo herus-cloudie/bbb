@@ -1,0 +1,135 @@
+<div class="d-flex flex-column justify-start align-stretch shaba-calc-page">
+
+  <h2 class="align-self-center">محاسبه شبا</h2>
+  <GoldDivider class="mt-md-7 mb-md-10 my-4 align-self-center"/>
+
+  <div class="d-flex flex-column justify-start align-stretch">
+    <div class="summary-box d-flex flex-column order-md-0 order-2 mt-4 mt-md-0" style="gap: 24px">
+      <b>نکات قابل توجه در خصوص شماره شبا:</b>
+      <ol class="pl-0">
+        <li>«شبا» یا شماره حساب بانکی ایران، به منظور تسهیل و استاندارد سازی مبادلات بین بانکی و بین المللی بانک های کشور، توسط بانک مرکزی جمهوری اسلامی ایران، تعریف و تبیین شده است و بزودی در تمامی سامانه های پرداخت بین بانکی منحصرا از این نوع حساب استفاده خواهد شد.</li>
+        <li>هر شماره حساب بانکی (صرف نظر از آنکه متعلق به کدام بانک باشد)، قابل تبدیل به یک شماره حساب «شبا» خواهد بود. مشتریان گرامی بانک صادرات ایران می‌توانند جهت اطلاع از شماره شبای سپرده‌ی خود نزد بانک صادرات ایران، از روش‌های زیر استفاده نمایند.</li>
+      </ol>
+      <b>      جهت دریافت شناسه‌ی شبای بانک صادرات ایران به صورت غیرحضوری، روش استعلام آن را انتخاب نمایید.</b>
+    </div>
+
+    <v-btn-toggle v-model="toggle_exclusive" mandatory class="my-md-12 my-4 order-md-1 order-0">
+      <v-btn v-for="tab of tabs" :key="tab">
+        {{ tab }}
+      </v-btn>
+    </v-btn-toggle>
+
+    <div class="summary-box d-flex flex-column justify-start align-stretch order-md-2 order-1"
+         v-if="toggle_exclusive === 0">
+
+      <b class="mb-md-13 mb-4">
+        لطفا شماره حساب یا شماره تسهیلات و یا شماره کارت بانک صادرات خود را وارد نمایید:
+      </b>
+
+      <v-radio-group v-model="selectedToggle">
+        <v-radio value="hesabToShaba" color="primary">
+          <template v-slot:label>
+            <div class="d-flex flex-md-row flex-column justify-start align-center radio-div">
+              <span class="col-md-4">دریافت شماره شبا از طریق شماره حساب/تسهیلات</span>
+              <v-text-field class="col-md-6"
+                            v-model="hesabToShaba"
+                            placeholder="شماره حساب یا شماره تسهیلات بانک صادرات خود را وارد نمایید"
+                            outlined dir="ltr"
+              ></v-text-field>
+            </div>
+          </template>
+        </v-radio>
+        <v-radio value="cardToShaba" color="primary">
+          <template v-slot:label>
+            <div class="d-flex flex-md-row flex-column justify-start align-center radio-div">
+              <span class="col-md-4">دریافت شماره شبا از طریق شماره کارت</span>
+              <v-text-field
+                v-model="cardToShaba"
+                placeholder="شماره کارت بانک صادرات خود را وارد نمایید"
+                outlined dir="ltr"
+                class="col-md-6"
+              ></v-text-field>
+            </div>
+          </template>
+        </v-radio>
+      </v-radio-group>
+
+      <div class="d-flex flex-row justify-start align-center">
+        <b class="col-md-4 mr-md-5 pr-md-5 pa-0">کد امنیتی را وارد نمایید:</b>
+        <div class="col-md-2 col-6 pa-0 mr-md-9">
+          <v-text-field
+            v-model="otp"
+            outlined
+          ></v-text-field>
+        </div>
+        <div class="otp-image">
+
+        </div>
+      </div>
+
+      <v-btn color="#FFC444" :loading="apiShabaLoading" @click="submitShaba()"
+             class="align-self-center mt-md-15 px-md-15 py-md-4 mt-6 px-6">
+        محاسبه شبا
+      </v-btn>
+
+      <div v-if="showShabaResult"
+           class="align-self-center mt-12 d-flex flex-column justify-center align-center"
+           style="color:white;padding: 16px 150px;border-radius: 20px;border: 1px solid #0D47A1;background: #0D47A1;box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);">
+        <p dir="ltr">IR63 0190 0000 0021 2532 9430 03</p>
+        <span>مينا درخشان</span>
+      </div>
+
+    </div>
+
+    <div class="summary-box d-flex flex-column justify-start align-stretch order-md-2 order-1"
+         v-if="toggle_exclusive === 1">
+
+      <b class="mb-md-13 mb-4">
+        لطفا شماره شبا بانک صادرات خود را وارد نمایید:
+      </b>
+
+      <v-radio-group v-model="selectedToggle">
+        <v-radio value="hesabToShaba" color="primary">
+          <template v-slot:label>
+            <div class="d-flex flex-row justify-start align-center radio-div">
+              <span class="col-4">دریافت شماره حساب از طریق شماره شبا</span>
+              <v-text-field class="col-6"
+                            v-model="hesabToShaba"
+                            placeholder="شماره حساب یا شماره تسهیلات بانک صادرات خود را وارد نمایید"
+                            outlined dir="ltr"
+              ></v-text-field>
+              <b>IR</b>
+            </div>
+          </template>
+        </v-radio>
+      </v-radio-group>
+
+      <div class="d-flex flex-row justify-start align-center" style="gap: 36px">
+        <b class="col-4 mr-5 pr-5">کد امنیتی را وارد نمایید:</b>
+        <div class="col-2">
+          <v-text-field
+            v-model="otp"
+            outlined
+          ></v-text-field>
+        </div>
+        <div class="otp-image">
+
+        </div>
+      </div>
+
+      <v-btn color="#FFC444" :loading="apiHesabLoading" @click="submitHesab()"
+             class="align-self-center mt-15" style="padding: 16px 150px">
+        دریافت شماره حساب
+      </v-btn>
+
+      <div v-if="showHesabResult"
+           class="align-self-center mt-12 d-flex flex-column justify-center align-center"
+           style="color:white;padding: 16px 150px;border-radius: 20px;border: 1px solid #0D47A1;background: #0D47A1;box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);">
+        <p dir="ltr">021 2532 9430 03</p>
+        <span>مينا درخشان</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>

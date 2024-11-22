@@ -1,0 +1,29 @@
+.faq-section {
+
+  h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 64px;
+    color: #212121;
+    margin-bottom: 48px;
+  }
+
+  ::v-deep {
+    .v-expansion-panel-content__wrap {
+      @media screen and (max-width: 959px) {
+        font-size: 12px;
+      }
+    }
+    .v-expansion-panel-header {
+      @media screen and (max-width: 959px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .v-application--is-ltr .v-expansion-panel-header__icon {
+    margin: 10px;
+  }
+
+}

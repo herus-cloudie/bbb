@@ -1,0 +1,7 @@
+<div  class="d-flex flex-column justify-start align-stretch MessagePage">
+  <div v-for="(item, index) in ManagerMessage" :key="index">
+    <h2>{{item.Title}}</h2>
+    <img :src="item.Image" alt="تصویر">
+    <p>{{item.Description}}</p>
+  </div>
+</div>

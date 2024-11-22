@@ -1,0 +1,194 @@
+.about-page {
+
+  .about-starter {
+    background-size: auto;
+    background: url("../../assets/img/about/bank-about.png") no-repeat bottom;
+    background-size: contain; //changed 
+    background-position: center; //change   add  
+    min-height: calc(70vh - 72px); //change 100vh to 70vh   
+
+    @media screen and (min-width: 960px) {
+      aspect-ratio: 0; //change  from 2 to 0
+    }
+
+    h2 {
+      font-size: 52px;
+      line-height: 68px;
+      font-weight: 500;
+    }
+
+    .about-subtitle {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 31px;
+      color: #313131;
+    }
+
+    .about-starter-buttons {
+      a {
+        background: #212121;
+        border-radius: 12px;
+        padding: 10px 47px;
+        color: white;
+        margin-top: 150px;
+
+        &:hover {
+          background: #3462CD;
+        }
+      }
+    }
+
+  }
+
+  .about-card {
+    background: #F5F5F5;
+    border-radius: 16px;
+    position: relative;
+
+    * {
+      transition: all 0.3s linear;
+    }
+
+    .about-card-title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 42px;
+      line-height: 55px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #212121;
+
+      margin: 24px 0;
+    }
+
+    .about-card-title-lt {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 42px;            
+      display: flex;
+      align-items: center;       
+      text-align: right;
+      color: #212121;
+      z-index: 1;                   //changed add
+    }
+
+    .about-card-subtitle {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #212121;
+      margin: 0 120px;
+
+      @media all and (max-width: 960px) {
+        margin: 0 20px 60px;
+      }
+
+    }
+
+    .advance-btn {
+      position: absolute;
+      left: 32px;
+      bottom: 32px;
+      background: #212121;
+      border-radius: 50%;
+      justify-items: center;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      display: flex;
+    }
+
+    &:hover {
+
+      img {
+        transform: scale(1.05);
+      }
+
+      .advance-btn {
+        background-color: #0D47A1;
+        left: 28px;
+      }
+    }
+
+  }
+
+  .about-card-banner {
+    background: #F5F5F5;
+    border-radius: 16px;
+    position: relative;
+    transition: all 0.3s linear;
+
+    .about-card-title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 42px;
+      line-height: 55px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #212121;
+
+      margin: 24px 0;
+    }
+
+    .about-card-title-lt {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 42px;
+      display: flex;
+      align-items: center;
+      text-align: right;
+      color: #212121;
+    }
+
+    .about-card-subtitle {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #212121;
+      margin: 0 120px;
+
+      @media all and (max-width: 960px) {
+        margin: 0 20px 60px;
+      }
+
+    }
+
+    .advance-btn {
+      position: absolute;
+      left: 32px;
+      bottom: 32px;
+      background: #212121;
+      border-radius: 50%;
+      justify-items: center;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      display: flex;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      .advance-btn {
+        background-color: #0D47A1;
+        left: 28px;
+      }
+    }
+
+  }
+
+}

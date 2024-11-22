@@ -1,0 +1,444 @@
+<div class="d-flex flex-column justify-start align-stretch digital-products-page mb-md-12 mb-4">
+
+  <v-btn-toggle v-model="toggle_exclusive" mandatory class="mt-md-12 mb-md-10 my-4">
+    <v-btn v-for="tab of tabs" :key="tab">
+      {{ tab }}
+    </v-btn>
+  </v-btn-toggle>
+
+  <div
+    class="container applications d-flex flex-md-row flex-column justify-start justify-md-space-between align-stretch"
+    v-if="toggle_exclusive === 0">
+    <div v-for="(item, index) in DigitalProductFirstTab" :key="index"
+      class="app-card col d-flex flex-column justify-start align-stretch">
+      <NuxtLink v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description">
+        <h2>
+          {{item.Title}}
+        </h2>
+        <span class="app-title">
+          {{item.SubTitle}}
+        </span>
+        <p class="app-desc">
+          {{item.Description}}
+        </p>
+        <img :src="item.Image" alt="بانک صادرات ایران">
+      </NuxtLink>
+      <NuxtLink v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description" class="d-flex align-self-end mt-5">
+        دریافت اپلیکیشن
+        <span class="material-icons">
+          chevron_left
+        </span>
+      </NuxtLink>
+
+      <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank">
+        <h2>
+          {{item.Title}}
+        </h2>
+        <span class="app-title">
+          {{item.SubTitle}}
+        </span>
+        <p class="app-desc">
+          {{item.Description}}
+        </p>
+        <img :src="item.Image" alt="بانک صادرات ایران">
+      </a>
+      <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" class="d-flex align-self-end mt-5"
+        target="_blank">
+        دریافت اپلیکیشن
+        <span class="material-icons">
+          chevron_left
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="container systems-services d-flex flex-column justify-start align-stretch" style="gap: 24px"
+    v-if="toggle_exclusive === 1">
+
+    <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch" style="gap: 24px">
+      <div class="col-md pa-0 d-flex flex-column justify-start align-stretch" style="gap: 24px">
+        <div v-for="(item, index) in DigitalProductSocondTabOneTwo" :key="index"
+          class="d-flex flex-row justify-space-between align-stretch" style="gap: 24px">
+          <nuxt-link :to="item.Link.Description" v-if="item.NoeLink=='صفحه داخلی'" class="link-card col pa-0">
+            <h3>{{item.Title}}</h3>
+            <p>
+              {{item.SubTitle}}
+            </p>
+          </nuxt-link>
+          <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank" class="link-card col pa-0">
+            <h3>{{item.Title}}</h3>
+            <p>
+              {{item.SubTitle}}
+            </p>
+          </a>
+        </div>
+
+        <div v-for="(item,index) in DigitalProductSocondTabThree" :key="index">
+          <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description"
+            class="ganjine-sepehr d-flex flex-md-row flex-column justify-start align-center">
+            <!-- <img :src="require('~/assets/img/digital-products/'+item.Image)" alt="بانک صادرات ایران"> -->
+            <img :src="item.Image" alt="بانک صادرات ایران">
+            <div class="back-linear"></div>
+            <div style="z-index: 2" class="col-md-9 d-flex flex-column justify-center align-start pa-md-13">
+              <h2 class="mb-5">
+                {{item.Title}}
+              </h2>
+              <p>
+                {{item.Description}}
+              </p>
+            </div>
+          </nuxt-link>
+
+          <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+            class="ganjine-sepehr d-flex flex-md-row flex-column justify-start align-center">
+            <img :src="item.Image" alt="بانک صادرات ایران">
+            <div class="back-linear"></div>
+            <div style="z-index: 2" class="col-md-9 d-flex flex-column justify-center align-start pa-md-13">
+              <h2 class="mb-5">
+                {{item.Title}}
+              </h2>
+              <p>
+                {{item.Description}}
+              </p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+      <div v-for="(item,index) in DigitalProductSocondTabFour" :key="index"
+        class="app-card col-md-4 d-flex flex-column justify-start align-stretch">
+        <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description">
+          <h2 class="mb-4">
+            {{item.Title}}
+          </h2>
+          <p class="app-desc">
+            {{item.Description}}
+          </p>
+          <img :src="item.Image" alt="بانک صادرات ایران">
+        </nuxt-link>
+
+        <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank">
+          <h2 class="mb-4">
+            {{item.Title}}
+          </h2>
+          <p class="app-desc">
+            {{item.Description}}
+          </p>
+          <img :src="item.Image" alt="بانک صادرات ایران">
+        </a>
+      </div>
+    </div>
+
+    <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch" style="gap: 24px">
+      <div v-for="(item,index) in DigitalProductSocondTabFiveSixSeven" :key="index"
+        class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch" style="gap: 24px">
+        <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description" class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </nuxt-link>
+        <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+          class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </a>
+      </div>
+    </div>
+
+
+    <div v-for="(item,index) in DigitalProductSocondTabEight">
+      <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description"
+        class="vekalati d-flex flex-row justify-start align-center">
+        <div class="col-md-6 d-flex flex-column justify-center align-start pa-md-14">
+          <h2 class="mb-md-5 mb-2">
+            {{item.Title}}
+          </h2>
+          <p>
+            {{item.Description}}
+          </p>
+        </div>
+      </nuxt-link>
+
+      <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+        class="vekalati d-flex flex-row justify-start align-center">
+        <div class="col-md-6 d-flex flex-column justify-center align-start pa-md-14">
+          <h2 class="mb-md-5 mb-2">
+            {{item.Title}}
+          </h2>
+          <p>
+            {{item.Description}}
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <div class="d-flex flex-md-row flex-column justify-start justify-md-space-between align-stretch" style="gap: 24px">
+      <div v-for="(item,index) in DigitalProductSocondTabNine"
+        class="app-card col-md-4 d-flex flex-column justify-start align-stretch">
+        <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description">
+          <h2 class="mb-4">
+            {{item.Title}}
+          </h2>
+          <p class="app-desc">
+            {{item.Description}}
+          </p>
+          <img :src="item.Image" alt="بانک صادرات ایران">
+        </nuxt-link>
+
+        <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description">
+          <h2 class="mb-4">
+            {{item.Title}}
+          </h2>
+          <p class="app-desc">
+            {{item.Description}}
+          </p>
+          <img :src="item.Image" alt="بانک صادرات ایران">
+        </a>
+
+      </div>
+
+
+      <div v-for="(item,index) in DigitalProductSocondTabTenEleven"
+        class="d-flex flex-row justify-space-between align-stretch" style="gap: 24px">
+        <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description" class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </nuxt-link>
+
+        <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md pa-0 d-flex flex-column justify-start align-stretch" style="gap: 24px">
+
+      <div v-for="(item,index) in DigitalProductSocondTabTwelveThirteen"
+        class="d-flex flex-row justify-space-between align-stretch" style="gap: 24px">
+        <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description" class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </nuxt-link>
+
+        <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+          class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </a>
+      </div>
+
+    </div>
+
+    <div v-for="(item,index) in DigitalProductSocondTabFourteen"
+      class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch" style="gap: 24px">
+      <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description" class="link-card col-md-8 pa-0">
+        <h3>{{item.Title}}</h3>
+        <p>{{item.SubTitle}}</p>
+      </nuxt-link>
+      <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+        class="link-card col-md-8 pa-0">
+        <h3>{{item.Title}}</h3>
+        <p>{{item.SubTitle}}</p>
+      </a>
+
+      <div v-for="(item,index) in DigitalProductSocondTabFifteen">
+        <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description" class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </nuxt-link>
+
+        <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+          class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </a>
+      </div>
+    </div>
+
+    <div v-for="(item,index) in DigitalProductSocondTabSeventeen"
+      class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch" style="gap: 24px">
+      <div v-for="(item,index) in DigitalProductSocondTabSixteen">
+        <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description" class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </nuxt-link>
+
+        <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+          class="link-card col-md pa-0">
+          <h3>{{item.Title}}</h3>
+          <p>{{item.SubTitle}}</p>
+        </a>
+      </div>
+      
+      <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description" class="link-card col-md-8 pa-0">
+        <h3>{{item.Title}}</h3>
+        <p>{{item.SubTitle}}</p>
+      </nuxt-link>
+      <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+        class="link-card col-md-8 pa-0">
+        <h3>{{item.Title}}</h3>
+        <p>{{item.SubTitle}}</p>
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="container systems-services d-flex flex-column justify-start align-stretch mt-10" style="gap: 24px"
+    v-if="toggle_exclusive === 2">
+
+    <div v-for="(item,index) in DigitalProductThirdOne">
+      <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description"
+        class="bon-card d-flex flex-md-row flex-column justify-start align-center">
+        <div
+          class="col-md-6 d-flex flex-column justify-md-center align-md-start justify-start align-center pa-md-14 pa-4">
+          <h2 class="mb-5">
+            {{item.Title}}
+          </h2>
+          <p>
+            {{item.Description}}
+          </p>
+        </div>
+        <!-- <img :src="require('~/assets/img/digital-products/'+item.Image)" alt="item.Image"> -->
+        <img :src="item.Image" alt="item.Image">
+      </nuxt-link>
+
+      <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description" target="_blank"
+        class="bon-card d-flex flex-md-row flex-column justify-start align-center">
+        <div
+          class="col-md-6 d-flex flex-column justify-md-center align-md-start justify-start align-center pa-md-14 pa-4">
+          <h2 class="mb-5">
+            {{item.Title}}
+          </h2>
+          <p>
+            {{item.Description}}
+          </p>
+        </div>
+        <!-- <img :src="require('~/assets/img/digital-products/'+item.Image)" alt="item.Image"> -->
+        <img :src="item.Image" alt="item.Image">
+      </a>
+
+    </div>
+
+
+    <div v-for="(item,index) in DigitalProductThirdTwo"
+      class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch" style="gap: 24px">
+      <div class="app-card col-md-4 d-flex flex-column justify-start align-stretch">
+        <nuxt-link v-if="item.NoeLink=='صفحه داخلی'" :to="item.Link.Description">
+          <h2 class="mb-4">
+            {{item.Title}}
+          </h2>
+          <p class="app-desc">
+            {{item.Description}}
+          </p>
+          <img :src="item.Image" alt="بانک صادرات ایران">
+        </nuxt-link>
+
+        <a v-if="item.NoeLink=='لینک خارجی'" :href="item.Link.Description">
+          <h2 class="mb-4">
+            {{item.Title}}
+          </h2>
+          <p class="app-desc">
+            {{item.Description}}
+          </p>
+          <img :src="item.Image" alt="بانک صادرات ایران">
+        </a>
+      </div>
+
+      <div class="col-md pa-0 d-flex flex-column justify-start align-stretch" style="gap: 24px">
+        <div class="d-flex flex-row justify-space-between align-stretch" style="gap: 24px">
+          <nuxt-link v-for="(item,index) in DigitalProductThirdThreeFour" :to="item.Link.Description"
+            v-if="item.NoeLink=='صفحه داخلی'" class="link-card col pa-0">
+            <h3>{{item.Title}}</h3>
+            <p>{{item.SubTitle}}</p>
+          </nuxt-link>
+
+          <a v-for="(item,index) in DigitalProductThirdThreeFour" :href="item.Link.Description" target="_blank"
+            v-if="item.NoeLink=='لینک خارجی'" class="link-card col pa-0">
+            <h3>{{item.Title}}</h3>
+            <p>{{item.SubTitle}}</p>
+          </a>
+
+        </div>
+
+        <nuxt-link v-for="(item,index) in DigitalProductThirdFive" :to="item.Link.Description"
+          v-if="item.NoeLink=='صفحه داخلی'"
+          class="d-flex flex-row justify-center align-center link-card link-card-safe pa-md-0 pa-4">
+          <span style="white-space: nowrap;">{{item.Title}}</span>
+          <img :src="item.Image" alt="item.Image">
+        </nuxt-link>
+
+        <a v-for="(item,index) in DigitalProductThirdFive" :href="item.Link.Description" target="_blank"
+          v-if="item.NoeLink=='لینک خارجی'"
+          class="d-flex flex-row justify-center align-center link-card link-card-safe pa-md-0 pa-4">
+          <span style="white-space: nowrap;">{{item.Title}}</span>
+          <img :src="item.Image" alt="item.Image">
+        </a>
+
+      </div>
+    </div>
+
+    <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch" style="gap: 24px">
+      <nuxt-link v-for="(item,index) in DigitalProductThirdSix" :to="item.Link.Description"
+        v-if="item.NoeLink=='صفحه داخلی'" class="link-card col-md pa-0">
+        <span>{{item.Title}}</span>
+      </nuxt-link>
+
+      <a v-for="(item,index) in DigitalProductThirdSix" :href="item.Link.Description" target="_blank"
+        v-if="item.NoeLink=='لینک خارجی'" class="link-card col-md pa-0">
+        <span>{{item.Title}}</span>
+      </a>
+
+      <nuxt-link v-for="(item,index) in DigitalProductThirdSeven" :to="item.Link.Description"
+        v-if="item.NoeLink=='صفحه داخلی'"
+        class="ganjine-sepehr d-flex flex-md-row flex-column justify-start align-center col-md-8">
+        <!-- <img :src="require('~/assets/img/digital-products/'+item.Image)" alt="بانک صادرات ایران"> -->
+        <img :src="item.Image" alt="بانک صادرات ایران">
+        <div class="back-linear"></div>
+        <div style="z-index: 2" class="col-md-9 d-flex flex-column justify-center align-start pa-md-13">
+          <h2 class="mb-5">
+            {{item.Title}}
+          </h2>
+          <p>
+            {{item.Description}}
+          </p>
+        </div>
+      </nuxt-link>
+
+      <a v-for="(item,index) in DigitalProductThirdSeven" :href="item.Link.Description" target="_blank"
+      v-if="item.NoeLink=='لینک خارجی'"
+        class="ganjine-sepehr d-flex flex-md-row flex-column justify-start align-center col-md-8">
+        <!-- <img :src="require('~/assets/img/digital-products/'+item.Image)" alt="بانک صادرات ایران"> -->
+        <img :src="item.Image" alt="بانک صادرات ایران">
+        <div class="back-linear"></div>
+        <div style="z-index: 2" class="col-md-9 d-flex flex-column justify-center align-start pa-md-13">
+          <h2 class="mb-5">
+            {{item.Title}}
+          </h2>
+          <p>
+            {{item.Description}}
+          </p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="container systems-services d-flex flex-column justify-start align-stretch mt-10" style="gap: 24px"
+    v-if="toggle_exclusive ===3 ">
+
+    <div class="d-flex flex-column justify-start align-stretch rules-page container">
+      <!-- <nuxt-link id="TextContent" v-for="(item,index) in DigitalProductFourthTab" :to="item.Link.Description"> -->
+      <div v-for="(item,index) in DigitalProductFourthTab"
+        class="d-flex flex-column justify-start align-stretch container my-12">
+        <!-- <h3 download target="_blank">
+              {{item.Title}}
+            </h3> -->
+        <a :href="item.Link.Description">
+          {{item.Title}}
+        </a>
+      </div>
+      <!-- </nuxt-link> -->
+    </div>
+  </div>
+</div>

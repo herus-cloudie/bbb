@@ -1,0 +1,321 @@
+<footer class="footer d-flex flex-column align-stretch justify-start">
+  <div class="container d-flex flex-md-row align-md-content-center justify-md-space-between my-13
+     flex-column justify-start align-stretch">
+    <div v-for="(item, index) in FooterBozorg" :key="index"
+      class="mb-10 mb-md-0 d-flex flex-row justify-start col-md-2">
+      <button style="width: 100%;" v-if="item.Title=='صدای سپهر'" @click="GetCall">
+        <!-- <a :href="item.TxtLink" class="mt-2 footer-link-title"> -->
+        <span class="material-icons-outlined ml-4">
+          {{item.Icon}}
+        </span>
+        <div class="d-flex flex-column justify-start">
+          <h3>
+            {{item.Title}}
+          </h3>
+          <!-- <a :href="item.TxtLink" class="mt-2 footer-link-title"> -->
+          {{item.Description}}
+          <span class="material-icons-outlined mb-n2">
+            chevron_left
+          </span>
+          <!-- </a> -->
+        </div>
+        <!-- </a> -->
+      </button>
+      <div v-if="item.Title!='صدای سپهر' && item.NoeLink=='صفحه داخلی'">
+        <div>
+          <NuxtLink class="footerdiv" :to="item.TxtLink">
+            <!-- <a :href="item.TxtLink" class="mt-2 footer-link-title"> -->
+            <span class="material-icons-outlined ml-4">
+              {{item.Icon}}
+            </span>
+            <div class="d-flex flex-column justify-start">
+              <h3>
+                {{item.Title}}
+              </h3>
+              <!-- <a :href="item.TxtLink" class="mt-2 footer-link-title"> -->
+              {{item.Description}}
+              <span class="material-icons-outlined mb-n2">
+                chevron_left
+              </span>
+              <!-- </a> -->
+            </div>
+            <!-- </a> -->
+          </NuxtLink>
+        </div>
+      </div>
+      <div v-if="item.Title!='صدای سپهر' && item.NoeLink=='لینک خارجی'">
+        <div>
+          <a :href="item.TxtLink">
+            <!-- <a :href="item.TxtLink" class="mt-2 footer-link-title"> -->
+            <span class="material-icons-outlined ml-4">
+              {{item.Icon}}
+            </span>
+            <div class="d-flex flex-column justify-start">
+              <h3>
+                {{item.Title}}
+              </h3>
+              <!-- <a :href="item.TxtLink" class="mt-2 footer-link-title"> -->
+              {{item.Description}}
+              <span class="material-icons-outlined mb-n2">
+                chevron_left
+              </span>
+              <!-- </a> -->
+            </div>
+            <!-- </a> -->
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <v-divider vertical class="d-none d-md-block"></v-divider>
+    <!-- <img src="~/assets/img/enamad.png" alt="e-namad"> -->
+    <div v-for="(item, index) in ImageFooterBozorg" :key="index"
+      class="mb-10 mb-md-0 d-flex flex-row justify-start col-md-2">
+      <!-- <a href="https://enamad.ir/">
+        <img :src="item.Icon">
+      </a> -->
+      <!-- <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=158443&amp;Code=rhZzHw0zR5zdD9FCiJdn"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=158443&amp;Code=rhZzHw0zR5zdD9FCiJdn" alt="" style="cursor:pointer" id="rhZzHw0zR5zdD9FCiJdn"></a> -->
+      <a referrerpolicy='origin' target='_blank'
+        href='https://trustseal.enamad.ir/?id=158443&Code=rhZzHw0zR5zdD9FCiJdn'><img referrerpolicy='origin'
+          src='https://trustseal.enamad.ir/logo.aspx?id=158443&Code=rhZzHw0zR5zdD9FCiJdn' alt='' style='cursor:pointer'
+          code='rhZzHw0zR5zdD9FCiJdn'></a>
+    </div>
+  </div>
+  <div class="sub-footer d-flex">
+    <div class="container d-flex flex-md-row align-md-content-center align-md-center justify-md-space-between
+ flex-column justify-start align-stretch">
+      <div class="d-flex flex-md-row align-md-content-center align-md-center justify-md-space-between
+ flex-wrap justify-space-between align-center  mt-8 mt-md-0">
+        <!-- <nuxt-link class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" to="/rules">قوانین و مقررات</nuxt-link>
+          <a class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" href="#">حفظ حریم خصوصی</a>
+          <nuxt-link class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" to="/about/auction">مناقصه و
+            مزایده</nuxt-link>
+            <a class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" href="#">نقشه سایت</a> -->
+        <!-- <nuxt-link v-for="(item, index) in FooterKuchak" :key="index"
+          class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" :to="item.TxtLink"
+          :id="item.Order">{{item.Title}}</nuxt-link> -->
+        <script>
+          function saderat() {
+            window.open('https://saderat.exchange', '_blank');
+          }
+          function embassy() {
+            window.open('https://embassy.bsi.ir', '_blank');
+          }
+          function sepehrib() {
+            window.open('https://www.sepehrib.ir', '_blank');
+          }
+
+          function saderatbourse() {
+            window.open(' https://saderatbourse.ir', '_blank');
+          }
+          function vbsi() {
+            window.open('https://www.vbsi.ir', '_blank');
+          }
+          function sarmadins() {
+            window.open('https://www.sarmadins.ir', '_blank');
+          }
+          function sepehrpay() {
+            window.open('https://www.sepehrpay.com', '_blank');
+          }
+          function Stsepehr() {
+            window.open('https://Stsepehr.ir', '_blank');
+          }
+          function kharazmico() {
+            window.open('http://kharazmico.com', '_blank');
+          }
+          function ice() {
+            window.open('https://www.ice.ir', '_blank');
+          }
+          function apsepehr() {
+            window.open('http://www.apsepehr.ir', '_blank');
+          }
+          function sequencing() {
+            window.open('https://sequencing.bsi.ir', '_blank');
+          }
+          function CreditCardBill() {
+            window.open('https://CreditCardBill.bsi.ir', '_blank');
+          }
+          function mefa() {
+            window.open('http://mefa.gov.ir', '_blank');
+          }
+          function cbi() {
+            window.open('http://www.cbi.ir', '_blank');
+          }
+
+        </script>
+
+        <!-- <nuxt-link class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" to="/monaghesat" id="monaghese">مناقصه و
+          مزایده
+          <div class="MenuContent2">
+            <ul class="dropdownInto_Cell">      
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a href="/Pages/PropertyAuction.aspx">مزایده املاک</a></li>
+                  <li class="dropdown-header3"><a href="/Pages/propertyauction1.aspx">مزایده اموال</a></li>
+                </ul>
+              </li>
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a href="/Pages/tender.aspx">مناقصه</a></li>
+                </ul>
+              </li>
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a href="/Pages/publicauction.aspx">مزایده عمومی</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nuxt-link> -->
+
+
+        <nuxt-link class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" to="item.TxtLink" id="ghavanin">وب سایت
+          های کاربردی
+          <!--  -->
+          <div class="MenuContent" id="Test1">
+            <ul class="dropdownInto_Cell">
+              <li class="col-sm-3">
+                <ul>
+                  <li class="dropdown-header3"><a onclick="saderat();">شرکت صرافی سپهر</a></li>
+                  <li class="dropdown-header3"><a onclick="embassy()">استعلام اصالت گواهی تمکن مالی</a>
+                  </li>
+                  <li class="dropdown-header3"><a onclick="sepehrib()">شرکت تأمین سرمایه سپهر</a></li>
+                  <li class="dropdown-header3"><a onclick="saderatbourse()">شرکت کارگزاری بانک صادرات</a></li>
+                </ul>
+              </li>
+              <li class="col-sm-3">
+                <ul>
+                  <li class="dropdown-header3"><a onclick="vbsi()">شرکت واسپاری سپهر صادرات</a></li>
+                  <li class="dropdown-header3"><a onclick="sarmadins()">شرکت بیمه سرمد</a></li>
+                  <li class="dropdown-header3"><a onclick="sepehrpay()">شرکت پرداخت الکترونیک سپهر</a>
+                  </li>
+                  <li class="dropdown-header3"><a onclick="Stsepehr()">شرکت فناوری و راه حل های هوشمند
+                      سپهر</a></li>
+                </ul>
+              </li>
+              <li class="col-sm-3">
+                <ul>
+                  <li class="dropdown-header3"><a onclick="kharazmico()">شرکت توسعه فناوری اطلاعات
+                      خوارزمی</a></li>
+                  <li class="dropdown-header3"><a onclick="ice()">بازار متشکل معاملات ارزی ایران</a>
+                  </li>
+                  <li class="dropdown-header3"><a onclick="apsepehr()">صندوق سرمایه گذاری اندوخته پایدار
+                      سپهر</a></li>
+                  <li class="dropdown-header3"><a onclick="sequencing()">سامانه نوبت دهی خزانه زرین سپهر</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="col-sm-3">
+                <ul>
+                  <li class="dropdown-header3"><a onclick="CreditCardBill()">صورتحساب کارت اعتباری مرابحه
+                      عمومی</a></li>
+                  <li class="dropdown-header3"><a onclick="mefa()">وزارت امور اقتصادی و دارایی</a></li>
+                  <li class="dropdown-header3"><a onclick="cbi()">بانک مرکزی</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--  -->
+        </nuxt-link>
+        <!-- <nuxt-link class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" to="item.TxtLink" id="harimkhosusi">حفظ
+          حریم خصوصی
+          <div class="MenuContent1">
+            <ul class="dropdownInto_Cell">
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a target="_blank" href="https://saham.bsi.ir/">سامانه اطلاع رسانی
+                      سهامداران</a></li>
+                  <li class="dropdown-header3"><a target="_blank" href="http://sarmadins.ir/">بیمه سرمد</a></li>
+                  <li class="dropdown-header3"><a target="_blank" href="http://sepehrib.ir/">تامین سرمایه سپهر</a></li>
+                  <li class="dropdown-header3"><a target="_blank" href="http://www.sepehrsaderat.com/">شرکت گروه مالی
+                      سپهر صادرات</a></li>
+                </ul>
+              </li>
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a target="_blank" href="http://www.vbsi.ir/">واسپاری سپهر صادرات</a>
+                  </li>
+                  <li class="dropdown-header3"><a target="_blank" href="/Pages/Plans/introduction.aspx">بررسی طرحها</a>
+                  </li>
+                  <li class="dropdown-header3"><a target="_blank" href="https://saderatbourse.ir/">شرکت کارگزاری بانک
+                      صادرات</a></li>
+
+                </ul>
+              </li>
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a target="_blank" href="http://www.cyberpolice.ir/">پلیس فتا</a></li>
+                  <li class="dropdown-header3"><a target="_blank" href="https://hrm.bsi.ir/">همکاران</a></li>
+                  <li class="dropdown-header3"><a target="_blank" href="https://saderat.exchange/">صرافی سپهر صادرات</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a target="_blank" href="https://www.mob.gov.ir">درگاه ملی خدمات دولت
+                      همراه </a></li>
+                  <li class="dropdown-header3"><a target="_blank" href="http://foia.iran.gov.ir">سامانه انتشار و دسترسی
+                      آزاد به اطلاعات </a></li>
+                  <li class="dropdown-header3"><a target="_blank" href="https://iran.gov.ir">درگاه ملی خدمات دولت هوشمند
+                    </a></li>
+
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+        </nuxt-link> -->
+        <!-- <nuxt-link class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" to="item.TxtLink" id="monaghese">مناقصه و مزایده
+          <div class="MenuContent2">
+            <ul class="dropdownInto_Cell">
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a href="/Pages/PropertyAuction.aspx">مزایده املاک</a></li>
+                  <li class="dropdown-header3"><a href="/Pages/propertyauction1.aspx">مزایده اموال</a></li>
+                </ul>
+              </li>
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a href="/Pages/tender.aspx">مناقصه</a></li>
+                </ul>
+              </li>
+              <li class="col-sm-4">
+                <ul>
+                  <li class="dropdown-header3"><a href="/Pages/publicauction.aspx">مزایده عمومی</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nuxt-link> -->
+        <!-- <nuxt-link class="ml-md-7 px-2 px-md-0 col-6 col-md-auto text-center" to="item.TxtLink" id="naghshe">نقشه
+          سایت</nuxt-link> -->
+      </div>
+      <div class="footer_SocialIcon">
+        <span class="mt-12 my-md-0 mb-9 text-center">
+          تمامی حقوق برای بانک صادرات ایران محفوظ است.
+        </span>
+        <!-- <a href="https://gap.im/bsi_1331" target="_blank"><img src="https://www.bsi.ir/SamixTheme/BSI_2016/img/gap.jpg"
+            alt="GAP" style="height:26px !important;width:26px !important;"></a> -->
+        <a href="https://eitaa.com/bsi_1331" target="_blank"><img
+            src="https://www.bsi.ir/SamixTheme/BSI_2016/img/eitaa.jpg" alt="EITAA"
+            style="height:26px !important;width:26px !important;"></a>
+        <!-- <a href="https://vitrin.splus.ir/bsi_1331" target="_blank"><img
+            src="https://www.bsi.ir/SamixTheme/BSI_2016/img/spluslogo.png" style="height:26px;width:26px;"
+            alt="splus"></a> -->
+        <a href="https://rubika.ir/bsi_1331" target="_blank"><img
+            src="https://www.bsi.ir/SamixTheme/BSI_2016/img/rubikalogo.png" style="height:26px;width:26px;"
+            alt="rubika"></a>
+        <a href="https://ble.ir/bsi_1331" target="_blank"><img style="width:26px;"
+            src="https://www.bsi.ir/SamixTheme/BSI_2016/img/bale_logo.png" alt="bale"></a>
+        <a href="https://aparat.com/bsi_1331" target="_blank"><img
+            src="https://www.bsi.ir/SamixTheme/BSI_2016/img/socialIcon_03.jpg" alt="aparat"></a>
+
+        <!--<a href="https://instagram.com/www_bsi_1331" target="_blank"><img src="/SamixTheme/BSI_2016/img/instaIconBoBsi.jpg" alt="instaIcon" /></a> -->
+      </div>
+      <!-- <span class="mt-12 my-md-0 mb-9 text-center">
+        تمامی حقوق برای بانک صادرات ایران محفوظ است.
+      </span> -->
+    </div>
+  </div>
+</footer>

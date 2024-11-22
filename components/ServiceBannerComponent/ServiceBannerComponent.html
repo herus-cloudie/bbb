@@ -1,0 +1,10 @@
+<!-- <nuxt-link to="/#" class="d-flex flex-row justify-center">
+  <img src="~/assets/img/landing/landing-service.png"
+       class="img-fluid" alt="bsi-service">
+</nuxt-link> -->
+<tbody>
+  <nuxt-link v-for="(item, index) in BannerFirstPage" to="#" class="d-flex flex-row justify-center">
+    <!-- <img :src="require('~/assets/img/landing/' + item.Icon)" class="img-fluid" alt="bsi-service"> -->
+    <img :src="item.Icon" class="img-fluid" alt="item.Icon">
+  </nuxt-link>
+</tbody>

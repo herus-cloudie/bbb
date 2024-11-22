@@ -1,0 +1,44 @@
+<div class="brand-page d-flex flex-column flex-md-row justify-space-between align-start my-10">
+  <AccordionLinkListComponent class="col-md-3 px-md-15" :links-list="links" />
+  <div class="col-md pl-md-15 d-flex flex-column justify-start align-center">
+    <h2 class="text-primary">
+      لوگوهای بانک صادرات ایران
+    </h2>
+    <GoldDivider class="mt-5 mb-10 align-self-center d-flex" />
+
+    <div class="d-flex flex-row flex-wrap justify-space-between align-stretch mb-10" style="gap: 20px;width: 100%">
+      <div v-for="(item,index) in LogoSaderat" :key="index"
+        class="download-box upper-box d-flex flex-column col-md justify-start align-stretch">
+        <div class="h-100 d-flex flex-column align-center justify-center">
+          <h3 class="text-primary">{{item.Title}}</h3>
+          <!-- <span style="color: #989898" dir="ltr" class="mt-3">.PNG</span> -->
+        </div>
+        <!-- <a class="py-2 text-center" style="border-radius: 8px;background: #3462CD;color: white;"
+          :href="require('~/assets/img/'+item.LinkFilename)" download> -->
+          <a class="py-2 text-center" style="border-radius: 8px;background: #3462CD;color: white;"
+          :href="item.TxtLink" download>
+
+          <v-icon color="white">mdi-download</v-icon>
+          <span>دانلود</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- <h2 class="text-primary mt-10">
+      مستندات هویت بصری
+    </h2>
+    <GoldDivider class="mt-5 mb-10" />
+    <div v-for="(item,index) in Mostanadat" :key="index"
+      class="download-box d-flex flex-column justify-start align-stretch">
+      <div class="my-auto d-flex flex-column align-center justify-center">
+        <h3 class="text-primary">{{item.Title}} </h3>
+        <span style="color: #989898" dir="ltr" class="mt-3">.PDF</span>
+      </div>
+      <a class="py-2 text-center mt-auto" style="border-radius: 8px;background: #3462CD;color: white;"
+        :href="require('~/assets/img/'+item.LinkFilename)" download>
+      <v-icon color="white">mdi-download</v-icon>
+      <span>دانلود</span>
+      </a>
+    </div> -->
+  </div>
+</div>

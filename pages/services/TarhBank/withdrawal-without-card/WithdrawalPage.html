@@ -1,0 +1,85 @@
+<div class="d-flex flex-column mb-12 justify-start align-stretch withdrawal-page">
+
+  <!-- <div class="d-flex flex-md-row flex-column justify-end align-end main-banner">
+    <div v-for="(item,index) in BardashtVajhSectionOne" :key="index" class="d-flex flex-column justify-start align-start col-md-6 col-auto main-banner-text"> -->
+      <div class="divImageOne">
+        <img class="ImageOne" v-for="(item,index) in BardashtVajhSectionOne" :key="index" :src="item.Image" alt="بانک صادرات ایران">
+      </div>
+      <!-- <h2>{{item.Title}}</h2>
+      <p class="my-5">{{item.Description}}</p> -->
+    <!-- </div>
+  </div> -->
+
+  <div class="d-flex flex-row justify-start align-center" style="gap: 40px;border-bottom: 1px solid #EEE">
+
+  </div>
+
+  <section class="my-md-16 d-flex flex-column flex-md-row justify-md-center justify-start
+    align-stretch align-md-center container more-info-section">
+    <div v-for="(item,index) in BardashtVajhSectionTwoImage" :key="index" class="d-flex flex-column justify-start align-stretch col-md-3">
+      <!-- <img :src="require('~/assets/img/services/misagh/'+item.Image)" alt=""> -->
+      <img :src="item.Image" alt="">           
+    </div>
+    <div class="d-flex flex-column justify-center align-stretch col-md-6" style="gap: 25px">
+      <div v-for="(item,index) in BardashtVajhSectionTwo" :key="index" class="desc-box">
+        <b>{{item.Title}}</b>
+        <!-- <ul>
+          <li>
+            {{item.Description}}
+          </li>
+        </ul> -->
+        <p v-html="item.Description.split('@@').join('<br>')"></p>
+      </div>
+    </div>
+  </section>
+  <hr width="100%" />
+  <section class="my-md-16 d-flex flex-column flex-md-row justify-md-center justify-start
+  align-stretch align-md-center container more-info-section">
+  <div v-for="(item,index) in BardashtVajhSectionThreeImage" :key="index" class="d-flex flex-column justify-start align-stretch col-md-3">
+    <!-- <img :src="require('~/assets/img/services/misagh/'+item.Image)" alt=""> -->
+    <img :src="item.Image" alt="">
+  </div>
+  <div class="d-flex flex-column justify-center align-stretch col-md-6" style="gap: 25px">
+    <div v-for="(item,index) in BardashtVajhSectionThree" :key="index" class="desc-box">
+      <b>{{item.Title}}</b>
+      <!-- <ul>
+        <li>
+          {{item.Description}}
+        </li>
+      </ul> -->
+      <p v-html="item.Description.split('@@').join('<br>')"></p>
+    </div>
+  </div>
+  <div v-for="(item,index) in BardashtVajhSectionThreeImageTwo" :key="index" class="d-flex flex-column align-stretch col-md-3">
+    <!-- <img :src="require('~/assets/img/services/misagh/'+item.Image)" alt=""> -->
+    <img :src="item.Image" alt="">
+  </div>
+</section>
+
+<span style="font-size: 35px; width: 200px; margin: auto; background-color: #0855cb; text-align: center; color: white; border-radius: 40px;">کلیپ</span>
+<div class="d-flex flex-row justify-center align-stretch py-13 app-download-box">
+  <div v-for="(item, index) of BardashtVajhTizer" :key="index"
+    class="d-flex flex-column justify-start align-md-center align-stretch mx-5 mx-md-0 download-source">
+    <a :href="item.TizerLink" target="_blank" download>
+      <!-- <p>دانلود فیلم</p> -->
+      <img src="~/assets/img/video.png" style="margin-left: 50px;">
+    </a>
+  </div>
+</div>
+
+  <section v-for="(item,index) in BardashtVajhSectionBlue" v-if="item.Title" :key="index" ref="calculateBox" class="calculate-box">
+    <div class="d-flex flex-column justify-start align-stretch container my-15">
+      <div  class="desc-box">               
+        <b>{{item.Title}}</b>
+        <!-- <ul>
+          <li>
+            {{item.Description}}
+          </li>
+        </ul> -->
+        <p v-html="item.Description.split('@@').join('<br>')"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- <FaqComponent ref="faqComponent" class="faq"/> -->
+</div>

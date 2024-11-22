@@ -1,0 +1,40 @@
+.footer {
+  background: #040738;
+
+  * {
+    color: white;
+  }
+
+  .container {
+    @media screen and (min-width: 960px) {
+      max-height: 100px;
+    }
+    padding: 0 !important;
+  }
+
+  img {
+    max-width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    align-self: center;
+  }
+
+  .footer-link-title {
+    font-size: 14px;
+
+    .material-icons-outlined {
+      display: inline-block;
+      overflow: hidden;
+    }
+  }
+
+  .sub-footer {
+    @media screen and (min-width: 960px) {
+      height: 80px;
+    }
+    @media screen and (max-width: 960px) {
+      font-size: 14px;
+    }
+    background: #010320;
+  }
+}

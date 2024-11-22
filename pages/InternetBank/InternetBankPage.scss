@@ -1,0 +1,110 @@
+.sepehr-card-page {
+  .main-banner {
+    color: white;
+    height: 680px;
+    // background-image: url("../../assets/img/digital-products/InternetBank.jpg");
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: top !important;
+
+    h1 {
+      text-align: right;
+      font-size: 50px;            
+      font-style: normal;          
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    p {
+      text-align: right;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+
+  .feature-card {
+    border-radius: 10px;
+    border: 1px solid #EEE;
+    background: #FFF;
+    width: 275px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 24px;
+    text-align: center;  //chnaged  add
+
+    @media screen and (max-width: 959px) {
+      margin-bottom: 2.5rem;
+      width: auto;
+      height: auto;
+    }
+
+    img {
+      margin-top: -3rem;
+      border-radius: 10px;
+      border: 1px solid #EEE;
+      width: 80px;
+      height: 80px;
+      background: #0D47A1;
+      padding: 10px;
+    }
+
+    h3 {
+      color: #212121;
+      text-align: right;
+      font-size: 24px;
+      font-style: normal;                                         
+      font-weight: 500;
+      line-height: normal;
+      text-align: center;  //changed  add
+    }
+
+    span {
+      color: #616161;
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .receive-condition {
+    border-radius: 10px;
+    border: 1px solid #FFC444;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @media screen and (max-width: 959px) {
+      padding: 15px 25px;
+    }
+
+    p {
+      color: #616161;
+      text-align: right;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: 20px;
+    }
+
+    span {
+      color: #939393;
+      text-align: justify;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 28px;
+    }
+
+  }
+}

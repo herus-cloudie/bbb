@@ -1,0 +1,27 @@
+<div
+  class="morabehe-page d-flex flex-md-row flex-column justify-md-space-between justify-start align-start my-md-10 my-5">
+  <AccordionLinkListComponent class="col-md-3 px-md-15" :links-list="links" />
+  <div v-for="(item, index) in ZemanatNameTitle" :key="index"
+    class="col-md pl-md-15 d-flex flex-column justify-start align-md-stretch align-center">
+    <h2 class="text-primary">
+      {{item.Title}}
+    </h2>
+    <GoldDivider class="mt-5 mb-10" />
+    <!-- <p class="mb-1 text-justify">
+      {{item.Description}}
+    </p> -->
+    <p class="mb-1 text-justify" v-html="item.Description.split('@@').join('<br>')"></p>
+
+    <div v-for="(item, index) in ZemanatNameItems" :key="index"
+      class="d-flex flex-column justify-start align-stretch descriptions">
+      <div class="link-box-title">
+        {{item.Title}}
+      </div>
+      <!-- <p>
+        ​{{item.Description}}
+      </p> -->
+      <p v-html="item.Description.split('@@').join('<br>')"></p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,209 @@
+<div class="d-flex flex-column mb-12 justify-start align-stretch teravat-page">
+  <!-- <div class="d-flex flex-md-row flex-column justify-end align-end main-banner">
+    <div v-for="(item,index) in TarheSanaSectionOne" :key="index"
+      class="d-flex flex-column justify-start align-start col-md-6 col-auto main-banner-text"> -->
+  <div class="divImageOne">
+    <img class="ImageOne" v-for="(item,index) in TarheSanaSectionOne" :key="index" :src="item.Image"
+      alt="بانک صادرات ایران">
+  </div>
+  <!-- <h2>{{item.Title}}</h2> -->
+  <!-- <p class="my-5">{{item.Description}}</p> -->
+  <!-- </div>
+  </div> -->
+
+  <div class="d-flex flex-row justify-start align-center" style="gap: 40px;border-bottom: 1px solid #EEE">
+
+  </div>
+
+  <section class="my-md-16 d-flex flex-column flex-md-row justify-md-center justify-start
+    align-stretch align-md-center container more-info-section">
+    <div v-for="(item,index) in TarheSanaSectionTwoImage" :key="index"
+      class="d-flex flex-column justify-start align-stretch col-md-3">
+      <!-- <img :src="require('~/assets/img/services/misagh/'+item.Image)" alt=""> -->
+      <img :src="item.Image" alt="">
+    </div>
+    <div class="d-flex flex-column justify-center align-stretch col-md-6" style="gap: 25px">
+      <div v-for="(item,index) in TarheSanaSectionTwo" :key="index" class="desc-box">
+        <b>{{item.Title}}</b>
+        <!-- <ul>
+          <li>
+            {{item.Description}}
+          </li>
+        </ul> -->
+        <p v-html="item.Description.split('@@').join('<br>')"></p>
+      </div>
+    </div>
+  </section>
+  <hr width="100%" />
+
+  <!-- <section class="my-md-16 d-flex flex-column flex-md-row justify-md-center justify-start
+  align-stretch align-md-center container more-info-section">
+    <div v-for="(item,index) in TarheSanaSectionThreeImage" v-if="item.Title" :key="index"
+      class="d-flex flex-column justify-start align-stretch col-md-3">
+      <img :src="item.Image" alt="">
+    </div>
+    <div v-for="(item,index) in TarheSanaSectionThree" v-if="item.Title" :key="index"
+      class="d-flex flex-column justify-center align-stretch col-md-6" style="gap: 25px">
+      <div class="desc-box">
+        <b>{{item.Title}}</b>
+        <ul>
+          <li>
+            {{item.Description}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div v-for="(item,index) in TarheSanaSectionThreeImageTwo" v-if="item.Title" :key="index"
+      class="d-flex flex-column align-stretch col-md-3">
+      <img :src="item.Image" alt="">
+    </div>
+  </section> -->
+  <section class="my-md-16 d-flex flex-column flex-md-row justify-md-center justify-start
+  align-stretch align-md-center container more-info-section">
+    <div v-for="(item,index) in TarheSanaSectionThreeImage" :key="index"
+      class="d-flex flex-column justify-start align-stretch col-md-3">
+      <!-- <img :src="require('~/assets/img/services/misagh/'+item.Image)" alt=""> -->
+      <img :src="item.Image" alt="">
+    </div>
+    <div class="d-flex flex-column justify-center align-stretch col-md-6" style="gap: 25px">
+      <div v-for="(item,index) in TarheSanaSectionThree" :key="index" class="desc-box">
+        <b>{{item.Title}}</b>
+        <!-- <ul>
+          <li>
+            {{item.Description}}
+          </li>
+        </ul> -->
+        <p v-html="item.Description.split('@@').join('<br>')"></p>
+      </div>
+    </div>
+    <div v-for="(item,index) in TarheSanaSectionThreeImageTwo" :key="index"
+      class="d-flex flex-column align-stretch col-md-3">
+      <!-- <img :src="require('~/assets/img/services/misagh/'+item.Image)" alt=""> -->
+      <img :src="item.Image" alt="">
+    </div>
+  </section>
+
+  <span
+    style="font-size: 35px; width: 200px; margin: auto; background-color: #0855cb; text-align: center; color: white; border-radius: 40px;">کلیپ</span>
+  <div class="d-flex flex-row justify-center align-stretch py-13 app-download-box">
+    <div v-for="(item, index) of TarheSanaTizer" :key="index"
+      class="d-flex flex-column justify-start align-md-center align-stretch mx-5 mx-md-0 download-source">
+      <a :href="item.TizerLink" target="_blank" download>
+        <!-- <p>دانلود فیلم</p> -->
+        <img src="~/assets/img/video.png" style="margin-left: 50px;">
+      </a>
+    </div>
+  </div>
+
+  <section ref="calculateBox" class="calculate-box">
+    <div class="d-flex flex-column justify-start align-stretch container my-15">
+      <div v-for="(item,index) in TarheSanaSectionBlue" :key="index" class="desc-box">
+        <b>{{item.Title}}</b>
+        <!-- <ul>
+          <li>
+            {{item.Description}}
+          </li>
+        </ul> -->
+        <p v-html="item.Description.split('@@').join('<br>')"></p>
+      </div>
+      <!-- <h2 class="text-center mb-2">نحوه محاسبه امتیاز در </h2>
+      <p class="text-center">
+        یکی از مزیت های این طرح نسبت به سپرده های سرمایه گذاری ماه شمار این است که نحوه محاسبه میانگین موجودی و کسب
+        امتیاز دریافت تسهیلات در این طرح به صورت روزشمار بوده و مشتری امکان واریز و برداشت و انجام امور روزانه مالی
+        خود را خواهد داشت.
+      </p>
+
+      <div class="d-flex flex-md-row flex-column justify-start justify-md-space-between align-center my-5" style="gap: 60px">
+        <div class="input-div">
+            <span class="text">
+              مبلغ سرمایه گذاری:
+            </span>
+          <v-text-field
+            v-model="depositValue"
+            outlined hide-details="auto"
+            class="col pa-0" dir="ltr"
+          ></v-text-field>
+        </div>
+
+        <div class="input-div">
+          <span>دوره سرمایه گذاری:</span>
+
+          <v-btn-toggle
+            v-model="depositPeriod"
+            color="#FFD130"
+          >
+            <v-btn value="3">
+              ۳ماهه
+            </v-btn>
+
+            <v-btn value="4">
+              ۴ماهه
+            </v-btn>
+
+            <v-btn value="6">
+              ۶ماهه
+            </v-btn>
+
+            <v-btn value="8">
+              ۸ماهه
+            </v-btn>
+
+            <v-btn value="12">
+              ۱۲ماهه
+            </v-btn>
+          </v-btn-toggle>
+        </div>
+
+
+        <v-btn
+          color="#FFC444"
+          class="py-2 px-10">
+          <v-icon class="me-2">
+            mdi-magnify
+          </v-icon>
+          <span>
+                جستجو
+              </span>
+        </v-btn>
+      </div>
+
+      <v-simple-table height="400px" class="mt-13">
+        <template v-slot:default>
+          <thead>
+          <tr>
+            <th>
+              ردیف
+            </th>
+            <th>
+              دوره سرمایه گذاری(ماه)
+            </th>
+            <th>
+              مدت بازپرداخت(ماه)
+            </th>
+            <th>
+              ضرایب
+            </th>
+            <th>
+              نرخ سود
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+            v-for="(item, index) in tableData"
+            :key="index"
+          >
+            <td>{{ index + 1 }}</td>
+            <td style="color: #FFC444">{{ item.period }}</td>
+            <td>{{ item.revenue }}</td>
+            <td>{{ item.multiply }}</td>
+            <td>{{ item.benefit }}</td>
+          </tr>
+          </tbody>
+        </template>
+      </v-simple-table> -->
+    </div>
+  </section>
+
+  <!-- <FaqComponent ref="faqComponent" class="faq"/> -->
+</div>

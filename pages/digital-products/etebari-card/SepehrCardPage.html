@@ -1,0 +1,85 @@
+<div class="d-flex flex-column justify-start align-stretch sepehr-card-page">
+
+  <div style="text-align: center;">
+    <img src="~/assets/img/digital-products/hamrah-bank-banner.png">
+  </div>
+
+  <div class="d-flex flex-row justify-start align-center main-banner">
+    <div v-for="(item,index) of EtebariKartSectionOne" :key="index"
+      class="d-flex flex-column justify-start align-start pr-16">
+      <h1 class="mb-7">{{item.Title}}</h1>
+      <p v-html="item.Description.split('@@').join('<br>')"></p>
+    </div>
+  </div>
+
+  <!-- <WhiteScrollDownIcon class="align-self-center mb-5" style="margin-top: -85px" /> -->
+
+  <!-- <div style="background: #F3F6FA">
+    <div
+      class="container d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch py-md-15 py-6">
+      <AccordionLinkListComponent class="col-md-3" :links-list="links" />
+      <div class="col-md-8 d-flex flex-column justify-start align-md-stretch align-center">
+        <h2 v-for="(item,index) of EtebariKartSectionTwoTitle" :key="index" class="text-primary" style="font-size: 40px">
+          {{item.Title}}
+        </h2>
+        <GoldDivider class="mt-7 mb-10" />
+        <p v-for="(item,index) of EtebariKartSectionTwoTitle" :key="index">
+          {{item.Description}}
+        </p>
+        <div class="d-flex flex-column justify-start align-stretch mt-16">
+          <div
+            class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch mt-md-10 mb-md-16">
+            <div v-for="(item,index) of EtebariKartSectionThird" :key="index" class="feature-card"> -->
+              <!-- <img :src="require('~/assets/img/digital-products/' +item.Image)" alt="item.Title"> -->
+              <!-- <img :src="item.Image" alt="item.Title">
+              <h3>{{item.Title}}</h3>
+              <span>{{item.Description}}</span>
+            </div>
+          </div>
+          <div class="d-flex flex-md-row flex-column justify-md-space-between justify-start align-stretch">
+            <div v-for="(item,index) of EtebariKartSectionThirdSecondRow" :key="index" class="feature-card"> -->
+              <!-- <img :src="require('~/assets/img/digital-products/'+item.Image)" alt="item.Title"> -->
+              <!-- <img :src="item.Image" alt="item.Title">
+              <h3>{{item.Title}}</h3>
+              <span>{{item.Description}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container d-flex flex-row justify-space-between align-stretch py-15">
+    <div class="col-md-3 d-none d-md-block"></div>
+    <div class="col-md-8 d-flex flex-column justify-start align-md-stretch align-center">
+      <h2 v-for="(item,index) of EtebariKartSectionFourthTitle" :key="index" class="text-primary"
+        style="font-size: 40px">
+        {{item.Title}}
+      </h2>
+      <GoldDivider class="mt-7 mb-10" />
+      <div class="d-flex flex-column justify-start align-stretch" style="gap: 20px">
+        <div v-for="(item,index) of EtebariKartSectionFourth" :key="index" class="receive-condition">
+          <p>{{item.Title}}</p>
+          <span v-html="item.Description.split('@@').join('<br>')"></span>
+        </div>
+        <!-- <div class="receive-condition">
+          <p>کارمزد و هزینه ها:</p>
+          <span>مبلغ 30.000ریال هزينه صدور کارت مي باشد .​</span>
+        </div>
+        <div class="receive-condition">
+          <p>فرآیند ارائه سرویس:</p>
+          <span>مراجعه مشتري به يكي از شعب بانك صادرات و درخواست سپهركارت و ارائه مدارك و تكميل فرم افتتاح حساب و دريافت سپهر كارت در کلیه شعب به صورت آني و به صورت متمركز(غير آني) در شعب تهران طي 48 ساعت و طي 72 ساعت در مراكز استان ها ​</span>
+        </div>
+        <div class="receive-condition">
+          <p>روش های صدور سپهر کارت:</p>
+          <span>
+              برقراری امکان صدور سپهرکارت در دو حالت متمرکز و آنی با رمز ثابت 1111 (چهار عدد یک)
+              <br>
+              برقراری امکان صدور سپهرکارت در دو حالت متمرکز و آنی با شماره کارت قبلی
+            </span>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+</div>

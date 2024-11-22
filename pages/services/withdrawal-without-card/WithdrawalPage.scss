@@ -1,0 +1,200 @@
+.withdrawal-page {
+
+  .main-banner {
+    @media screen and (max-width: 960px) {
+      min-height: calc(100vh - 56px);
+    }
+
+    min-height: calc(100vh - 72px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../../assets/img/services/misagh/services-background.png");
+    color: white;
+
+    .main-banner-text {
+      margin-bottom: calc(72px + 32px + 48px);
+
+      h2 {
+        font-size: 42px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+  }
+
+  .more-info-section {
+    gap: 100px;
+
+    h2 {
+      font-size: 42px;
+    }
+
+    a {
+      border-radius: 8px;
+      background: #0068FF;
+      padding: 10px 30px;
+      color: white;
+      text-align: center;
+      @media screen and (min-width: 960px) {
+        align-self: flex-start;
+      }
+    }
+
+    .desc-box {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 16px;
+
+      b {
+        color: #212121;
+        text-align: right;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 28px;
+        margin-bottom: 16px;
+      }
+
+      ul {
+        padding-right: 20px;
+
+        li {
+          color: #212121;
+          text-align: right;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px; /* 200% */
+        }
+      }
+    }
+
+  }
+
+  .calculate-box {
+    background: linear-gradient(45deg, #173165 0%, #0068FF 100%);
+    color: white;
+
+    ::v-deep {
+
+      .v-btn-toggle {
+        border-radius: 10px;
+
+        .v-btn {
+          padding: 0 22px;
+          @media screen and (max-width: 959px) {
+            padding: 0 8px;
+            font-size: 12px;
+          }
+        }
+
+        .v-btn__content {
+          color: #212121 !important;
+        }
+
+        .v-btn--active {
+          &::before {
+            display: none !important;
+          }
+
+          background: #FFD130 !important;
+        }
+      }
+
+      .v-data-table__wrapper {
+        padding: 20px 40px !important;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+          display: none; /* Safari and Chrome */
+        }
+      }
+
+      .v-data-table {
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 5px 5px 22px 10px rgba(0, 0, 0, 0.25);
+
+        th {
+          color: white;
+          text-align: center !important;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px; /* 133.333% */
+          border-bottom-color: #FFF !important;
+          border-bottom-width: 2px !important;
+          padding: 24px 8px;
+          @media screen and (max-width: 959px) {
+            font-size: 14px;
+            padding: 1rem;
+          }
+
+        }
+
+        td {
+          color: white;
+          text-align: center;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px;
+          height: 70px !important;
+          border-bottom-color: #FFF !important;
+          border-bottom-width: 1px !important;
+          @media screen and (max-width: 959px) {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+        background: transparent !important;
+      }
+    }
+
+    .input-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+
+      ::v-deep {
+        .v-input__control {
+          border-radius: 12px !important;
+          border: none !important;
+          background: white !important;
+        }
+      }
+
+      .text {
+        color: #FFF;
+        text-align: right;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        white-space: nowrap;
+        @media screen and (max-width: 959px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .faq {
+    @media screen and (min-width: 960px) {
+      margin: 40px 240px !important;
+    }
+  }
+}

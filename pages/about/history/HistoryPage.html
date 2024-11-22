@@ -1,0 +1,20 @@
+<v-row no-gutters justify="start" align="stretch" class="px-md-4 my-md-16 my-4">
+  <AccordionLinkListComponent :linksList="links" class="col-md-2 pa-md-0 me-md-4 mx-4" />
+  <v-carousel class="col-md mt-10 mt-md-0" hide-delimiters>
+    <v-carousel-item v-for="(slide, index) in History" :key="index">
+      <div class="d-flex fill-height justify-space-between align-center flex-column-reverse flex-md-row px-5">
+        <div class="col-md-6 d-flex flex-column justify-start align-start">
+          <h2>
+            {{slide.Title }}
+          </h2>
+          <p>
+              {{slide.Description}}
+          </p>
+        </div>
+        <!-- <img src="~/assets/img/about/history.png"  alt="saderat-bank-history" class="col-md-5"> -->
+         <img :src="slide.Image"  alt="saderat-bank-history" class="col-md-5" style="max-width: 35%;">   <!-- add style max-wdth:41,666% to 35%  -->
+      </div>
+    </v-carousel-item>
+  </v-carousel>
+
+</v-row>

@@ -1,0 +1,35 @@
+ul {
+
+  * {
+  transition: all 0.3s ease-in;
+}
+
+  .list-item {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #212121;
+    margin: 28px 0;
+  }
+
+  .active-link {
+    color: #0D47A1;
+    &::before {
+      width: 7px;
+      height: 7px;
+      background: #0D47A1;
+      border-radius: 50%;
+      margin-left: 10px;
+      content: "";
+    }
+  }
+}
+
+.list-divider {
+  border-left: 1px solid #EEEEEE;
+  height: 100%;
+}

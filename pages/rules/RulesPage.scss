@@ -1,0 +1,64 @@
+.rules-page {
+
+  a {
+    border-bottom: 1px #d6d6d6 solid;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #616161;
+    text-decoration: underline #616161 !important;
+
+    &:before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: #616161;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  ::v-deep {
+    .v-btn-toggle {
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);
+      align-self: center;
+      padding: 8px 20px;
+      width: 100%;
+      max-width: 100%;
+
+      @media screen and (max-width: 959px) {
+        display: flex;
+        flex-direction: column;
+        padding: 4px 10px;
+      }
+
+      .v-btn {
+        border-radius: 10px;
+        background: white;
+        border: none;
+        padding: 16px 0;
+        color: #616161;
+        font-size: 14px;
+
+        @media screen and (min-width: 960px) {
+          height: unset !important;
+          width: 33%;
+          font-size: 22px;
+        }
+      }
+
+      .v-item--active {
+        background: #0D47A1;
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.10);
+        color: white;
+
+        &:before {
+          opacity: 0 !important;
+        }
+      }
+
+    }
+  }
+}

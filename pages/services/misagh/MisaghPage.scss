@@ -1,0 +1,51 @@
+.misagh-page {
+
+  .main-banner {
+    @media screen and (max-width: 960px) {
+      min-height: calc(100vh - 56px);
+    }
+
+    min-height: calc(100vh - 72px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../../assets/img/services/misagh/misagh-background.png");
+    color: white;
+
+    .main-banner-text {
+      margin-bottom: calc(72px + 32px + 48px);
+
+      h2 {
+        font-size: 42px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+  }
+
+  .more-info-section {
+    gap: 100px;
+    h2 {
+      font-size: 42px;
+    }
+    a {
+      border-radius: 8px;
+      background: #0068FF;
+      padding: 10px 30px;
+      color: white;
+      text-align: center;
+      @media screen and (min-width: 960px) {
+        align-self: start;
+      }
+    }
+  }
+
+  .faq {
+    @media screen and (min-width: 960px) {
+      margin: 20px 240px !important;
+    }
+  }
+}
